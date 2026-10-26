@@ -1,6 +1,6 @@
 # Roadmap and work packages
 
-**Recorded:** 2026-10-26. **Status:** proposed baseline, pending owner acceptance. No earned completion percentage is claimed until an authored, validated Project Record Standard ledger is established.
+**Recorded:** 2026-10-26. **Status:** ten work packages entered owner-authorized initial working scope on 2026-10-26 following merge of PR #11. Native Project Record Standard ledger is validated in CI. Foundation DIA-001 is source-linked Done (1/10 required work); four milestone acceptance decisions remain unknown. The working-scope authorization does not itself accept skill quality or milestone gates.
 
 The project follows [Project Record Standard v0.4.1](https://github.com/interzettel/project-record-standard/releases/tag/v0.4.1), contract 0.2.0, for terminology, stable IDs, separate completion and acceptance, evidence, and scope changes. Its installer preview/apply and official ledger check succeeded in isolated GitHub Actions CI on 2026-10-26; Windows/Claude/Codex runtime discovery, owner scope acceptance, and hosted tracker remain unverified.
 
