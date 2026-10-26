@@ -17,7 +17,7 @@
       "owner": null,
       "priority": "P0",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/1",
-      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "criterion": "Research, source inventory, architecture and initial scope preserved at exact merged revision.",
       "note": "Initial research, foundation and roadmap committed via merged PR #11; does not establish other milestone acceptance.",
       "deferReason": null,
       "evidence": [
@@ -53,7 +53,7 @@
       "owner": null,
       "priority": "P0",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/2",
-      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "criterion": "Official PRS 0.4.1 record, source history, project-only README tracker and parity CI verified; install/rollback and readiness limits documented.",
       "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
       "deferReason": null,
       "evidence": []
@@ -76,7 +76,7 @@
       "owner": null,
       "priority": "P0",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/3",
-      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "criterion": "Agent Skills standard and upstream donor licenses, security and revision comparisons documented with reuse decisions.",
       "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
       "deferReason": null,
       "evidence": []
@@ -99,7 +99,7 @@
       "owner": null,
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/4",
-      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "criterion": "Portable Superpowers/skill-creator/PRS install and discovery verified in an actual Claude Code or Codex session, including rollback.",
       "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
       "deferReason": null,
       "evidence": []
@@ -123,7 +123,7 @@
       "owner": null,
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/5",
-      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "criterion": "Versioned typed finding schema and authority rules validated with examples, positive and negative controls.",
       "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
       "deferReason": null,
       "evidence": []
@@ -147,7 +147,7 @@
       "owner": null,
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/6",
-      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "criterion": "Three specialist skills completed with portable metadata, matched no-skill/with-skill runs and human-adjudicated behavior results.",
       "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
       "deferReason": null,
       "evidence": []
@@ -170,7 +170,7 @@
       "owner": null,
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/7",
-      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "criterion": "Evidence-linked evaluation on safe copies of real research/project documents, including false-positive and preservation checks.",
       "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
       "deferReason": null,
       "evidence": []
@@ -193,7 +193,7 @@
       "owner": null,
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/8",
-      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "criterion": "Method, communication, cross-document consistency and coordinator integration passes composition/conflict tests.",
       "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
       "deferReason": null,
       "evidence": []
@@ -216,7 +216,7 @@
       "owner": null,
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/9",
-      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "criterion": "Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions.",
       "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
       "deferReason": null,
       "evidence": []
@@ -240,7 +240,7 @@
       "owner": null,
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/10",
-      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "criterion": "Versioned skill releases, pinned consumers, provenance/compatibility and update-drift checks established with publication evidence.",
       "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
       "deferReason": null,
       "evidence": []
@@ -283,7 +283,7 @@
       "acceptanceRule": "unknown",
       "sourceAccepted": null,
       "unscopedWork": [],
-      "nextAction": "Owner acceptance and verified gate evidence pending",
+      "nextAction": "Review the documented foundation and its source authority (work 1/1; acceptance still unknown).",
       "priority": null,
       "sourceState": null,
       "evidence": []
@@ -305,7 +305,7 @@
       "acceptanceRule": "unknown",
       "sourceAccepted": null,
       "unscopedWork": [],
-      "nextAction": "Owner acceptance and verified gate evidence pending",
+      "nextAction": "Verify local skill-runtime activation, complete donor audit and accept the findings contract.",
       "priority": null,
       "sourceState": null,
       "evidence": []
@@ -325,7 +325,7 @@
       "acceptanceRule": "unknown",
       "sourceAccepted": null,
       "unscopedWork": [],
-      "nextAction": "Owner acceptance and verified gate evidence pending",
+      "nextAction": "Adjudicate blinded reviewer-vs-baseline runs including negative controls.",
       "priority": null,
       "sourceState": null,
       "evidence": []
@@ -346,7 +346,7 @@
       "acceptanceRule": "unknown",
       "sourceAccepted": null,
       "unscopedWork": [],
-      "nextAction": "Owner acceptance and verified gate evidence pending",
+      "nextAction": "Prove reversible consumer adoption, versioned publication and update compatibility.",
       "priority": null,
       "sourceState": null,
       "evidence": []
