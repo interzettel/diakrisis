@@ -268,8 +268,8 @@
       "title": "Adopt framework in consumer repositories",
       "groupId": "DIA-ADP",
       "milestoneId": "DIA-M3",
-      "state": "backlog",
-      "sourceState": "backlog",
+      "state": "active",
+      "sourceState": "writing-kitchen-pinned-consumer-source-merged;acceptance-deferred",
       "required": true,
       "blocked": false,
       "dependsOn": [
@@ -282,9 +282,22 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/9",
       "criterion": "Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions.",
-      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "note": "Owner-directed build-first exception: first reversible Diakrisis consumer implementation merged into yigit-denktas/writing-kitchen main at commit 919ebba4e890a05d85cbd2e9a641c6ef11362cb2, PR #24. Seven native skills pinned to Diakrisis source a72b28e25165afc1193fa16ed13a3cd9f8db9afd, 16 source paths with per-file Git blob receipts and rollback guide. GitHub tree verified all 16 installed hashes and eight byte-identical upstream blobs, but Writing Kitchen CI run 40409113960 failed with inaccessible job logs/steps; original main CI also has failures, cause unknown. Hosted snapshot verifier has NOT been observed passing. No model/skill activation, private corpus ingestion, hooks or app runtime integration. DIA-007 still incomplete acceptance dependency; remain In progress, no DIA-M3 acceptance or Done point.",
       "deferReason": null,
-      "evidence": []
+      "evidence": [
+        {
+          "kind": "consumer-merged-implementation",
+          "source": "https://github.com/yigit-denktas/writing-kitchen/pull/24"
+        },
+        {
+          "kind": "consumer-source-manifest",
+          "source": "https://github.com/yigit-denktas/writing-kitchen/blob/919ebba4e890a05d85cbd2e9a641c6ef11362cb2/integrations/diakrisis/source-manifest.json"
+        },
+        {
+          "kind": "consumer-ci-failed-unresolved",
+          "source": "https://github.com/yigit-denktas/writing-kitchen/actions/runs/40409113960"
+        }
+      ]
     },
     {
       "id": "DIA-010",
@@ -411,7 +424,7 @@
       "acceptanceRule": "unknown",
       "sourceAccepted": null,
       "unscopedWork": [],
-      "nextAction": "Prove reversible consumer adoption, versioned publication and update compatibility.",
+      "nextAction": "DIA-009 / #9 first Writing Kitchen consumer source integration merged (WK PR #24), source hashes verified through GitHub tree but hosted CI failed without accessible logs and live activation untested. Await DIA-007 reviewer/false-positive gate, consumer CI diagnosis, native agent-discovery and authority/privacy checks before adoption acceptance. Other proposed consumers and DIA-010 packaging remain development candidates, not accepted milestones.",
       "priority": null,
       "sourceState": null,
       "evidence": []
@@ -425,7 +438,8 @@
     "GitHub-native issue milestones are not configured; DIA-M0–DIA-M3 exist in the authoritative PRS ledger and are linked to issues by ID, not as native GitHub milestone objects.",
     "2026-10-26: DIA-003 documentary audit complete via PR #20; required work 2/10. DIA-M1 supporting work 1/4 Done; milestone sourceAccepted remains unknown.",
     "2026-10-26: owner-approved MIT covers rights-controlled original Project Record Standard v0.4.1 material, documented at upstream PR #5 (merged); historical release artifact and third-party rights unchanged. DIA-002 remains blocked only on owner-deferred live/archive verification.",
-    "2026-10-26: DIA-005 contract revision 1 implementation structurally verified in PR #24; no earned Done point while upstream DIA-002 and end-of-build verification remain pending. Required work stays 2/10."
+    "2026-10-26: DIA-005 contract revision 1 implementation structurally verified in PR #24; no earned Done point while upstream DIA-002 and end-of-build verification remain pending. Required work stays 2/10.",
+    "2026-10-26: Owner-authorized DIA-009 build-before-test exception; first consumer Writing Kitchen code merged with precise source manifest. No Done/acceptance credit until DIA-007 and consumer checks; WK CI failed, root cause unverified. Required work stays 2/10."
   ],
   "governance": {
     "purpose": "Portable review skills for conceptual, linguistic and scientific integrity (proposed, unapproved)",
