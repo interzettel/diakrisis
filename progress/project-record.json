@@ -21,7 +21,8 @@
         "renderer": "host",
         "theme": "theme.json",
         "readmeMetric": "work",
-        "progressUrl": null
+        "progressUrl": null,
+        "readmeImageUrl": "./assets/progress.svg"
       },
       "snapshots": [
         {
