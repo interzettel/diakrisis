@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "adapter": "normalized-v1",
+      "sourceFile": "ledger.json",
+      "project": {
+        "id": "diakrisis",
+        "name": "Diakrisis",
+        "repository": "interzettel/diakrisis",
+        "visibility": "public"
+      },
+      "source": {
+        "kind": "file-snapshot",
+        "path": "progress/ledger.json",
+        "commit": null,
+        "observedOn": "2026-10-26",
+        "updatedOn": "2026-10-26",
+        "authority": "Local proposal; no approved baseline"
+      },
+      "presentation": {
+        "renderer": "host",
+        "theme": "theme.json",
+        "readmeMetric": "work",
+        "progressUrl": null
+      }
+    }
+  ]
+}
