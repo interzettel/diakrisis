@@ -6,30 +6,43 @@
       "title": "Preserve research foundation",
       "groupId": "DIA-FDN",
       "milestoneId": "DIA-M0",
-      "state": "review",
-      "sourceState": "review",
-      "required": false,
+      "state": "done",
+      "sourceState": "merged-and-reviewable",
+      "required": true,
       "blocked": false,
       "dependsOn": [],
       "unmappedDependencies": [],
-      "completionBasis": "not-complete",
+      "completionBasis": "owner-directed-merge",
       "kind": "work-package",
       "owner": null,
       "priority": "P0",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/1",
       "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
-      "note": "Proposed scope, not accepted",
-      "deferReason": "Owner has not yet accepted scoped denominator",
-      "evidence": []
+      "note": "Initial research, foundation and roadmap committed via merged PR #11; does not establish other milestone acceptance.",
+      "deferReason": null,
+      "evidence": [
+        {
+          "kind": "owner-direction",
+          "source": "2026-10-26 user instruction to merge PR #11 and proceed"
+        },
+        {
+          "kind": "merged-pr",
+          "source": "https://github.com/interzettel/diakrisis/pull/11"
+        },
+        {
+          "kind": "ci-verification",
+          "source": "https://github.com/interzettel/diakrisis/actions/runs/40369691691"
+        }
+      ]
     },
     {
       "id": "DIA-002",
       "title": "Install and verify Project Record Standard",
       "groupId": "DIA-INF",
       "milestoneId": "DIA-M1",
-      "state": "backlog",
+      "state": "active",
       "sourceState": "backlog",
-      "required": false,
+      "required": true,
       "blocked": false,
       "dependsOn": [
         "DIA-001"
@@ -41,8 +54,8 @@
       "priority": "P0",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/2",
       "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
-      "note": "Proposed scope, not accepted",
-      "deferReason": "Owner has not yet accepted scoped denominator",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
       "evidence": []
     },
     {
@@ -52,7 +65,7 @@
       "milestoneId": "DIA-M1",
       "state": "active",
       "sourceState": "active",
-      "required": false,
+      "required": true,
       "blocked": false,
       "dependsOn": [
         "DIA-001"
@@ -64,8 +77,8 @@
       "priority": "P0",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/3",
       "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
-      "note": "Proposed scope, not accepted",
-      "deferReason": "Owner has not yet accepted scoped denominator",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
       "evidence": []
     },
     {
@@ -75,7 +88,7 @@
       "milestoneId": "DIA-M1",
       "state": "backlog",
       "sourceState": "backlog",
-      "required": false,
+      "required": true,
       "blocked": false,
       "dependsOn": [
         "DIA-003"
@@ -87,8 +100,8 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/4",
       "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
-      "note": "Proposed scope, not accepted",
-      "deferReason": "Owner has not yet accepted scoped denominator",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
       "evidence": []
     },
     {
@@ -96,9 +109,9 @@
       "title": "Define typed findings and authority contract",
       "groupId": "DIA-INF",
       "milestoneId": "DIA-M1",
-      "state": "backlog",
+      "state": "active",
       "sourceState": "backlog",
-      "required": false,
+      "required": true,
       "blocked": false,
       "dependsOn": [
         "DIA-002",
@@ -111,8 +124,8 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/5",
       "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
-      "note": "Proposed scope, not accepted",
-      "deferReason": "Owner has not yet accepted scoped denominator",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
       "evidence": []
     },
     {
@@ -120,9 +133,9 @@
       "title": "Build and test three pilot reviewers",
       "groupId": "DIA-EVL",
       "milestoneId": "DIA-M2",
-      "state": "backlog",
+      "state": "active",
       "sourceState": "backlog",
-      "required": false,
+      "required": true,
       "blocked": false,
       "dependsOn": [
         "DIA-004",
@@ -135,8 +148,8 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/6",
       "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
-      "note": "Proposed scope, not accepted",
-      "deferReason": "Owner has not yet accepted scoped denominator",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
       "evidence": []
     },
     {
@@ -146,7 +159,7 @@
       "milestoneId": "DIA-M2",
       "state": "backlog",
       "sourceState": "backlog",
-      "required": false,
+      "required": true,
       "blocked": false,
       "dependsOn": [
         "DIA-006"
@@ -158,8 +171,8 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/7",
       "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
-      "note": "Proposed scope, not accepted",
-      "deferReason": "Owner has not yet accepted scoped denominator",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
       "evidence": []
     },
     {
@@ -169,7 +182,7 @@
       "milestoneId": "DIA-M3",
       "state": "backlog",
       "sourceState": "backlog",
-      "required": false,
+      "required": true,
       "blocked": false,
       "dependsOn": [
         "DIA-007"
@@ -181,8 +194,8 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/8",
       "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
-      "note": "Proposed scope, not accepted",
-      "deferReason": "Owner has not yet accepted scoped denominator",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
       "evidence": []
     },
     {
@@ -192,7 +205,7 @@
       "milestoneId": "DIA-M3",
       "state": "backlog",
       "sourceState": "backlog",
-      "required": false,
+      "required": true,
       "blocked": false,
       "dependsOn": [
         "DIA-007"
@@ -204,8 +217,8 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/9",
       "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
-      "note": "Proposed scope, not accepted",
-      "deferReason": "Owner has not yet accepted scoped denominator",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
       "evidence": []
     },
     {
@@ -215,7 +228,7 @@
       "milestoneId": "DIA-M3",
       "state": "backlog",
       "sourceState": "backlog",
-      "required": false,
+      "required": true,
       "blocked": false,
       "dependsOn": [
         "DIA-008",
@@ -228,8 +241,8 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/10",
       "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
-      "note": "Proposed scope, not accepted",
-      "deferReason": "Owner has not yet accepted scoped denominator",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
       "evidence": []
     }
   ],
@@ -340,8 +353,9 @@
     }
   ],
   "warnings": [
-    "All ten work leaves remain excluded from required scope until owner acceptance. 0/0: Not measured.",
-    "Verified CI does not imply scientific quality, owner acceptance, or deployment."
+    "Initial working scope authorized 2026-10-26; one completed foundation leaf; all other work remains open.",
+    "Milestone sourceAccepted and downstream reviewer scientific validity remain unknown.",
+    "Native Claude/Codex activation and matched without-skill/with-skill LLM evaluations have not been observed."
   ],
   "governance": {
     "purpose": "Portable review skills for conceptual, linguistic and scientific integrity (proposed, unapproved)",
@@ -352,7 +366,16 @@
     "successCriteria": [],
     "wbsCoverage": "not-assessed",
     "workPackages": [],
-    "baselines": [],
+    "baselines": [
+      {
+        "id": "DIA-B01",
+        "kind": "working-scope-authorization",
+        "date": "2026-10-26",
+        "source": "User approved merge of PR #11 and directed next implementation stages",
+        "linkedSource": "https://github.com/interzettel/diakrisis/pull/11",
+        "note": "Authorization to proceed on ten proposed packages, not owner acceptance of outputs, safety autonomy or milestone gates."
+      }
+    ],
     "changeRequests": [],
     "risks": [],
     "tailoring": {
