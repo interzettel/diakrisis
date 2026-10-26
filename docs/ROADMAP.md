@@ -12,7 +12,7 @@
 
 ## Accounted work and dependencies
 
-These ten records alone constitute the current required-work denominator. GitHub issues provide delivery/discussion; each has one canonical ledger milestone. **GitHub-native milestones are not configured**, so these DIA-M IDs are *ledger checkpoints*, not GitHub milestone objects.
+These ten records alone constitute the current required-work denominator. GitHub issues provide delivery/discussion; each has one canonical ledger milestone. **None of the ten tracked GitHub issues had a native milestone assigned in the 2026-10-26 inspection**, so these DIA-M IDs are *ledger checkpoints*, not GitHub milestone objects.
 
 | ID / issue | Ledger milestone | Priority | State | Dependencies | Remaining criterion |
 | --- | --- | --- | --- | --- | --- |
