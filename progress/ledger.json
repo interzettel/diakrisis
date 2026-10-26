@@ -277,9 +277,9 @@
       "groupId": "DIA-ADP",
       "milestoneId": "DIA-M3",
       "state": "active",
-      "sourceState": "writing-kitchen-pinned-consumer-source-merged;acceptance-deferred",
+      "sourceState": "first-consumer-source-merged;private-actions-runner-unallocated;acceptance-deferred",
       "required": true,
-      "blocked": false,
+      "blocked": true,
       "dependsOn": [
         "DIA-007"
       ],
@@ -290,7 +290,7 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/9",
       "criterion": "Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions.",
-      "note": "Owner-directed build-first exception: first reversible Diakrisis consumer implementation merged into yigit-denktas/writing-kitchen main at commit 919ebba4e890a05d85cbd2e9a641c6ef11362cb2, PR #24. Seven native skills pinned to Diakrisis source a72b28e25165afc1193fa16ed13a3cd9f8db9afd, 16 source paths with per-file Git blob receipts and rollback guide. GitHub tree verified all 16 installed hashes and eight byte-identical upstream blobs, but Writing Kitchen CI run 40409113960 failed with inaccessible job logs/steps; original main CI also has failures, cause unknown. Hosted snapshot verifier has NOT been observed passing. No model/skill activation, private corpus ingestion, hooks or app runtime integration. DIA-007 still incomplete acceptance dependency; remain In progress, no DIA-M3 acceptance or Done point.",
+      "note": "First consumer Writing Kitchen source integration merged at WK PR #24 with 16-file pinned blob manifest; Spatial Laboratory offline N02 bridge source PR #18 awaits owner-required protected-branch merge approval. GitHub Actions failure investigated 2026-10-27: WK post-integration run 40409275568 and pre-integration run 39126910180, Spatial PR run 40412642089 and pre-integration main run 40119623438 all have runner_id=0 and steps=[]; neither application tests nor source-checkers started. Public Diakrisis run 40417865197 allocated a runner and passed 14 steps. Cause of private-runner dispatch not proven (billing/quota/budget/payment or runner policy suspected); owner must inspect GitHub billing/Actions settings or contact Support. Thus this leaf has Blocked flag for **consumer hosted verification**, not a failed test verdict. No new user permission or expenditure authorized; DIA-007 behavioral acceptance deferred, milestone DIA-M3 not accepted, required work remains 2/10.",
       "deferReason": null,
       "evidence": [
         {
@@ -302,8 +302,16 @@
           "source": "https://github.com/yigit-denktas/writing-kitchen/blob/919ebba4e890a05d85cbd2e9a641c6ef11362cb2/integrations/diakrisis/source-manifest.json"
         },
         {
-          "kind": "consumer-ci-failed-unresolved",
-          "source": "https://github.com/yigit-denktas/writing-kitchen/actions/runs/40409113960"
+          "kind": "private-actions-runner-startup-incident",
+          "source": "https://github.com/interzettel/diakrisis/blob/main/docs/research/DIA-009-RUNNER-INCIDENT.md"
+        },
+        {
+          "kind": "writing-kitchen-runner-zero",
+          "source": "https://github.com/yigit-denktas/writing-kitchen/actions/runs/40409275568"
+        },
+        {
+          "kind": "spatial-laboratory-runner-zero",
+          "source": "https://github.com/yigit-denktas/spatial-laboratory/actions/runs/40412642089"
         }
       ]
     },
@@ -441,7 +449,7 @@
       "acceptanceRule": "unknown",
       "sourceAccepted": null,
       "unscopedWork": [],
-      "nextAction": "DIA-008 / #8 offline coordinator composition and 19-file portable bundle implemented in PR #27, structural CI green. DIA-009 Writing Kitchen source integration merged but consumer CI/native activation unverified; Spatial Laboratory PR #18 open awaiting explicit owner merge authorization. DIA-010 unreleased deterministic builder exists. No behavioral evaluation completed: DIA-007 and DIA-008/009 acceptance gates remain deferred, no stable package release. M3 acceptance unknown.",
+      "nextAction": "DIA-009 / #9 private consumer Actions blocker isolated to **no runner allocated** (runner_id 0, zero steps) for Writing Kitchen and Spatial Laboratory, including before Diakrisis integration. Owner must check private Actions usage/budget/payment/policy and retry once dispatch is restored. Spatial Laboratory PR #18 still needs explicit owner merge approval. DIA-008 coordinator and DIA-010 offline bundle structurally implemented; DIA-007 behavior/consumer verification and stable release gates deferred. M3 acceptance unknown.",
       "priority": null,
       "sourceState": null,
       "evidence": []
@@ -458,7 +466,8 @@
     "2026-10-26: DIA-005 contract revision 1 implementation structurally verified in PR #24; no earned Done point while upstream DIA-002 and end-of-build verification remain pending. Required work stays 2/10.",
     "2026-10-26: Owner-authorized DIA-009 build-before-test exception; first consumer Writing Kitchen code merged with precise source manifest. No Done/acceptance credit until DIA-007 and consumer checks; WK CI failed, root cause unverified. Required work stays 2/10.",
     "2026-10-26: DIA-010 development bundle ZIP/SHA256/compatibility code authored in PR #26, structurally verified in GitHub Actions; package 0.1.0-dev.0 is still unreleased and no publication evidence exists. Work stays 2/10 Done until remaining dependency/acceptance gates.",
-    "2026-10-26: DIA-008 deterministic coordinator implemented with validated source-preserving grouping and complete-link checks (PR #27), and portable 19-file builder verified in CI; this is structural functionality, not accepted/validated reviewer behavior. Required work stays 2/10."
+    "2026-10-26: DIA-008 deterministic coordinator implemented with validated source-preserving grouping and complete-link checks (PR #27), and portable 19-file builder verified in CI; this is structural functionality, not accepted/validated reviewer behavior. Required work stays 2/10.",
+    "2026-10-27: DIA-009 consumer CI does not execute; both private repos fail before runner allocation. GitHub account/Actions control is an external owner-required check. No code-test failure is established. Work remains 2/10 Done."
   ],
   "governance": {
     "purpose": "Portable review skills for conceptual, linguistic and scientific integrity (proposed, unapproved)",

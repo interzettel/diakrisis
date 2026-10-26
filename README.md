@@ -18,7 +18,7 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-26 against `cb777408`.
+Observed 2026-10-26 against `98702d37`.
 
 #### Milestone roadmap
 
@@ -27,7 +27,7 @@ Observed 2026-10-26 against `cb777408`.
 | **DIA-M0 — Documented basis** | Now | 1/1 · 100.0% | Unknown / not assessed | Review the documented foundation and its source authority (work 1/1; acceptance still unknown). |
 | **DIA-M1 — Reproducible foundation** | Now | 1/4 · 25.0% | Unknown / not assessed | DIA-005 / #5 finding+report contract revision 1 structurally implemented in PR #24 (positive/negative/abstention cases passed). DIA-003 complete; DIA-002 / #2 remains the P0 prerequisite Blocked only for owner-deferred local archive/runtime verification. DIA-004 / #4 runtime activation is also deferred. No further eligible unblocked completion gate in M1 until owner resumes the final test phase; M1 acceptance remains unknown. |
 | **DIA-M2 — Evaluated reviewers** | Next | 0/2 · 0.0% | Unknown / not assessed | Adjudicate blinded reviewer-vs-baseline runs including negative controls. |
-| **DIA-M3 — Portable system** | Later | 0/3 · 0.0% | Unknown / not assessed | DIA-008 / #8 offline coordinator composition and 19-file portable bundle implemented in PR #27, structural CI green. DIA-009 Writing Kitchen source integration merged but consumer CI/native activation unverified; Spatial Laboratory PR #18 open awaiting explicit owner merge authorization. DIA-010 unreleased deterministic builder exists. No behavioral evaluation completed: DIA-007 and DIA-008/009 acceptance gates remain deferred, no stable package release. M3 acceptance unknown. |
+| **DIA-M3 — Portable system** | Later | 0/3 · 0.0% | Unknown / not assessed | DIA-009 / #9 private consumer Actions blocker isolated to **no runner allocated** (runner_id 0, zero steps) for Writing Kitchen and Spatial Laboratory, including before Diakrisis integration. Owner must check private Actions usage/budget/payment/policy and retry once dispatch is restored. Spatial Laboratory PR #18 still needs explicit owner merge approval. DIA-008 coordinator and DIA-010 offline bundle structurally implemented; DIA-007 behavior/consumer verification and stable release gates deferred. M3 acceptance unknown. |
 
 #### Work packages
 
@@ -43,7 +43,7 @@ States represent recorded implementation progress; a closed issue, passing test 
 | [DIA-006](https://github.com/interzettel/diakrisis/issues/6) | Build and test three pilot reviewers | In progress | P1 | DIA-004, DIA-005 | [Evidence](https://github.com/interzettel/diakrisis/pull/17) |
 | [DIA-007](https://github.com/interzettel/diakrisis/issues/7) | Evaluate pilots on genuine documents | Planned | P1 | DIA-006 | Evidence-linked evaluation on safe copies of real research/project documents, including false-positive and preservation checks. |
 | [DIA-008](https://github.com/interzettel/diakrisis/issues/8) | Expand reviewers and coordination | In progress | P2 | DIA-007 | [Evidence](https://github.com/interzettel/diakrisis/pull/17) |
-| [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | In progress | P2 | DIA-007 | Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions. |
+| [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | In progress | P2 | DIA-007 | Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions. · Blocked flag (reason in source) |
 | [DIA-010](https://github.com/interzettel/diakrisis/issues/10) | Version releases and evaluate drift | In progress | P2 | DIA-008, DIA-009 | Versioned skill releases, pinned consumers, provenance/compatibility and update-drift checks established with publication evidence. |
 
 **Versioning:** Suite `0.1.0-dev.0` — **unreleased**; included skills: **7**. Draft candidates: None. [Single package version policy](docs/VERSIONING.md).
