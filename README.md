@@ -81,15 +81,14 @@ These are integration targets, **not completed integrations**. Consumer reposito
 
 These are **planned modules** rather than a list of shipped capabilities. The initial slice is terminology, conceptual modeling and arguments.
 
-**Tracking:** Required approved work: **0/0 — Not measured**. Proposed retained work: **0/10 completed**. Milestone acceptance: **unknown**. These are separate measures; see [ledger](progress/ledger.json).
-
 ## Repository navigation
 
 - [Foundation and design boundaries](docs/FOUNDATION.md)
 - [Prioritized roadmap and acceptance gates](docs/ROADMAP.md)
 - [External research and upstream inventory](docs/SOURCES.md)
 - [Agent Skills specification review](docs/AGENT-SKILLS-STANDARD.md)
-- [Per-skill versioning](docs/VERSIONING.md) · [README generation policy](docs/README-TRACKER.md)\n- [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
+- [Per-skill versioning](docs/VERSIONING.md) · [README generation policy](docs/README-TRACKER.md)
+- [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
 - [Project-record adoption and source authority](progress/adoption.md)
 - [Proposed PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)
 - [Provisional review finding contract](docs/REVIEW-CONTRACT.md) and [RED-phase test cases](evals/README.md)
