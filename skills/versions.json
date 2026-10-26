@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "project": "diakrisis",
+  "suite": {
+    "version": "0.1.0-dev.0",
+    "status": "unreleased",
+    "releaseTag": null,
+    "releaseDate": null,
+    "notes": "Working software/research prototype only; no published suite release"
+  },
+  "skills": [],
+  "candidates": [
+    {
+      "name": "terminology-review",
+      "proposedVersion": "0.1.0-draft",
+      "status": "experimental",
+      "pullRequest": "https://github.com/interzettel/diakrisis/pull/12",
+      "sourceRef": "feat/terminology-review-pilot",
+      "released": false,
+      "behaviorValidated": false
+    }
+  ],
+  "policy": "docs/VERSIONING.md"
+}
