@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "observedOn": "2026-10-26",
+  "repository": "interzettel/diakrisis",
+  "baselineBranch": "main",
+  "initialHead": "46e2557677a6caa3206fe2d4ea2c23127d71c0aa",
+  "scope": "initial bootstrap (partial, not exhaustive hosted inventory)",
+  "coverage": [
+    {
+      "surface": "repository root",
+      "status": "complete",
+      "observation": "LICENSE only on main; MIT Studio Zettlerei 2026",
+      "source": "https://api.github.com/repos/interzettel/diakrisis/contents/"
+    },
+    {
+      "surface": "local git working tree",
+      "status": "inaccessible",
+      "observation": "No authenticated local checkout; remote git DNS unavailable"
+    },
+    {
+      "surface": "project documentation",
+      "status": "complete",
+      "observation": "No README/AGENTS/progress on original main"
+    },
+    {
+      "surface": "issues",
+      "status": "partial",
+      "observation": "Not yet reconciled with GitHub native issues"
+    },
+    {
+      "surface": "pull requests and branches",
+      "status": "partial",
+      "observation": "Main and bootstrap branch observed; comprehensive PR/branch audit pending"
+    },
+    {
+      "surface": "release and deployment",
+      "status": "unknown",
+      "observation": "No verified release/deployment evidence"
+    },
+    {
+      "surface": "upstream sources",
+      "status": "partial",
+      "observation": "Initial comparison in docs/SOURCES.md; security and license review pending"
+    }
+  ],
+  "evidenceLimits": [
+    "A remote GitHub write is not a Windows/Claude/Codex installation",
+    "Do not report verified PRS progress without running its validator and observing relevant scope acceptance"
+  ]
+}
