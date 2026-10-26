@@ -23,7 +23,7 @@ class ConsumerBundleTests(unittest.TestCase):
             self.assertEqual((one / "SHA256SUMS").read_bytes(),
                              (two / "SHA256SUMS").read_bytes())
             manifest = bundle.verify(one / "bundle")
-            self.assertEqual(len(manifest["files"]), 16)
+            self.assertEqual(len(manifest["files"]), 19)
             self.assertEqual(manifest["suite_version"], "0.1.0-dev.0")
             self.assertEqual(manifest["source_revision"], bundle.commit_sha())
 
