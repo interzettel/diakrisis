@@ -33,7 +33,9 @@ These are integration targets, **not completed integrations**. Consumer reposito
 
 These are **planned modules** rather than a list of shipped capabilities. The initial slice is terminology, conceptual modeling and arguments.
 
-**Tracking:** Required approved work: **0/0 — Not measured**. Proposed retained work: **0/10 completed**. Milestone acceptance: **unknown**. These are separate measures; see [ledger](progress/ledger.json).\n\n## Repository navigation
+**Tracking:** Required approved work: **0/0 — Not measured**. Proposed retained work: **0/10 completed**. Milestone acceptance: **unknown**. These are separate measures; see [ledger](progress/ledger.json).
+
+## Repository navigation
 
 - [Foundation and design boundaries](docs/FOUNDATION.md)
 - [Prioritized roadmap and acceptance gates](docs/ROADMAP.md)
