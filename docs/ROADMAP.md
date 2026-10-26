@@ -41,3 +41,6 @@ Milestones are **acceptance gates**, not tasks or percentages. No milestone is a
 ## Immediate next move
 
 Finish source verification and install/validate Project Record Standard in a **clean staging checkout**. Inspect changes, then create the authoritative manifest/ledger. After that, integrate upstream authoring tools and run *baseline* tests before shipping skills. GitHub issues can record delivery discussions; they must not become a competing authoritative completion ledger.
+## Owner-approved build-first sequencing — 2026-10-26
+
+All seven specialist/coordinator skill modules are being authored together in draft PR #17 before any further model test infrastructure or behavioral evaluation. Each module has a dated pre-implementation web-source record in `docs/research/`. Structural packaging checks remain in CI. No DIA-006, DIA-007, or DIA-008 completion or milestone acceptance is inferred from drafted instructions; comparative evaluations and integrated behavioral checks are **deferred until the suite is built**, at the owner's direction. Suite SemVer applies to the **whole package only**, not individual modules.
