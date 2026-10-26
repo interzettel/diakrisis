@@ -41,7 +41,7 @@
       "groupId": "DIA-INF",
       "milestoneId": "DIA-M1",
       "state": "active",
-      "sourceState": "isolated-ci-verified;upstream-license-owner-approval-pending;local-verification-deferred",
+      "sourceState": "isolated-ci-verified;original-source-license-approved;local-verification-deferred",
       "required": true,
       "blocked": true,
       "dependsOn": [
@@ -54,7 +54,7 @@
       "priority": "P0",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/2",
       "criterion": "Official PRS 0.4.1 record, source history, project-only README tracker and parity CI verified; install/rollback and readiness limits documented.",
-      "note": "Existing official PRS v0.4.1 ledger/README parity and disposable GitHub Actions installation checks passed. Independently downloaded archive SHA-256/extraction and Windows Claude/Codex activation remain deferred by owner to final test phase; only publisher-provided archive SHA-256 a46cdcea938eb987b936497a22db8eab07106aad7dd12a8cfe10b4ad41f74607 was observed. 2026-10-26 licensing subtask: PRS source v0.4.1 lacks explicit license, so opened owner-decision issue https://github.com/interzettel/project-record-standard/issues/4 and proposed MIT in **unmerged DRAFT** https://github.com/interzettel/project-record-standard/pull/5. No rights-holder approval or historical v0.4.1 grant is established. Next responsible actor: PRS source owner confirms legal grant/attribution/applicability; local runtime evidence remains deferred. Keep this leaf In progress + Blocked, not Done.",
+      "note": "Source-owner approval 2026-10-26: original rights-controlled Project Record Standard source (including v0.4.1 revision ebc6afb0b977ff3d7605893c73ac63021775c4d3) granted MIT with approved attribution in current LICENSE and standards/LICENSING-DECISION.md; upstream PR #5 merged at 9fab17ddae8c2488eff63670d8f1a28d5c763a1f and issue #4 closed. Historical v0.4.1 tag/ZIP/hash unchanged; third-party rights separately governed. Isolated PRS source install, ledger validation and README/SVG CI verified. BLOCKED only for separately owner-deferred local Windows Claude/Codex activation, independent v0.4.1 archive checksum/extraction and related final-runtime checks; do not mark Done or accept DIA-M1.",
       "deferReason": null,
       "evidence": [
         {
@@ -70,12 +70,16 @@
           "source": "https://github.com/interzettel/diakrisis/pull/15"
         },
         {
-          "kind": "licensing-decision-request",
-          "source": "https://github.com/interzettel/project-record-standard/issues/4"
+          "kind": "source-owner-approved-license",
+          "source": "https://github.com/interzettel/project-record-standard/blob/9fab17ddae8c2488eff63670d8f1a28d5c763a1f/standards/LICENSING-DECISION.md"
         },
         {
-          "kind": "unapproved-license-proposal",
+          "kind": "merged-upstream-license-pr",
           "source": "https://github.com/interzettel/project-record-standard/pull/5"
+        },
+        {
+          "kind": "upstream-license-ci",
+          "source": "https://github.com/interzettel/project-record-standard/actions/runs/40399025196"
         }
       ]
     },
@@ -357,7 +361,7 @@
       "acceptanceRule": "unknown",
       "sourceAccepted": null,
       "unscopedWork": [],
-      "nextAction": "DIA-002 / #2 P0: PRS source owner must decide on LICENSE and attribution in https://github.com/interzettel/project-record-standard/issues/4 and approve/amend **draft** PR #5. Neither historical v0.4.1 licensing nor final local verification is resolved. DIA-M1 acceptance remains unknown, and the owner-deferred model/runtime test phase is untouched.",
+      "nextAction": "DIA-002 / #2 P0: MIT licensing for rights-controlled original PRS v0.4.1 source is approved and documented at upstream merged PR #5; no further license owner decision is pending. Remaining blocker is independent archive checksum/extraction and Windows Claude/Codex activation, expressly deferred by owner to final test phase. DIA-004 depends on completed DIA-003 but its live runner activation is likewise deferred. DIA-M1 acceptance unknown.",
       "priority": null,
       "sourceState": null,
       "evidence": []
@@ -411,7 +415,7 @@
     "2026-10-26: all seven experimental skill definitions merged in PR #17; functional integration and behavioral evaluation deferred, with no owner acceptance or stable release yet.",
     "GitHub-native issue milestones are not configured; DIA-M0–DIA-M3 exist in the authoritative PRS ledger and are linked to issues by ID, not as native GitHub milestone objects.",
     "2026-10-26: DIA-003 documentary audit complete via PR #20; required work 2/10. DIA-M1 supporting work 1/4 Done; milestone sourceAccepted remains unknown.",
-    "2026-10-26: Project Record Standard license decision now requested at PRS #4 and unmerged draft PR #5; MIT is a **proposal**, not currently granted, and v0.4.1 applicability remains for the rights-holder to resolve."
+    "2026-10-26: owner-approved MIT covers rights-controlled original Project Record Standard v0.4.1 material, documented at upstream PR #5 (merged); historical release artifact and third-party rights unchanged. DIA-002 remains blocked only on owner-deferred live/archive verification."
   ],
   "governance": {
     "purpose": "Portable review skills for conceptual, linguistic and scientific integrity (proposed, unapproved)",
