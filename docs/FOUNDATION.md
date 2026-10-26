@@ -49,7 +49,7 @@ Similarly, distinguish entity types, instances, attributes, states, events, acti
 
 Each finding should contain `id`, `reviewer`, `artifact`, `span`, `category`, `claim`, `basis` (source URI/revision or explicit rule), `evidence_status` (observed/inferred/unknown), `severity`, `confidence_reason`, `suggestion`, and `requires_owner_decision`.
 
-The schema is provisional. Severity is not model authority; block only on project-governed acceptance rules. Overlapping reviewers must refer to the same underlying conflict rather than report inflated counts.
+The [candidate JSON Schema](../schemas/finding.schema.json) and [RED-phase test fixtures](../evals/pilot-cases.json) are now staged. Neither is an accepted evaluation result. The schema is provisional. Severity is not model authority; block only on project-governed acceptance rules. Overlapping reviewers must refer to the same underlying conflict rather than report inflated counts.
 
 ## Pilot fixtures
 
