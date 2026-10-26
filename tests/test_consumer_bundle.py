@@ -23,7 +23,7 @@ class ConsumerBundleTests(unittest.TestCase):
             self.assertEqual((one / "SHA256SUMS").read_bytes(),
                              (two / "SHA256SUMS").read_bytes())
             manifest = bundle.verify(one / "bundle")
-            self.assertEqual(len(manifest["files"]), 16)
+            self.assertEqual(len(manifest["files"]), 19)
             self.assertEqual(manifest["suite_version"], "0.1.0-dev.0")
             self.assertEqual(manifest["source_revision"], bundle.commit_sha())
 
@@ -36,6 +36,25 @@ class ConsumerBundleTests(unittest.TestCase):
                               encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "local file drift"):
                 bundle.verify(out / "bundle")
+
+    def test_packaged_coordinator_runs_against_local_schemas(self):
+        import subprocess
+        import sys
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "pkg"
+            bundle.build(out)
+            script = out / "bundle/integrations/diakrisis/tools/coordinate_reviews.py"
+            example = ROOT / "evals/coordinator/example.json"
+            result_path = Path(tmp) / "combined.json"
+            run = subprocess.run(
+                [sys.executable, str(script), "--input", str(example),
+                 "--output", str(result_path)],
+                capture_output=True, text=True, check=False,
+            )
+            self.assertEqual(run.returncode, 0, run.stderr)
+            report = __import__("json").loads(result_path.read_text(encoding="utf-8"))
+            self.assertEqual(len(report["report"]["findings"]), 2)
+            self.assertEqual(len(report["groups"]), 1)
 
     def test_refuse_nonempty_output(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -43,6 +43,14 @@ Do **not** automatically run all six reviewers on every request. A narrow proofr
 7. Order outcomes by *consequence and evidence quality*, not quantity or invented scores. Separate observed defects from inferred risks, optional style suggestions, needs clarification and true abstentions.
 8. Deliver a human-usable synthesis: scope/coverage, canonical findings with evidence, proposals to fix (not committed changes), unresolved authority questions, and explicit next decision owner. No accepted/published status is implied.
 
+## Deterministic coordination (DIA-008)
+
+When specialist review results already exist as valid DIA-005 `review-report` objects, consult the [source-preserving composition contract](../../../docs/COORDINATION.md), [combined-report schema](../../../schemas/coordinated-report.schema.json), and offline `tools/coordinate_reviews.py` utility **if available in this checkout**. Do not claim the Python utility exists or has executed inside a consumer that only installed the portable `SKILL.md`.
+
+The tool takes an explicit local list of actual submitted reviewer reports. It validates each original finding, never rewrites or deletes it, records source report IDs and input hashes, and annotates declared shared causes/disagreements. **Never create a `shared-cause` relationship from string overlap, a matching `issue_key` alone, inferred transitivity, or apparent reviewer consensus.** Provide an inspected same-scope rationale and declared authority for each intended pair; disagreements and unknown authority remain unresolved for the owner. Without reliable source data or executable access, explain the limitation in prose instead of fabricating machine records.
+
+Composition structural checks do not substitute for source-authority judgment, real agent execution, DIA-007 behavior evaluation, or acceptance. Report **the individual findings and their evidence** even when displayed together in a human-facing group. Use one Diakrisis suite version; `schema_version` identifies the interchange format, not independent skill versions.
+
 ## Example routing
 
 - README versus charter's task-state definition → `consistency-review`, `terminology-review`, optionally `conceptual-model-review` if relationships are at issue.

@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "coordination_id": "demo-composition-001",
+  "inputs": [
+    {
+      "input_id": "terminology-fixture",
+      "report": {
+        "schema_version": 1,
+        "review_id": "demo-term-001",
+        "status": "issues-identified",
+        "coverage": {
+          "examined": [
+            {
+              "source": "synthetic project note",
+              "scope": "one state/flag sentence",
+              "revision": "fixture-1"
+            }
+          ],
+          "not_examined": [
+            "all other sections"
+          ]
+        },
+        "findings": [
+          {
+            "schema_version": 1,
+            "id": "F-terminology",
+            "reviewer": "terminology-review",
+            "artifact": {
+              "path": "docs/task-policy.md",
+              "revision": "abc123",
+              "span": "Blocked execution state"
+            },
+            "category": "state-designation-conflict",
+            "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+            "basis": [
+              {
+                "source": "standards/STANDARD.md",
+                "revision": "v0.4.1",
+                "span": "Blocked is a flag, not an execution state",
+                "reason": "The accepted state model distinguishes state from blocked flag.",
+                "verification": "inspected",
+                "applicability": "applicable"
+              }
+            ],
+            "evidence_status": "observed",
+            "disposition": "confirmed-conflict",
+            "severity": "major",
+            "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+            "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+            "requires_owner_decision": true,
+            "issue_key": "blocked-as-state"
+          }
+        ],
+        "limitations": [
+          "Synthetic fixture, not a real study or live reviewer execution."
+        ]
+      }
+    },
+    {
+      "input_id": "concept-fixture",
+      "report": {
+        "schema_version": 1,
+        "review_id": "demo-concept-001",
+        "status": "issues-identified",
+        "coverage": {
+          "examined": [
+            {
+              "source": "synthetic project note",
+              "scope": "one state/flag sentence",
+              "revision": "fixture-1"
+            }
+          ],
+          "not_examined": [
+            "all other sections"
+          ]
+        },
+        "findings": [
+          {
+            "schema_version": 1,
+            "id": "F-concept",
+            "reviewer": "conceptual-model-review",
+            "artifact": {
+              "path": "docs/task-policy.md",
+              "revision": "abc123",
+              "span": "Blocked execution state"
+            },
+            "category": "state-designation-conflict",
+            "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+            "basis": [
+              {
+                "source": "standards/STANDARD.md",
+                "revision": "v0.4.1",
+                "span": "Blocked is a flag, not an execution state",
+                "reason": "The accepted state model distinguishes state from blocked flag.",
+                "verification": "inspected",
+                "applicability": "applicable"
+              }
+            ],
+            "evidence_status": "observed",
+            "disposition": "confirmed-conflict",
+            "severity": "major",
+            "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+            "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+            "requires_owner_decision": true,
+            "issue_key": "blocked-as-state"
+          }
+        ],
+        "limitations": [
+          "Synthetic fixture, not a real study or live reviewer execution."
+        ]
+      }
+    }
+  ],
+  "relations": [
+    {
+      "left": "F-terminology",
+      "right": "F-concept",
+      "kind": "shared-cause",
+      "reason": "Synthetic example declares both reviewer observations address the same state versus blocked-flag confusion at the identical passage.",
+      "authority_source": "synthetic PRS state/blocked-flag fixture, version demo"
+    }
+  ]
+}

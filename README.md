@@ -4,7 +4,7 @@
 
 A local-first, evidence-aware collection of portable Agent Skills for reviewing conceptual structures, terminology, reasoning, research methods, and written communication.
 
-**Status: seven coordinated experimental skills implemented on `main`.** Package `0.1.0-dev.0` remains unreleased. Structural checks pass; consumer integrations, live agent activation, and behavioral review evaluations are deferred. No skill output is automatically authoritative, and no review grants an agent permission to publish, merge, or alter another repository.
+**Status: seven coordinated experimental skills implemented on `main`.** Package `0.1.0-dev.0` remains unreleased. Structural checks pass; an experimental consumer source integration exists in Writing Kitchen, while host activation, consumer CI resolution and behavioral review evaluations remain pending. No skill output is automatically authoritative, and no review grants an agent permission to publish, merge, or alter another repository.
 
 ## Project tracker
 
@@ -18,7 +18,7 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-26 against `845a4404`.
+Observed 2026-10-26 against `cb777408`.
 
 #### Milestone roadmap
 
@@ -27,7 +27,7 @@ Observed 2026-10-26 against `845a4404`.
 | **DIA-M0 — Documented basis** | Now | 1/1 · 100.0% | Unknown / not assessed | Review the documented foundation and its source authority (work 1/1; acceptance still unknown). |
 | **DIA-M1 — Reproducible foundation** | Now | 1/4 · 25.0% | Unknown / not assessed | DIA-005 / #5 finding+report contract revision 1 structurally implemented in PR #24 (positive/negative/abstention cases passed). DIA-003 complete; DIA-002 / #2 remains the P0 prerequisite Blocked only for owner-deferred local archive/runtime verification. DIA-004 / #4 runtime activation is also deferred. No further eligible unblocked completion gate in M1 until owner resumes the final test phase; M1 acceptance remains unknown. |
 | **DIA-M2 — Evaluated reviewers** | Next | 0/2 · 0.0% | Unknown / not assessed | Adjudicate blinded reviewer-vs-baseline runs including negative controls. |
-| **DIA-M3 — Portable system** | Later | 0/3 · 0.0% | Unknown / not assessed | DIA-009 / #9 first Writing Kitchen source integration merged (WK PR #24), but live consumer CI and agent activation unresolved; DIA-010 / #10 reproducible offline package builder implemented in Diakrisis PR #26 and source tests passed. Neither work package is Done. Owner-deferred DIA-007/008 behavior and composition gates, accepted consumer verification, and stable release publication receipts remain outstanding. DIA-M3 acceptance unknown. |
+| **DIA-M3 — Portable system** | Later | 0/3 · 0.0% | Unknown / not assessed | DIA-008 / #8 offline coordinator composition and 19-file portable bundle implemented in PR #27, structural CI green. DIA-009 Writing Kitchen source integration merged but consumer CI/native activation unverified; Spatial Laboratory PR #18 open awaiting explicit owner merge authorization. DIA-010 unreleased deterministic builder exists. No behavioral evaluation completed: DIA-007 and DIA-008/009 acceptance gates remain deferred, no stable package release. M3 acceptance unknown. |
 
 #### Work packages
 
@@ -92,7 +92,7 @@ All seven modules are **merged into `main`** in [PR #17](https://github.com/inte
 - [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
 - [Project-record adoption and source authority](progress/adoption.md)
 - [Proposed PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)
-- [Evidence-bound finding contract (revision 1)](docs/REVIEW-CONTRACT.md), [review report schema](schemas/review-report.schema.json) and [synthetic contract controls](evals/finding-contract/cases.json)
+- [Evidence-bound finding contract (revision 1)](docs/REVIEW-CONTRACT.md), [review report schema](schemas/review-report.schema.json), [offline coordinator composition](docs/COORDINATION.md) and [synthetic contract controls](evals/finding-contract/cases.json)
 - [Installation and verification](docs/INSTALLATION.md)
 
 ## Quality and non-goals

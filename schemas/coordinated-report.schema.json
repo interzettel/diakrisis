@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/interzettel/diakrisis/schemas/coordinated-report.schema.json",
+  "title": "DIA-008 additive coordinated report revision 1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "coordination_id",
+    "report",
+    "sources",
+    "groups",
+    "disagreements",
+    "relationship_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "coordination_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "report": {
+      "$ref": "review-report.schema.json"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "input_id",
+          "review_id",
+          "review_status",
+          "sha256"
+        ],
+        "properties": {
+          "input_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "review_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "review_status": {
+            "enum": [
+              "issues-identified",
+              "no-issues-detected",
+              "insufficient-evidence"
+            ]
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "group_id",
+          "finding_ids",
+          "declared_reasons"
+        ],
+        "properties": {
+          "group_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "finding_ids": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "declared_reasons": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "disagreements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "left",
+          "right",
+          "reason",
+          "authority_source"
+        ],
+        "properties": {
+          "left": {
+            "type": "string",
+            "minLength": 1
+          },
+          "right": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "authority_source": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "relationship_policy": {
+      "const": "declared-links-only-not-independent-adjudication"
+    }
+  }
+}
