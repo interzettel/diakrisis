@@ -4,7 +4,7 @@
 
 The project follows [Project Record Standard v0.4.1](https://github.com/interzettel/project-record-standard/releases/tag/v0.4.1), contract 0.2.0, for terminology, stable IDs, separate completion and acceptance, evidence, and scope changes. Its installer preview/apply and official ledger check succeeded in isolated GitHub Actions CI on 2026-10-26; Windows/Claude/Codex runtime discovery, owner scope acceptance, and hosted tracker remain unverified.
 
-## Sequencing and gates
+**Prerequisite for any additional reviewer:** complete the [research gate](RESEARCH-GATE.md) before skill implementation or material revision; source-refresh and matched baseline/treatment evaluation are independent gates.\n\n## Sequencing and gates
 
 | Order | Package | Priority | Completion gate | Depends on |
 | --- | --- | --- | --- | --- |
