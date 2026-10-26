@@ -12,7 +12,7 @@ A skill directory must contain `SKILL.md`, with YAML frontmatter including `name
 - Typical optional `scripts/`, `references/`, `assets/`. Put large sources in references, not in every prompt.
 - Main `SKILL.md` under 500 lines; instructions under 5,000 tokens recommended; progressive disclosure through metadata → instructions → resources.
 - Relative file references; avoid deep indirect dependency chains.
-- Validate with official `skills-ref validate <skill-directory>` and portable runtime discovery tests.
+- Validate with pinned official `skills-ref validate <skill-directory>` and portable runtime discovery tests. Its own README calls the reference implementation demonstrative, not production-certified. Metadata validity is not behavioral review competence.
 
 ## Local design rules (additional, not claims of standard requirements)
 
