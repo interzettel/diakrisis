@@ -41,7 +41,7 @@ For a very narrow question, invoke a named reviewer directly rather than the coo
 
 ## How findings work together
 
-1. The coordinator identifies relevant specialists and the governing sources.
+1. The coordinator identifies relevant specialists and the governing sources; the [offline aggregator](COORDINATION.md) can only combine source-provided validated reports, not initiate specialist models or judge semantic equivalence.
 2. Each specialist names exact affected spans, the supported or uncertain claim, the relevant evidence and the least intrusive suggestion.
 3. Findings about the **same underlying defect** are deduplicated; their differing reasons remain visible.
 4. Unresolved authority conflicts and inaccessible sources remain explicitly undecided.
