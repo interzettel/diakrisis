@@ -1,0 +1,9 @@
+[submodule "tools/upstream/superpowers"]
+	path = tools/upstream/superpowers
+	url = https://github.com/obra/superpowers.git
+[submodule "tools/upstream/anthropic-skills"]
+	path = tools/upstream/anthropic-skills
+	url = https://github.com/anthropics/skills.git
+[submodule "tools/upstream/project-record-standard"]
+	path = tools/upstream/project-record-standard
+	url = https://github.com/interzettel/project-record-standard.git
