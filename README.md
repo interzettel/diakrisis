@@ -18,14 +18,14 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-26 against `8e8ffd1c`.
+Observed 2026-10-26 against `8e4f0c51`.
 
 #### Milestone roadmap
 
 | Milestone | Horizon | Supporting required work | Outcome acceptance | Next gate |
 | --- | --- | ---: | --- | --- |
 | **DIA-M0 — Documented basis** | Now | 1/1 · 100.0% | Unknown / not assessed | Review the documented foundation and its source authority (work 1/1; acceptance still unknown). |
-| **DIA-M1 — Reproducible foundation** | Now | 0/4 · 0.0% | Unknown / not assessed | Verify local skill-runtime activation, complete donor audit and accept the findings contract. |
+| **DIA-M1 — Reproducible foundation** | Now | 0/4 · 0.0% | Unknown / not assessed | NEXT: DIA-003 / GitHub #3 (P0): complete documented donor/spec source, license, security and reuse audit. DIA-002 / #2 remains blocked only on deferred local archive/runtime verification; no milestone acceptance implied. |
 | **DIA-M2 — Evaluated reviewers** | Next | 0/2 · 0.0% | Unknown / not assessed | Adjudicate blinded reviewer-vs-baseline runs including negative controls. |
 | **DIA-M3 — Portable system** | Later | 0/3 · 0.0% | Unknown / not assessed | Prove reversible consumer adoption, versioned publication and update compatibility. |
 
@@ -36,7 +36,7 @@ States represent recorded implementation progress; a closed issue, passing test 
 | ID / issue | Work package | State | Priority | Dependencies | Evidence or next action |
 | --- | --- | --- | --- | --- | --- |
 | [DIA-001](https://github.com/interzettel/diakrisis/issues/1) | Preserve research foundation | Done | P0 | — | [Evidence](https://github.com/interzettel/diakrisis/pull/11) |
-| [DIA-002](https://github.com/interzettel/diakrisis/issues/2) | Install and verify Project Record Standard | In progress | P0 | DIA-001 | Official PRS 0.4.1 record, source history, project-only README tracker and parity CI verified; install/rollback and readiness limits documented. |
+| [DIA-002](https://github.com/interzettel/diakrisis/issues/2) | Install and verify Project Record Standard | In progress | P0 | DIA-001 | [Evidence](https://github.com/interzettel/diakrisis/pull/15) · Blocked flag (reason in source) |
 | [DIA-003](https://github.com/interzettel/diakrisis/issues/3) | Audit upstream standards and donors | In progress | P0 | DIA-001 | Agent Skills standard and upstream donor licenses, security and revision comparisons documented with reuse decisions. |
 | [DIA-004](https://github.com/interzettel/diakrisis/issues/4) | Activate pinned authoring tools | Planned | P1 | DIA-003 | Portable Superpowers/skill-creator/PRS install and discovery verified in an actual Claude Code or Codex session, including rollback. |
 | [DIA-005](https://github.com/interzettel/diakrisis/issues/5) | Define typed findings and authority contract | In progress | P1 | DIA-002, DIA-003 | Versioned typed finding schema and authority rules validated with examples, positive and negative controls. |
