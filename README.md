@@ -4,7 +4,7 @@
 
 A local-first, evidence-aware collection of portable Agent Skills for reviewing conceptual structures, terminology, reasoning, research methods, and written communication.
 
-**Status: seven coordinated experimental skills implemented on `main`.** Package `0.1.0-dev.0` remains unreleased. Structural checks pass; consumer integrations, live agent activation, and behavioral review evaluations are deferred. No skill output is automatically authoritative, and no review grants an agent permission to publish, merge, or alter another repository.
+**Status: seven coordinated experimental skills implemented on `main`.** Package `0.1.0-dev.0` remains unreleased. Structural checks pass; an experimental consumer source integration exists in Writing Kitchen, while host activation, consumer CI resolution and behavioral review evaluations remain pending. No skill output is automatically authoritative, and no review grants an agent permission to publish, merge, or alter another repository.
 
 ## Project tracker
 
@@ -92,7 +92,7 @@ All seven modules are **merged into `main`** in [PR #17](https://github.com/inte
 - [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
 - [Project-record adoption and source authority](progress/adoption.md)
 - [Proposed PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)
-- [Evidence-bound finding contract (revision 1)](docs/REVIEW-CONTRACT.md), [review report schema](schemas/review-report.schema.json) and [synthetic contract controls](evals/finding-contract/cases.json)
+- [Evidence-bound finding contract (revision 1)](docs/REVIEW-CONTRACT.md), [review report schema](schemas/review-report.schema.json), [offline coordinator composition](docs/COORDINATION.md) and [synthetic contract controls](evals/finding-contract/cases.json)
 - [Installation and verification](docs/INSTALLATION.md)
 
 ## Quality and non-goals
