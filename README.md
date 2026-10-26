@@ -40,7 +40,7 @@ These are **planned modules** rather than a list of shipped capabilities. The in
 - [Foundation and design boundaries](docs/FOUNDATION.md)
 - [Prioritized roadmap and acceptance gates](docs/ROADMAP.md)
 - [External research and upstream inventory](docs/SOURCES.md)
-- [Agent Skills specification review](docs/AGENT-SKILLS-STANDARD.md)
+- [Agent Skills specification review](docs/AGENT-SKILLS-STANDARD.md)\n- [Mandatory research gate for every skill](docs/RESEARCH-GATE.md)
 - [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
 - [Project-record adoption and source authority](progress/adoption.md)
 - [Proposed PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)
