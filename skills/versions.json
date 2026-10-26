@@ -1,23 +1,19 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "project": "diakrisis",
   "suite": {
     "version": "0.1.0-dev.0",
     "status": "unreleased",
     "releaseTag": null,
     "releaseDate": null,
-    "notes": "Working software/research prototype only; no published suite release"
+    "notes": "One version for the complete coordinated Diakrisis skill package; no published release yet."
   },
   "skills": [],
   "candidates": [
     {
       "name": "terminology-review",
-      "proposedVersion": "0.1.0-draft",
       "status": "experimental",
-      "pullRequest": "https://github.com/interzettel/diakrisis/pull/12",
-      "sourceRef": "feat/terminology-review-pilot",
-      "released": false,
-      "behaviorValidated": false
+      "pullRequest": "https://github.com/interzettel/diakrisis/pull/12"
     }
   ],
   "policy": "docs/VERSIONING.md"
