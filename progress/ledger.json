@@ -250,9 +250,13 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/8",
       "criterion": "Method, communication, cross-document consistency and coordinator integration passes composition/conflict tests.",
-      "note": "Owner-authorized build-first DIA-008 implementation: six specialist reports accepted through DIA-005 typed schemas; source-preserving deterministic coordinator in tools/coordinate_reviews.py, additive coordinated-report.schema.json, complete-link explicit grouping, unresolved disagreement, provenance digests, abstention/negative coverage, offline examples/tests, and expanded 19-file portable bundle with consumer links. Source PR #27 CI run 40417198629 passed full static, schema, reproducibility and refusal controls. DIA-007 actual evaluated reviewer quality and empirical composition remain deferred by owner; suite unreleased; issue In progress, no M3 acceptance or Done point.",
+      "note": "Owner-authorized build-first DIA-008 implementation: six specialist reports accepted through DIA-005 typed schemas; source-preserving deterministic coordinator in tools/coordinate_reviews.py, additive coordinated-report.schema.json, complete-link explicit grouping, unresolved disagreement, provenance digests, abstention/negative coverage, offline examples/tests, and expanded 19-file portable bundle with consumer links. Source PR #27 CI run 40417198629 passed initial static, schema, reproducibility and refusal controls. Final tested package additionally executes the vendored coordinator on the synthetic integration example; the final CI receipt governs that claim. DIA-007 actual evaluated reviewer quality and empirical composition remain deferred by owner; suite unreleased; issue In progress, no M3 acceptance or Done point.",
       "deferReason": null,
       "evidence": [
+        {
+          "kind": "coordinator-implementation-pr",
+          "source": "https://github.com/interzettel/diakrisis/pull/27"
+        },
         {
           "kind": "merged-pr",
           "source": "https://github.com/interzettel/diakrisis/pull/17"
@@ -260,10 +264,6 @@
         {
           "kind": "ci-verification",
           "source": "https://github.com/interzettel/diakrisis/actions/runs/40386332620"
-        },
-        {
-          "kind": "coordinator-implementation-pr",
-          "source": "https://github.com/interzettel/diakrisis/pull/27"
         },
         {
           "kind": "coordinator-composition-ci",
