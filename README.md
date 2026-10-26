@@ -79,7 +79,7 @@ These are integration targets, **not completed integrations**. Consumer reposito
 | `consistency-review` | Cross-document contradictions, version/decision drift |
 | `review-coordinator` | Route appropriate checks, deduplicate findings, never fabricate consensus |
 
-These are **planned modules** rather than a list of shipped capabilities. The initial slice is terminology, conceptual modeling and arguments.
+These are the intended modules, **not released capabilities**. `terminology-review` is an experimental first module in draft PR #17; the initial scope prioritizes terminology, conceptual modeling and arguments.
 
 ## Repository navigation
 
