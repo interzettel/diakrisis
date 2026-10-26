@@ -92,7 +92,7 @@ All seven modules are **merged into `main`** in [PR #17](https://github.com/inte
 - [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
 - [Project-record adoption and source authority](progress/adoption.md)
 - [Proposed PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)
-- [Provisional review finding contract](docs/REVIEW-CONTRACT.md) and [RED-phase test cases](evals/README.md)
+- [Evidence-bound finding contract (revision 1)](docs/REVIEW-CONTRACT.md), [review report schema](schemas/review-report.schema.json) and [synthetic contract controls](evals/finding-contract/cases.json)
 - [Installation and verification](docs/INSTALLATION.md)
 
 ## Quality and non-goals
