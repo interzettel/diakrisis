@@ -30,7 +30,7 @@ Repeat the pass when changing an important technical assumption, upstream standa
 
 | Skill | Most recent prereq research | Implementation | Model behavior |
 | --- | --- | --- | --- |
-| `terminology-review` | [2026-10-26](research/terminology-review-2026-10-26.md) | Draft in PR #12 | Not tested |
+| `terminology-review` | [2026-10-26](research/terminology-review-2026-10-26.md) | Experimental candidate in PR #17 | Not tested |
 | `conceptual-model-review` | Not started | Not started | Not tested |
 | `argument-review` | Not started | Not started | Not tested |
 | `method-review` | Not started | Not started | Not tested |
