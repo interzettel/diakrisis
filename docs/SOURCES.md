@@ -15,7 +15,7 @@
 | [Vale](https://vale.sh/) | candidate deterministic prose linter | Evaluate for style and terminology | Verify rules and language coverage |
 | [W3C SKOS](https://www.w3.org/TR/skos-reference/) / [SHACL](https://www.w3.org/TR/shacl/) / [PROV-O](https://www.w3.org/TR/prov-o/) | normative specifications | Possible taxonomic, constraint and provenance instruments | Use when complexity justifies formal representation |
 
-A Git commit pin identifies source bytes, not necessarily a trusted release or a verified installation. Nothing above is assumed installed merely because a URL or pin was recorded.
+The official Agent Skills `skills-ref` reference implementation has also been pinned at `69ef37e9424c0a7ea9dd2293b559e43ec8176379`; its own README marks it demonstration-only, not production certification. A Git commit pin identifies source bytes, not necessarily a trusted release or a verified installation. Nothing above is assumed installed merely because a URL or pin was recorded.
 
 ## Existing owned repositories (observed main branch)
 
