@@ -7,3 +7,6 @@
 [submodule "tools/upstream/project-record-standard"]
 	path = tools/upstream/project-record-standard
 	url = https://github.com/interzettel/project-record-standard.git
+[submodule "tools/upstream/agentskills"]
+	path = tools/upstream/agentskills
+	url = https://github.com/agentskills/agentskills.git
