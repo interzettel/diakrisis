@@ -33,7 +33,7 @@ These are integration targets, **not completed integrations**. Consumer reposito
 
 These are **planned modules** rather than a list of shipped capabilities. The initial slice is terminology, conceptual modeling and arguments.
 
-**Tracking:** Required approved work: **0/0 — Not measured**. Proposed retained work: **0/10 completed**. Milestone acceptance: **unknown**. These are separate measures; see [ledger](progress/ledger.json).
+**Tracking (working scope authorized 26 October 2026): Required work **1/10 complete (10.0%)**; retained ledger **1/10 (10.0%)**. Milestone acceptance remains **unknown**. These are different measures; development authorization does not imply accepting a milestone. These are separate measures; see [ledger](progress/ledger.json).
 
 ## Repository navigation
 
