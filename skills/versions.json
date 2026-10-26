@@ -6,10 +6,16 @@
     "status": "unreleased",
     "releaseTag": null,
     "releaseDate": null,
-    "notes": "Development package includes experimental terminology-review; no package publication or validated behavior claimed."
+    "notes": "Seven coordinated experimental skill modules implemented in development; one package SemVer. Formal model-behavior evaluation and release deferred by owner."
   },
   "skills": [
-    "terminology-review"
+    "terminology-review",
+    "conceptual-model-review",
+    "argument-review",
+    "method-review",
+    "communication-review",
+    "consistency-review",
+    "review-coordinator"
   ],
   "candidates": [],
   "policy": "docs/VERSIONING.md"
