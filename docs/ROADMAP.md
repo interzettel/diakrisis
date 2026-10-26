@@ -2,7 +2,7 @@
 
 **Recorded:** 2026-10-26. **Status:** proposed baseline, pending owner acceptance. No earned completion percentage is claimed until an authored, validated Project Record Standard ledger is established.
 
-The project follows [Project Record Standard v0.4.1](https://github.com/interzettel/project-record-standard/releases/tag/v0.4.1), contract 0.2.0, for terminology, stable IDs, separate completion and acceptance, evidence, and scope changes. Its actual installer/CLI output and hosted tracking are not verified in this workspace.
+The project follows [Project Record Standard v0.4.1](https://github.com/interzettel/project-record-standard/releases/tag/v0.4.1), contract 0.2.0, for terminology, stable IDs, separate completion and acceptance, evidence, and scope changes. Its installer preview/apply and official ledger check succeeded in isolated GitHub Actions CI on 2026-10-26; Windows/Claude/Codex runtime discovery, owner scope acceptance, and hosted tracker remain unverified.
 
 ## Sequencing and gates
 
