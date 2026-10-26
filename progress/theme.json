@@ -1,15 +1,15 @@
 {
-  "font": "system-ui, sans-serif",
+  "font": "system-ui, -apple-system, Segoe UI, sans-serif",
   "light": {
-    "background": "#ffffff",
-    "surface": "#ffffff",
-    "text": "#202020",
-    "muted": "#555555",
-    "border": "#aaaaaa",
-    "accent": "#202020",
-    "accentText": "#ffffff",
-    "signal": "#202020",
-    "signalText": "#202020"
+    "background": "#FAFCFB",
+    "surface": "#FFFFFF",
+    "text": "#19272E",
+    "muted": "#65757E",
+    "border": "#D9E2E5",
+    "accent": "#006043",
+    "accentText": "#FFFFFF",
+    "signal": "#D72C35",
+    "signalText": "#19272E"
   },
-  "notes": "Neutral fallback only. Brand unapproved."
+  "notes": "README-only minimal project tracker; accessible source-backed SVG. No Pages deployment."
 }
