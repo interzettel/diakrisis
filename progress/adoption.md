@@ -25,4 +25,4 @@
 
 **Rollback:** remove only files introduced by the reviewed PR/installer receipt; never run `init` over authored records or delete source history. Source of truth stays in this repo, project issue labels are projections/discussion.
 
-**Status:** this file documents the adoption plan; installation, CLI verification, progress percentage, and acceptance are pending.
+**Status:** checked-in native ledger/manifest are present and the official v0.4.1 check and disposable installation passed in GitHub Actions. Required-scope denominator remains 0/0 (Not measured); owner acceptance, local runner discovery, official release checksums, branding, and any hosted tracker remain pending.
