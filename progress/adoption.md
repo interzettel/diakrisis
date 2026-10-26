@@ -33,3 +33,7 @@ All ten accounted GitHub issues (#1–#10) were re-read and given an explicit ca
 ## 2026-10-26 PRS licensing clarification handoff
 
 [DIA-002 / issue #2](https://github.com/interzettel/diakrisis/issues/2) now links the upstream [PRS license-decision issue #4](https://github.com/interzettel/project-record-standard/issues/4) and [unmerged MIT proposal PR #5](https://github.com/interzettel/project-record-standard/pull/5). **No permission or v0.4.1 coverage is yet confirmed.** The source-owner decision is separate from local Windows/Claude/Codex activation and independent archive digest verification, both deferred until the owner-directed final test phase. Required work stays **2/10**; DIA-M1 acceptance is still unknown.
+
+## 2026-10-26 source-license approval reconciled
+
+The repository owner expressly approved the MIT license and attribution for rights-controlled original Project Record Standard material, covering original source at the pinned historical `v0.4.1` revision. Upstream [PR #5](https://github.com/interzettel/project-record-standard/pull/5) merged; the licensing decision is available [here](https://github.com/interzettel/project-record-standard/blob/main/standards/LICENSING-DECISION.md). This **supersedes the earlier unapproved draft proposal** but does not change frozen v0.4.1 assets or third-party rights. DIA-002 remains active+blocked solely for owner-deferred independent archive verification and local Windows/Claude/Codex runtime checks. DIA-M1 not accepted; accounting remains 2/10.
