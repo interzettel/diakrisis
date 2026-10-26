@@ -20,17 +20,17 @@
     {
       "surface": "project documentation",
       "status": "complete",
-      "observation": "No README/AGENTS/progress on original main"
+      "observation": "README, AGENTS, proposed scope, source inventory, official native PRS record/manifest created on draft branch; not merged/accepted."
     },
     {
       "surface": "issues",
-      "status": "partial",
-      "observation": "Not yet reconciled with GitHub native issues"
+      "status": "complete",
+      "observation": "Created and verified 10 bounded work-package issues, DIA-001..DIA-010, during bootstrap."
     },
     {
       "surface": "pull requests and branches",
       "status": "partial",
-      "observation": "Main and bootstrap branch observed; comprehensive PR/branch audit pending"
+      "observation": "Reviewed bootstrap branch and draft PR #11, not all historical branches/PRs (new repository)."
     },
     {
       "surface": "release and deployment",
@@ -46,5 +46,7 @@
   "evidenceLimits": [
     "A remote GitHub write is not a Windows/Claude/Codex installation",
     "Do not report verified PRS progress without running its validator and observing relevant scope acceptance"
-  ]
+  ],
+  "observationUpdate": "2026-10-26: 10 work-package issues created, draft PR #11 opened, source-pinned skill installation and official PRS ledger check passed in isolated CI; local runner activation untested.",
+  "ciEvidence": "https://github.com/interzettel/diakrisis/actions/runs/40368887009"
 }
