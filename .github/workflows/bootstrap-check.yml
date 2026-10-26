@@ -26,6 +26,7 @@ jobs:
           for skill in .agents/skills/*/SKILL.md; do
             skills-ref validate "$(dirname "$skill")"
           done
+          python -m pip install --disable-pip-version-check jsonschema==4.23.0
           python -m unittest discover -s tests -v
           python tools/terminology_eval.py --dry-run > "$RUNNER_TEMP/terminology-eval-plan.json"
       - name: Validate package version registry
