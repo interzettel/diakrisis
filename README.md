@@ -6,6 +6,12 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 **Status: bootstrap / research and planning.** Official Project Record Standard validation and isolated skill installation have passed in GitHub Actions; no local Claude/Codex activation or skill-efficacy evaluation is yet verified. This repository is not yet a validated scientific-review product. No skill output is automatically authoritative; no review grants an agent permission to publish, merge, or alter another repository.
 
+## Project tracker
+
+<!-- project-record:start -->
+Tracker is being generated from the authoritative Project Record Standard ledger.
+<!-- project-record:end -->
+
 ## Why it exists
 
 A grammatically impeccable assertion can still misuse a term, confuse a state with a class, conceal an unsupported inference, or contradict an accepted research method. Diakrisis helps researchers, writers, and coding agents **find and explain** those problems without silently replacing their judgment.
@@ -41,7 +47,7 @@ These are **planned modules** rather than a list of shipped capabilities. The in
 - [Prioritized roadmap and acceptance gates](docs/ROADMAP.md)
 - [External research and upstream inventory](docs/SOURCES.md)
 - [Agent Skills specification review](docs/AGENT-SKILLS-STANDARD.md)
-- [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
+- [Per-skill versioning](docs/VERSIONING.md) · [README generation policy](docs/README-TRACKER.md)\n- [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
 - [Project-record adoption and source authority](progress/adoption.md)
 - [Proposed PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)
 - [Provisional review finding contract](docs/REVIEW-CONTRACT.md) and [RED-phase test cases](evals/README.md)
@@ -59,6 +65,6 @@ Use the [official Agent Skills specification](https://agentskills.io/specificati
 
 ## Governance
 
-The owner accepts conceptual-model changes and release decisions. Contributors can propose changes through reviewed PRs. Drafts, tests, literature retrieval and agent opinions do not independently establish acceptance or scientific validity.
+Project presentation is **README-only**; no GitHub Pages deployment is planned. The owner accepts conceptual-model changes and release decisions. Contributors can propose changes through reviewed PRs. Drafts, tests, literature retrieval and agent opinions do not independently establish acceptance or scientific validity.
 
 License: [MIT](LICENSE).
