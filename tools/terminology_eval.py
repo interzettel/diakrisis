@@ -58,6 +58,12 @@ def plan(cases: list[dict], seed: int) -> list[tuple[str, str]]:
     return tasks
 
 
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    """Avoid following an unexpected redirect from a local endpoint."""
+    def redirect_request(self, request, fp, code, msg, headers, newurl):
+        return None
+
+
 def generate(url: str, model: str, system: str, user: str, timeout: int) -> str:
     data = json.dumps({
         "model": model, "stream": False, "messages": [
@@ -66,7 +72,8 @@ def generate(url: str, model: str, system: str, user: str, timeout: int) -> str:
         ], "options": {"temperature": 0}
     }).encode("utf-8")
     request = urllib.request.Request(url, data=data, headers={"Content-Type":"application/json"})
-    with urllib.request.urlopen(request, timeout=timeout) as response:
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
+    with opener.open(request, timeout=timeout) as response:
         record = json.loads(response.read().decode("utf-8"))
     if not isinstance(record.get("message", {}).get("content"), str):
         raise ValueError("local Ollama response has no text message")
