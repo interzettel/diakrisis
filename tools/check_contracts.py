@@ -63,9 +63,9 @@ def check():
         for item in items:
             issue = item.get("issueUrl", "")
             issue_links.append(issue)
-            if not re.fullmatch(r"DIA-\\d{3}", item["id"]):
+            if not re.fullmatch(r"DIA-\d{3}", item["id"]):
                 errors.append("invalid stable work ID: " + str(item.get("id")))
-            if not re.fullmatch(r"https://github\\.com/interzettel/diakrisis/issues/\\d+", issue):
+            if not re.fullmatch(r"https://github\.com/interzettel/diakrisis/issues/\d+", issue):
                 errors.append("noncanonical issue link: " + str(item["id"]))
             milestone = item.get("milestoneId")
             if milestone not in milestones:
