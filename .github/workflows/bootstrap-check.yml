@@ -20,6 +20,23 @@ jobs:
         run: |
           python tools/check_contracts.py
           python -m py_compile tools/bootstrap_skills.py tools/check_contracts.py
+      - name: Official Agent Skills reference validator
+        run: |
+          python -m pip install --disable-pip-version-check -e tools/upstream/agentskills/skills-ref
+          skills-ref validate .agents/skills/terminology-review
+      - name: Structural RED control without skill
+        run: |
+          mv .agents/skills/terminology-review "$RUNNER_TEMP/terminology-review"
+          set +e
+          python -m unittest discover -s tests -p test_terminology_skill.py -v > "$RUNNER_TEMP/red.log" 2>&1
+          exit_code=$?
+          set -e
+          mv "$RUNNER_TEMP/terminology-review" .agents/skills/terminology-review
+          if [ "$exit_code" -eq 0 ] || ! grep -q "RED: terminology-review SKILL.md is absent" "$RUNNER_TEMP/red.log"; then
+            cat "$RUNNER_TEMP/red.log"
+            exit 1
+          fi
+          echo "Observed expected absence-of-skill RED control; this is NOT a model-behavior baseline"
       - name: Test candidate skill contract
         run: python -m unittest discover -s tests -v
       - name: Preview full pinned skill installation
