@@ -20,6 +20,10 @@ jobs:
         run: |
           python tools/check_contracts.py
           python -m py_compile tools/bootstrap_skills.py tools/check_contracts.py
+      - name: Validate package version registry
+        run: python tools/check_skill_versions.py
+      - name: Emit deterministic README/SVG for initial reviewed import
+        run: python tools/sync_readme.py --emit-hex
       - name: Preview full pinned skill installation
         run: |
           mkdir -p "$RUNNER_TEMP/diakrisis-skill-test"
