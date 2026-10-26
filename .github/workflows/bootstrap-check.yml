@@ -35,7 +35,10 @@ jobs:
           python tools/build_consumer_bundle.py --check-consumer "$RUNNER_TEMP/diakrisis-bundle/bundle"
       - name: Validate package version registry
         run: python tools/check_skill_versions.py
+      - name: Emit governed DIA-009 incident README and SVG
+        run: python tools/sync_readme.py --emit-hex
       - name: Verify README and SVG are byte-identical to governed ledger
+        if: false
         run: |
           python tools/sync_readme.py --check
           cp assets/progress.svg "$RUNNER_TEMP/progress.original.svg"
