@@ -99,3 +99,7 @@ The following matters belong to **existing** issues, not new side quests:
 - Kalaris provenance and citation verifier: https://github.com/KalarisLabs/research-agent-skills/tree/b0ee35abfd7e26428846fbd84f282114560a5fbd
 - Vale v3 linter: https://github.com/vale-cli/vale/tree/8b9bfb97700a707140fff9f444048439df5bc9b1
 - W3C specs and statuses: https://www.w3.org/TR/skos-reference/ · https://www.w3.org/TR/shacl/ · https://www.w3.org/TR/shacl12-core/ · https://www.w3.org/TR/owl2-primer/ · https://www.w3.org/TR/prov-o/
+
+## Post-audit source-owner licensing resolution — 2026-10-26
+
+**This is a subsequent event, not a correction of what the original audit observed.** The audit correctly recorded no `LICENSE` in the frozen v0.4.1 tag. The repository owner later expressly approved MIT with the proposed attribution for rights-controlled original Project Record Standard source, **including original material in v0.4.1**. The approval is now documented in [PRS licensing decision](https://github.com/interzettel/project-record-standard/blob/9fab17ddae8c2488eff63670d8f1a28d5c763a1f/standards/LICENSING-DECISION.md) and [merged PR #5](https://github.com/interzettel/project-record-standard/pull/5). The old tag/ZIP and digests remain unchanged; third-party materials retain their own terms. Supersedes the audit's former *unresolved owner-permission* action only. No live runtime/model tests, new imports, or repository release have occurred.
