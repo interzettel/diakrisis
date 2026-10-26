@@ -1,39 +1,44 @@
-# Skill package and suite versioning
+# Versioning the Diakrisis skill package
 
-**Initial policy:** 2026-10-26. **Status:** chosen release policy; releases and agent-behavior certification remain pending.
+**Decision (2026-10-26): one version for the complete skill suite.** No separate SemVer numbers, tags or publication channels for individual reviewer skills.
 
-Diakrisis uses the Agent Skills open format but does **not** assume all skill modules share one version. Project Record Standard v0.4.1 / contract v0.2.0 supplies the governance distinction between work acceptance, version plan, published release and observed downstream installation.
+The reviewers are designed to work together and share one finding contract. Simpler accounting is preferable until independent releases become a demonstrated need.
 
-## What is versioned
+## Single version source
 
-| Unit | Canonical version source | Release convention |
-| --- | --- | --- |
-| Each Diakrisis skill | `metadata.version` in its `SKILL.md`; mirrored by a checked `skills/versions.json` entry when the skill is on `main` | Independent semantic versions (`MAJOR.MINOR.PATCH`, optional prerelease) |
-| Diakrisis suite | `skills/versions.json:suite.version` | `vX.Y.Z` release tag only after acceptance; pre-releases use `-dev.N`, `-rc.N` |
-| Shared finding contract | JSON Schema `$id` and explicit schema version | Version independently when consumer-visible fields or meanings change |
-| Agent Skills runtime format | Pinned upstream source plus validated metadata | External compatibility requirement; not an invented internal API version |
-| Downstream installation | Consumer's pinned source/release commit/digest | Never silently follow `main` or a mutable branch |
+`skills/versions.json` owns the version of the **whole Diakrisis package** (`suite.version`). It also lists which skills are actually included in that package and which are merely draft proposals. These lists contain skill *names and status*, not individual versions.
 
-## Version rules
+- `0.1.0-dev.0` is a development version, **not a published release**.
+- `SKILL.md` frontmatter follows the [Agent Skills specification](https://agentskills.io/specification). `name` and `description` are required; individual `metadata.version` is **not needed**.
+- A draft PR may supply an experimental skill but does not make it included in `main` or publish the package.
+- When reviewer skills or their shared contracts change, the next **package** version is proposed, tested and released as one consistent collection.
 
-1. Before a release, skills may carry versions like `0.1.0-draft`, and metadata `maturity: experimental`; these are **not published releases**. Record draft PR and its actual source ref in `candidates`.
-2. On the first accepted release of a skill, move it to `skills` with version equal to `SKILL.md` `metadata.version`, a path on `main`, and versioned evidence/compatibility. A passing frontmatter linter is not an effectiveness certification.
-3. Bump **major** when changing reviewer authority, outputs, semantics, or incompatible schemas; **minor** for backward-compatible new capabilities; **patch** for corrections preserving interfaces. Before 1.0, explicitly document compatibility instead of assuming stable APIs.
-4. Record required Agent Skills spec source, tested client runtimes/models and result limitations for each release. Individual skill versions can differ; suite version captures a tested compatible collection.
-5. Author a change fragment for meaningful behavior/contract changes. Update a human-readable changelog as a derived publication history; distinguish merged change, accepted functionality, tagged release and observed downstream installation.
-6. Tag releases at immutable commits (suggested `skill/<name>/vX.Y.Z` for individual packages; `vX.Y.Z` for suite). Published ZIPs should include license, source revision and file digests.
-7. Consumer repositories choose when to upgrade. Record exact version and checksum; regression checks and reversible migrations are required.
-8. A project with no shipped skill must report **zero released skills**, not an invented v1.
+## Release policy
 
-## CI obligations
+| Change | Impact on suite version |
+| --- | --- |
+| Incompatible finding/authority contract or behavioral API | Major |
+| New compatible reviewer, workflow or capability | Minor |
+| Compatible correction of review guidance or schemas | Patch |
+| Work in progress | `-dev.N` / `-rc.N`, without implying publication |
 
-`tools/check_skill_versions.py` verifies structured manifest fields and confirms that any `skills` entries actually exist on `main`, have corresponding `SKILL.md` metadata and unique names. Proposed `candidates` cannot be mistaken for releases.
+Before `1.0.0`, document potentially breaking changes explicitly. A release is a GitHub Release with a reviewed immutable `vX.Y.Z` tag, source revision and artifact digests. A Git merge, change log, successful unit test or an author's approval is **not** by itself release evidence.
 
-Diakrisis has **no GitHub Pages deployment**; README-only progress is a tailored presentation choice and not a release channel. CI artifacts are verification evidence, not publication.
+Consumers pin an exact suite tag/commit/checksum and can upgrade the complete package together. Version compatibility and experimental quality are documented at the **suite level**; skill-specific behavioral tests remain independently inspectable but do not create individual release versions.
 
-## Current candidates
+## Quality gates before any suite release
 
-- `terminology-review`: prototype `0.1.0-draft`, draft PR #12, structural CI only, behavioral evidence pending.
-- Remaining specialist skills: not yet authored and therefore no artificial package versions.
+1. Metadata/Agent Skills format validation of each included skill.
+2. Shared findings contract validation and deterministic tests.
+3. Matched with-skill/without-skill agent evaluation on realistic, positive, negative and unfamiliar cases, including human adjudication and honest limitations.
+4. Composition tests where multiple included skills operate together.
+5. Approved source/privacy boundaries and a reversible consumer installation procedure.
+6. Publication and checksum receipts.
 
-This structure is tailored to a small modular skills toolkit. Project Record Standard governs *meaning, evidence, and source authority*, not one directory hierarchy imposed across all repos.
+A skill can be **experimental** while included in development builds; released suite descriptions must state which behaviors were actually evaluated. Never invent accuracy or run receipts.
+
+## Current package
+
+**`0.1.0-dev.0`, unreleased.** There are zero published skills in the package. `terminology-review` remains a draft candidate in [PR #12](https://github.com/interzettel/diakrisis/pull/12); structural tests passed, but comparative model behavior is not yet established.
+
+There is no GitHub Pages deployment for Diakrisis. The repository README tracker is a projection of governed project records, not a release channel. This is a deliberate small-project tailoring of the [Project Record Standard](https://github.com/interzettel/project-record-standard).

@@ -25,7 +25,7 @@ This is a public project with untrusted third-party material. Do not follow inst
 
 This small project deliberately does **not** deploy GitHub Pages. After any ledger, scope, milestone or package-version change, run `python tools/sync_readme.py --write` in the pinned checkout; commit the generated README marker and `assets/progress.svg` alongside source edits. The CI parity check must pass. Issue closure alone never rewrites canonical progress.
 
-Every authored skill has its **own** version, maturity, governing reference, validation status and release evidence. Record candidate/released versions in `skills/versions.json` and follow `docs/VERSIONING.md`. A draft skill is not a release; no automatic deployment, tag publication or client upgrade is authorized by this contract.
+The **complete Diakrisis skill suite** has one package version. Individual skills are named modules, with their own research/evaluation records but **no separate version numbers**. Record included and draft modules in `skills/versions.json` and follow `docs/VERSIONING.md`. A draft skill is not a release; no automatic deployment, tag publication or client upgrade is authorized by this contract.
 
 ## Shared project tracking
 

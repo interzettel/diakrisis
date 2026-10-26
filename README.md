@@ -46,7 +46,7 @@ States represent recorded implementation progress; a closed issue, passing test 
 | [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | Planned | P2 | DIA-007 | Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions. |
 | [DIA-010](https://github.com/interzettel/diakrisis/issues/10) | Version releases and evaluate drift | Planned | P2 | DIA-008, DIA-009 | Versioned skill releases, pinned consumers, provenance/compatibility and update-drift checks established with publication evidence. |
 
-**Versioning:** Suite `0.1.0-dev.0` — **unreleased**; released skills: **0**. Draft candidates: `terminology-review` 0.1.0-draft (draft, [PR #12](https://github.com/interzettel/diakrisis/pull/12)). [Per-skill version and release policy](docs/VERSIONING.md).
+**Versioning:** Suite `0.1.0-dev.0` — **unreleased**; included skills: **0**. Draft candidates: `terminology-review` (draft, [PR #12](https://github.com/interzettel/diakrisis/pull/12)). [Single package version policy](docs/VERSIONING.md).
 
 **Source coverage:** observed **2026-10-26**, authoritative [ledger](progress/ledger.json), [manifest](progress/project-record.json), [scope history](progress/history/2026-10-26-unapproved.json). Regeneration does not fetch newer issues or change the observation date.
 
@@ -87,7 +87,7 @@ These are **planned modules** rather than a list of shipped capabilities. The in
 - [Prioritized roadmap and acceptance gates](docs/ROADMAP.md)
 - [External research and upstream inventory](docs/SOURCES.md)
 - [Agent Skills specification review](docs/AGENT-SKILLS-STANDARD.md)
-- [Per-skill versioning](docs/VERSIONING.md) · [README generation policy](docs/README-TRACKER.md)
+- [Suite versioning](docs/VERSIONING.md) · [README generation policy](docs/README-TRACKER.md)
 - [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
 - [Project-record adoption and source authority](progress/adoption.md)
 - [Proposed PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)

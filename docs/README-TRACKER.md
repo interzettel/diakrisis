@@ -14,7 +14,7 @@
 
 ## Read the view
 
-At the top of the README, the scoped graphic shows named fractions/percentages from the official Project Record Standard calculator, not an estimate. Below it are exact milestone work fractions, acceptance states (including **unknown**), every accounting leaf, stable issue links, dependencies, next gates and draft skill versions. All data appears as Markdown for readers who cannot view the SVG.
+At the top of the README, the scoped graphic shows named fractions/percentages from the official Project Record Standard calculator, not an estimate. Below it are exact milestone work fractions, acceptance states (including **unknown**), every accounting leaf, stable issue links, dependencies, next gates and draft skill status. All data appears as Markdown for readers who cannot view the SVG.
 
 The graphic is the original Project Record Standard README renderer, using Diakrisis-specific colours and typography. The added table is a local small-project view; **no JavaScript, Pages route, or hosted website is necessary**.
 
@@ -42,4 +42,4 @@ Every PR runs official Project Record Standard ledger validation, scope-history 
 
 ## Publication / versioning
 
-GitHub `main` README is a source-controlled status view, **not a release or deployment channel**. No Pages workflow, URL, site or web runtime is installed. Reusable skills are released independently under [per-skill versioning](VERSIONING.md) after separate behavioral evaluation and review.
+GitHub `main` README is a source-controlled status view, **not a release or deployment channel**. No Pages workflow, URL, site or web runtime is installed. The complete skill package is versioned together under [single-suite versioning](VERSIONING.md) after separate behavioral evaluation and review.
