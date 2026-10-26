@@ -4,7 +4,7 @@
 
 A local-first, evidence-aware collection of portable Agent Skills for reviewing conceptual structures, terminology, reasoning, research methods, and written communication.
 
-**Status: bootstrap / research and planning.** This repository is not yet a validated scientific-review product. No skill output is automatically authoritative; no review grants an agent permission to publish, merge, or alter another repository.
+**Status: bootstrap / research and planning.** Official Project Record Standard validation and isolated skill installation have passed in GitHub Actions; no local Claude/Codex activation or skill-efficacy evaluation is yet verified. This repository is not yet a validated scientific-review product. No skill output is automatically authoritative; no review grants an agent permission to publish, merge, or alter another repository.
 
 ## Why it exists
 
@@ -33,7 +33,7 @@ These are integration targets, **not completed integrations**. Consumer reposito
 
 These are **planned modules** rather than a list of shipped capabilities. The initial slice is terminology, conceptual modeling and arguments.
 
-## Repository navigation
+**Tracking:** Required approved work: **0/0 — Not measured**. Proposed retained work: **0/10 completed**. Milestone acceptance: **unknown**. These are separate measures; see [ledger](progress/ledger.json).\n\n## Repository navigation
 
 - [Foundation and design boundaries](docs/FOUNDATION.md)
 - [Prioritized roadmap and acceptance gates](docs/ROADMAP.md)
