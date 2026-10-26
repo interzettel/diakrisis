@@ -60,3 +60,6 @@ The [candidate JSON Schema](../schemas/finding.schema.json) and [RED-phase test 
 5. Correct scientific passage: should return no gratuitous findings.
 
 Report false positives, misses and adjudication rules, not merely reviewer agreement.
+## Coordinated developmental modules — October 2026
+
+The repository now contains seven experimental Agent Skills: terminology, conceptual model, argument, method, communication, consistency and a routing coordinator. All are part of **one unreleased package**; see [usage profiles](USAGE.md). The specialist division is intended to prevent duplicated authority claims and irrelevant reviews, but it has **not** yet been behaviorally evaluated. Implementation is not release acceptance.
