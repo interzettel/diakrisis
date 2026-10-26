@@ -43,6 +43,8 @@ def render() -> tuple[str, str]:
     theme = json.loads(THEME.read_text(encoding="utf-8"))
     versions = json.loads(VERSIONS.read_text(encoding="utf-8"))
     svg, module = render_readme(record, theme)
+    # The host has deliberately chosen README-only presentation; no missing-site warning.
+    module = module.replace("Interactive route not connected. · ", "")
     source = record["source"]
     milestones = record["milestones"]
     items = record["items"]
