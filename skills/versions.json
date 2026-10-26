@@ -6,15 +6,11 @@
     "status": "unreleased",
     "releaseTag": null,
     "releaseDate": null,
-    "notes": "One version for the complete coordinated Diakrisis skill package; no published release yet."
+    "notes": "Development package includes experimental terminology-review; no package publication or validated behavior claimed."
   },
-  "skills": [],
-  "candidates": [
-    {
-      "name": "terminology-review",
-      "status": "experimental",
-      "pullRequest": "https://github.com/interzettel/diakrisis/pull/12"
-    }
+  "skills": [
+    "terminology-review"
   ],
+  "candidates": [],
   "policy": "docs/VERSIONING.md"
 }
