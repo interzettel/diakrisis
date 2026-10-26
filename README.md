@@ -18,7 +18,7 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-26 against `bd5a8320`.
+Observed 2026-10-26 against `9e4e3fd9`.
 
 #### Milestone roadmap
 
@@ -42,11 +42,11 @@ States represent recorded implementation progress; a closed issue, passing test 
 | [DIA-005](https://github.com/interzettel/diakrisis/issues/5) | Define typed findings and authority contract | In progress | P1 | DIA-002, DIA-003 | Versioned typed finding schema and authority rules validated with examples, positive and negative controls. |
 | [DIA-006](https://github.com/interzettel/diakrisis/issues/6) | Build and test three pilot reviewers | In progress | P1 | DIA-004, DIA-005 | Three specialist skills completed with portable metadata, matched no-skill/with-skill runs and human-adjudicated behavior results. |
 | [DIA-007](https://github.com/interzettel/diakrisis/issues/7) | Evaluate pilots on genuine documents | Planned | P1 | DIA-006 | Evidence-linked evaluation on safe copies of real research/project documents, including false-positive and preservation checks. |
-| [DIA-008](https://github.com/interzettel/diakrisis/issues/8) | Expand reviewers and coordination | Planned | P2 | DIA-007 | Method, communication, cross-document consistency and coordinator integration passes composition/conflict tests. |
+| [DIA-008](https://github.com/interzettel/diakrisis/issues/8) | Expand reviewers and coordination | In progress | P2 | DIA-007 | Method, communication, cross-document consistency and coordinator integration passes composition/conflict tests. |
 | [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | Planned | P2 | DIA-007 | Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions. |
 | [DIA-010](https://github.com/interzettel/diakrisis/issues/10) | Version releases and evaluate drift | Planned | P2 | DIA-008, DIA-009 | Versioned skill releases, pinned consumers, provenance/compatibility and update-drift checks established with publication evidence. |
 
-**Versioning:** Suite `0.1.0-dev.0` — **unreleased**; included skills: **1**. Draft candidates: None. [Single package version policy](docs/VERSIONING.md).
+**Versioning:** Suite `0.1.0-dev.0` — **unreleased**; included skills: **7**. Draft candidates: None. [Single package version policy](docs/VERSIONING.md).
 
 **Source coverage:** observed **2026-10-26**, authoritative [ledger](progress/ledger.json), [manifest](progress/project-record.json), [scope history](progress/history/2026-10-26-unapproved.json). Regeneration does not fetch newer issues or change the observation date.
 
