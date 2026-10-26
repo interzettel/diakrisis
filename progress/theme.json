@@ -1,0 +1,15 @@
+{
+  "font": "system-ui, sans-serif",
+  "light": {
+    "background": "#ffffff",
+    "surface": "#ffffff",
+    "text": "#202020",
+    "muted": "#555555",
+    "border": "#aaaaaa",
+    "accent": "#202020",
+    "accentText": "#ffffff",
+    "signal": "#202020",
+    "signalText": "#202020"
+  },
+  "notes": "Neutral fallback only. Brand unapproved."
+}
