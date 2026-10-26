@@ -37,13 +37,13 @@ Restart the agent session and verify automatic skill triggering. See upstream [i
 
 Anthropic's `skill-creator` is now project-local in a compatible runner that discovers `.agents/skills/`; verify it is discoverable through your runtime's native skill listing. Follow its evaluation process, and test before deploying reviewers.
 
-## 4. Establish Project Record Standard
+## 4. Validate authored Agent Skills\n\nThe official Agent Skills reference validator is pinned as `tools/upstream/agentskills/` and run in CI against authored skills. Its upstream README describes it as a **demonstration reference implementation**, not production certification. The CI additionally exercises `skills-ref to-prompt` for prompt metadata serialization; this does not prove actual Claude/Codex activation.\n\n## 5. Establish Project Record Standard
 
 The installer copies the v0.4.1 project-record skills, but does not itself author accepted scope, run the project-record ledger CLI, authorize decisions, create a GitHub Project, or deploy a website.
 
 Follow the [adoption plan](../progress/adoption.md), starting with the official `establish-project-tracking` skill and a new empty staging directory. Use its native CLI to validate the project manifest. Do not claim a completion percentage before scoped ledger and authoritative evidence exist.
 
-## 5. Verification and rollback
+## 6. Verification and rollback
 
 Run `python tools/check_contracts.py` and the source kit's official tests. Test one new Claude/Codex session: skill discovery, appropriate trigger, negative trigger, and inability to silently edit accepted project definitions. GitHub Actions tests should be treated as separate evidence once a workflow actually executes.
 
