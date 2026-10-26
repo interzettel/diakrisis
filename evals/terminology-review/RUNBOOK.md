@@ -8,10 +8,21 @@ Measure whether `terminology-review` improves source-grounded terminology critiq
 
 ## Runtime preflight
 
-1. Open a reviewed checkout of draft PR #12 in a supported agent runtime (Claude Code and/or Codex). Use a clean branch/worktree and no private data.
+1. Open a reviewed checkout of draft PR #17 in a supported agent runtime (Claude Code and/or Codex). Use a clean branch/worktree and no private data.
 2. Verify that `.agents/skills/terminology-review/SKILL.md` appears through the host's real skill discovery/activation mechanism. Separately verify whether Superpowers is active as a plugin; a copied directory is not a plugin hook.
 3. Record exact model/build, temperature/thinking where available, prompt versions, allowed tools, source revision, skill revision, system instruction baseline, time and user approvals.
 4. If using two different models or harnesses, treat results as distinct experiments, not matched pairs.
+
+## Locally runnable paired evaluation (no hosted inference)
+
+On a Windows checkout with Python and an intentionally installed local Ollama model:
+
+```powershell
+python tools/terminology_eval.py --dry-run
+python tools/terminology_eval.py --execute --model <your-installed-model> --output evals/terminology-review/runs/first-pair.json
+```
+
+The tool refuses non-loopback endpoints, redirects and proxy egress; raw outputs remain locally gitignored until privacy and quality review. Do not claim this executes on a user's machine merely because commands exist. The with-skill arm explicitly injects the procedure; test actual automatic skill discovery separately in Claude Code/Codex.
 
 ## Same-input comparisons
 
