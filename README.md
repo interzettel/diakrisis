@@ -4,7 +4,7 @@
 
 A local-first, evidence-aware collection of portable Agent Skills for reviewing conceptual structures, terminology, reasoning, research methods, and written communication.
 
-**Status: bootstrap / research and planning.** Official Project Record Standard validation and isolated skill installation have passed in GitHub Actions; no local Claude/Codex activation or skill-efficacy evaluation is yet verified. This repository is not yet a validated scientific-review product. No skill output is automatically authoritative; no review grants an agent permission to publish, merge, or alter another repository.
+**Status: seven coordinated experimental skills implemented on `main`.** Package `0.1.0-dev.0` remains unreleased. Structural checks pass; consumer integrations, live agent activation, and behavioral review evaluations are deferred. No skill output is automatically authoritative, and no review grants an agent permission to publish, merge, or alter another repository.
 
 ## Project tracker
 
@@ -79,7 +79,7 @@ These are integration targets, **not completed integrations**. Consumer reposito
 | `consistency-review` | Cross-document contradictions, version/decision drift |
 | `review-coordinator` | Route appropriate checks, deduplicate findings, never fabricate consensus |
 
-All seven modules are **authored as experimental development skills in draft PR #17**, but none is a validated or released capability. The complete coordinated package shares one version; behavioral testing and installation in consumer repositories will follow after implementation.
+All seven modules are **merged into `main`** in [PR #17](https://github.com/interzettel/diakrisis/pull/17). They form one **unreleased experimental package**; consumer integrations, behavioral evaluation, and publication remain separate future work.
 
 ## Repository navigation
 
