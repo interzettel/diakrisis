@@ -88,7 +88,7 @@ All seven modules are **merged into `main`** in [PR #17](https://github.com/inte
 - [Prioritized roadmap and acceptance gates](docs/ROADMAP.md)
 - [External research and upstream inventory](docs/SOURCES.md)
 - [Agent Skills specification review](docs/AGENT-SKILLS-STANDARD.md)\n- [Mandatory pre-skill research review](docs/RESEARCH-GATE.md) · [Experimental terminology evaluation](evals/terminology-review/ASSESSMENT.md)
-- [Suite versioning](docs/VERSIONING.md) · [README generation policy](docs/README-TRACKER.md)
+- [Suite versioning](docs/VERSIONING.md) · [Offline consumer bundling and compatibility](docs/COMPATIBILITY.md) · [README generation policy](docs/README-TRACKER.md)
 - [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
 - [Project-record adoption and source authority](progress/adoption.md)
 - [Proposed PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)
