@@ -89,13 +89,13 @@ def render() -> tuple[str, str]:
         )
     candidates = versions.get("candidates", [])
     draft = ", ".join(
-        f"`{safe(c['name'])}` {safe(c['proposedVersion'])} (draft, [PR #{str(c['pullRequest']).rstrip('/').split('/')[-1]}]({c['pullRequest']}))"
+        f"`{safe(c['name'])}` (draft, [PR #{str(c['pullRequest']).rstrip('/').split('/')[-1]}]({c['pullRequest']}))"
         for c in candidates
     ) or "None"
     breakdown.extend([
         "",
-        f"**Versioning:** Suite `{safe(versions['suite']['version'])}` — **{safe(versions['suite']['status'])}**; released skills: **{len(versions['skills'])}**. "
-        f"Draft candidates: {draft}. [Per-skill version and release policy](docs/VERSIONING.md).",
+        f"**Versioning:** Suite `{safe(versions['suite']['version'])}` — **{safe(versions['suite']['status'])}**; included skills: **{len(versions['skills'])}**. "
+        f"Draft candidates: {draft}. [Single package version policy](docs/VERSIONING.md).",
         "",
         f"**Source coverage:** observed **{source['observedOn']}**, authoritative "
         "[ledger](progress/ledger.json), [manifest](progress/project-record.json), "
