@@ -1,0 +1,4 @@
+# Evaluation outputs are created on a local operator's machine. Never auto-publish raw text.
+evals/terminology-review/runs/
+__pycache__/
+*.pyc

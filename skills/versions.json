@@ -6,15 +6,17 @@
     "status": "unreleased",
     "releaseTag": null,
     "releaseDate": null,
-    "notes": "One version for the complete coordinated Diakrisis skill package; no published release yet."
+    "notes": "Seven coordinated experimental skill modules implemented in development; one package SemVer. Formal model-behavior evaluation and release deferred by owner."
   },
-  "skills": [],
-  "candidates": [
-    {
-      "name": "terminology-review",
-      "status": "experimental",
-      "pullRequest": "https://github.com/interzettel/diakrisis/pull/12"
-    }
+  "skills": [
+    "terminology-review",
+    "conceptual-model-review",
+    "argument-review",
+    "method-review",
+    "communication-review",
+    "consistency-review",
+    "review-coordinator"
   ],
+  "candidates": [],
   "policy": "docs/VERSIONING.md"
 }

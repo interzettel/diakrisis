@@ -134,7 +134,7 @@
       "groupId": "DIA-EVL",
       "milestoneId": "DIA-M2",
       "state": "active",
-      "sourceState": "backlog",
+      "sourceState": "seven-developmental-skills-authored",
       "required": true,
       "blocked": false,
       "dependsOn": [
@@ -148,9 +148,14 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/6",
       "criterion": "Three specialist skills completed with portable metadata, matched no-skill/with-skill runs and human-adjudicated behavior results.",
-      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "note": "Terminology, conceptual-model and argument modules drafted alongside remaining specialists; comparative efficacy pending owner-delayed evaluation.",
       "deferReason": null,
-      "evidence": []
+      "evidence": [
+        {
+          "kind": "implementation-branch",
+          "source": "https://github.com/interzettel/diakrisis/pull/17"
+        }
+      ]
     },
     {
       "id": "DIA-007",
@@ -180,8 +185,8 @@
       "title": "Expand reviewers and coordination",
       "groupId": "DIA-ADP",
       "milestoneId": "DIA-M3",
-      "state": "backlog",
-      "sourceState": "backlog",
+      "state": "active",
+      "sourceState": "seven-skills-authored-in-draft-pr",
       "required": true,
       "blocked": false,
       "dependsOn": [
@@ -194,9 +199,14 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/8",
       "criterion": "Method, communication, cross-document consistency and coordinator integration passes composition/conflict tests.",
-      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "note": "Seven research-grounded modules authored in PR #17; coordinator and review composition await end-of-build evaluation. No acceptance credit.",
       "deferReason": null,
-      "evidence": []
+      "evidence": [
+        {
+          "kind": "implementation-branch",
+          "source": "https://github.com/interzettel/diakrisis/pull/17"
+        }
+      ]
     },
     {
       "id": "DIA-009",
@@ -355,7 +365,9 @@
   "warnings": [
     "Initial working scope authorized 2026-10-26; one completed foundation leaf; all other work remains open.",
     "Milestone sourceAccepted and downstream reviewer scientific validity remain unknown.",
-    "Native Claude/Codex activation and matched without-skill/with-skill LLM evaluations have not been observed."
+    "Native Claude/Codex activation and matched without-skill/with-skill LLM evaluations have not been observed.",
+    "Owner-directed build-first 2026-10-26: all seven skill instructions authored in draft PR #17, structural checks only; behavioral evaluation and owner acceptance deferred.",
+    "Progress remains 1/10 Done; draft skill content is not a completed/accepted work package."
   ],
   "governance": {
     "purpose": "Portable review skills for conceptual, linguistic and scientific integrity (proposed, unapproved)",

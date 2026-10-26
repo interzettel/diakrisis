@@ -1,6 +1,6 @@
 # Reproducible toolchain installation
 
-This repository declares three pinned upstream Git submodules; their availability in GitHub does not install them on your Windows PC or load them into an agent. For first setup use a **reviewed local checkout**; do not pipe network responses directly into a shell.
+This repository declares three pinned skill-toolkit submodules plus the pinned Agent Skills specification/reference validator submodule; their availability in GitHub does not install them on your Windows PC or load them into an agent. For first setup use a **reviewed local checkout**; do not pipe network responses directly into a shell.
 
 ## 1. Clone source at reviewed revisions
 
