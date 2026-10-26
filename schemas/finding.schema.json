@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/interzettel/diakrisis/schemas/finding.schema.json",
+  "title": "Diakrisis candidate review finding v0 (not a scientifically validated judge)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "reviewer",
+    "artifact",
+    "category",
+    "claim",
+    "basis",
+    "evidence_status",
+    "disposition",
+    "severity",
+    "confidence_reason",
+    "requires_owner_decision"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer": {
+      "type": "string",
+      "enum": [
+        "terminology-review",
+        "conceptual-model-review",
+        "argument-review",
+        "method-review",
+        "communication-review",
+        "consistency-review"
+      ]
+    },
+    "artifact": {
+      "type": "object",
+      "required": [
+        "path",
+        "span"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "span": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "basis": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "reason"
+        ],
+        "properties": {
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_status": {
+      "enum": [
+        "observed",
+        "inferred",
+        "unknown"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "confirmed-conflict",
+        "needs-clarification",
+        "suggestion",
+        "abstain"
+      ]
+    },
+    "severity": {
+      "enum": [
+        "informational",
+        "minor",
+        "major",
+        "blocking-candidate"
+      ]
+    },
+    "confidence_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "suggestion": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "requires_owner_decision": {
+      "type": "boolean"
+    }
+  }
+}
