@@ -1,0 +1,459 @@
+{
+  "contractVersion": "0.2.0",
+  "items": [
+    {
+      "id": "DIA-001",
+      "title": "Preserve research foundation",
+      "groupId": "DIA-FDN",
+      "milestoneId": "DIA-M0",
+      "state": "done",
+      "sourceState": "merged-and-reviewable",
+      "required": true,
+      "blocked": false,
+      "dependsOn": [],
+      "unmappedDependencies": [],
+      "completionBasis": "owner-directed-merge",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P0",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/1",
+      "criterion": "Research, source inventory, architecture and initial scope preserved at exact merged revision.",
+      "note": "Initial research, foundation and roadmap committed via merged PR #11; does not establish other milestone acceptance.",
+      "deferReason": null,
+      "evidence": [
+        {
+          "kind": "owner-direction",
+          "source": "2026-10-26 user instruction to merge PR #11 and proceed"
+        },
+        {
+          "kind": "merged-pr",
+          "source": "https://github.com/interzettel/diakrisis/pull/11"
+        },
+        {
+          "kind": "ci-verification",
+          "source": "https://github.com/interzettel/diakrisis/actions/runs/40369691691"
+        }
+      ]
+    },
+    {
+      "id": "DIA-002",
+      "title": "Install and verify Project Record Standard",
+      "groupId": "DIA-INF",
+      "milestoneId": "DIA-M1",
+      "state": "active",
+      "sourceState": "verified-project-records;local-verification-deferred",
+      "required": true,
+      "blocked": true,
+      "dependsOn": [
+        "DIA-001"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P0",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/2",
+      "criterion": "Official PRS 0.4.1 record, source history, project-only README tracker and parity CI verified; install/rollback and readiness limits documented.",
+      "note": "Recorded blocker (owner-directed final test phase): native local Windows/Claude/Codex activation and independent downloaded release-archive digest/extraction receipts are not available here. Published PRS v0.4.1 archive SHA-256 is a46cdcea938eb987b936497a22db8eab07106aad7dd12a8cfe10b4ad41f74607; this publisher receipt is not a locally calculated checksum. CI verified exact pinned source installation and record/README parity. Next actor: local operator during end-of-build verification; remain In progress.",
+      "deferReason": null,
+      "evidence": [
+        {
+          "kind": "published-release-metadata",
+          "source": "https://github.com/interzettel/project-record-standard/releases/tag/v0.4.1"
+        },
+        {
+          "kind": "ci-verification",
+          "source": "https://github.com/interzettel/diakrisis/actions/runs/40387364762"
+        },
+        {
+          "kind": "merged-pr",
+          "source": "https://github.com/interzettel/diakrisis/pull/15"
+        }
+      ]
+    },
+    {
+      "id": "DIA-003",
+      "title": "Audit upstream standards and donors",
+      "groupId": "DIA-INF",
+      "milestoneId": "DIA-M1",
+      "state": "active",
+      "sourceState": "next-authorized-p0-item",
+      "required": true,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-001"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P0",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/3",
+      "criterion": "Agent Skills standard and upstream donor licenses, security and revision comparisons documented with reuse decisions.",
+      "note": "Selected next eligible P0 work package as of 2026-10-26. Complete the existing donor/standards audit: inspect exact source revisions, per-repository/skill licenses, security and portability, with reuse/adapt/reference/reject decisions. Deliver docs/research/DONOR-AUDIT.md; update this issue and evidence. No additional skill authoring or testing infrastructure.",
+      "deferReason": null,
+      "evidence": [
+        {
+          "kind": "partial-source-inventory",
+          "source": "https://github.com/interzettel/diakrisis/blob/main/docs/SOURCES.md"
+        }
+      ]
+    },
+    {
+      "id": "DIA-004",
+      "title": "Activate pinned authoring tools",
+      "groupId": "DIA-INF",
+      "milestoneId": "DIA-M1",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": true,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-003"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P1",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/4",
+      "criterion": "Portable Superpowers/skill-creator/PRS install and discovery verified in an actual Claude Code or Codex session, including rollback.",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
+      "evidence": []
+    },
+    {
+      "id": "DIA-005",
+      "title": "Define typed findings and authority contract",
+      "groupId": "DIA-INF",
+      "milestoneId": "DIA-M1",
+      "state": "active",
+      "sourceState": "backlog",
+      "required": true,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-002",
+        "DIA-003"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P1",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/5",
+      "criterion": "Versioned typed finding schema and authority rules validated with examples, positive and negative controls.",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
+      "evidence": []
+    },
+    {
+      "id": "DIA-006",
+      "title": "Build and test three pilot reviewers",
+      "groupId": "DIA-EVL",
+      "milestoneId": "DIA-M2",
+      "state": "active",
+      "sourceState": "seven-modules-merged-experimental",
+      "required": true,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-004",
+        "DIA-005"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P1",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/6",
+      "criterion": "Three specialist skills completed with portable metadata, matched no-skill/with-skill runs and human-adjudicated behavior results.",
+      "note": "Seven coordinated experimental reviewer modules merged into main via PR #17; real reviewer accuracy, activation and owner acceptance remain to be assessed.",
+      "deferReason": null,
+      "evidence": [
+        {
+          "kind": "merged-pr",
+          "source": "https://github.com/interzettel/diakrisis/pull/17"
+        },
+        {
+          "kind": "ci-verification",
+          "source": "https://github.com/interzettel/diakrisis/actions/runs/40386332620"
+        }
+      ]
+    },
+    {
+      "id": "DIA-007",
+      "title": "Evaluate pilots on genuine documents",
+      "groupId": "DIA-EVL",
+      "milestoneId": "DIA-M2",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": true,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-006"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P1",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/7",
+      "criterion": "Evidence-linked evaluation on safe copies of real research/project documents, including false-positive and preservation checks.",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
+      "evidence": []
+    },
+    {
+      "id": "DIA-008",
+      "title": "Expand reviewers and coordination",
+      "groupId": "DIA-ADP",
+      "milestoneId": "DIA-M3",
+      "state": "active",
+      "sourceState": "seven-modules-merged-experimental",
+      "required": true,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-007"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P2",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/8",
+      "criterion": "Method, communication, cross-document consistency and coordinator integration passes composition/conflict tests.",
+      "note": "Seven experimental skills including coordinator merged via PR #17. Integration effectiveness and final behavioral evaluation remain pending; work remains In progress.",
+      "deferReason": null,
+      "evidence": [
+        {
+          "kind": "merged-pr",
+          "source": "https://github.com/interzettel/diakrisis/pull/17"
+        },
+        {
+          "kind": "ci-verification",
+          "source": "https://github.com/interzettel/diakrisis/actions/runs/40386332620"
+        }
+      ]
+    },
+    {
+      "id": "DIA-009",
+      "title": "Adopt framework in consumer repositories",
+      "groupId": "DIA-ADP",
+      "milestoneId": "DIA-M3",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": true,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-007"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P2",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/9",
+      "criterion": "Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions.",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
+      "evidence": []
+    },
+    {
+      "id": "DIA-010",
+      "title": "Version releases and evaluate drift",
+      "groupId": "DIA-ADP",
+      "milestoneId": "DIA-M3",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": true,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-008",
+        "DIA-009"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P2",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/10",
+      "criterion": "Versioned skill releases, pinned consumers, provenance/compatibility and update-drift checks established with publication evidence.",
+      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "deferReason": null,
+      "evidence": []
+    }
+  ],
+  "groups": [
+    {
+      "id": "DIA-FDN",
+      "title": "Research foundation",
+      "panel": "Research foundation"
+    },
+    {
+      "id": "DIA-INF",
+      "title": "Upstream and records",
+      "panel": "Upstream and records"
+    },
+    {
+      "id": "DIA-EVL",
+      "title": "Reviewer evaluation",
+      "panel": "Reviewer evaluation"
+    },
+    {
+      "id": "DIA-ADP",
+      "title": "Adoption and release",
+      "panel": "Adoption and release"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "DIA-M0",
+      "title": "Documented basis",
+      "goal": "Evidence and review required: Documented basis",
+      "horizon": "Now",
+      "groupIds": [
+        "DIA-FDN"
+      ],
+      "gateItemIds": [
+        "DIA-001"
+      ],
+      "acceptanceRule": "unknown",
+      "sourceAccepted": null,
+      "unscopedWork": [],
+      "nextAction": "Review the documented foundation and its source authority (work 1/1; acceptance still unknown).",
+      "priority": null,
+      "sourceState": null,
+      "evidence": []
+    },
+    {
+      "id": "DIA-M1",
+      "title": "Reproducible foundation",
+      "goal": "Evidence and review required: Reproducible foundation",
+      "horizon": "Now",
+      "groupIds": [
+        "DIA-INF"
+      ],
+      "gateItemIds": [
+        "DIA-002",
+        "DIA-003",
+        "DIA-004",
+        "DIA-005"
+      ],
+      "acceptanceRule": "unknown",
+      "sourceAccepted": null,
+      "unscopedWork": [],
+      "nextAction": "NEXT: DIA-003 / GitHub #3 (P0): complete documented donor/spec source, license, security and reuse audit. DIA-002 / #2 remains blocked only on deferred local archive/runtime verification; no milestone acceptance implied.",
+      "priority": null,
+      "sourceState": null,
+      "evidence": []
+    },
+    {
+      "id": "DIA-M2",
+      "title": "Evaluated reviewers",
+      "goal": "Evidence and review required: Evaluated reviewers",
+      "horizon": "Next",
+      "groupIds": [
+        "DIA-EVL"
+      ],
+      "gateItemIds": [
+        "DIA-006",
+        "DIA-007"
+      ],
+      "acceptanceRule": "unknown",
+      "sourceAccepted": null,
+      "unscopedWork": [],
+      "nextAction": "Adjudicate blinded reviewer-vs-baseline runs including negative controls.",
+      "priority": null,
+      "sourceState": null,
+      "evidence": []
+    },
+    {
+      "id": "DIA-M3",
+      "title": "Portable system",
+      "goal": "Evidence and review required: Portable system",
+      "horizon": "Later",
+      "groupIds": [
+        "DIA-ADP"
+      ],
+      "gateItemIds": [
+        "DIA-008",
+        "DIA-009",
+        "DIA-010"
+      ],
+      "acceptanceRule": "unknown",
+      "sourceAccepted": null,
+      "unscopedWork": [],
+      "nextAction": "Prove reversible consumer adoption, versioned publication and update compatibility.",
+      "priority": null,
+      "sourceState": null,
+      "evidence": []
+    }
+  ],
+  "warnings": [
+    "Initial working scope authorized 2026-10-26; one completed foundation leaf; all other work remains open.",
+    "Milestone sourceAccepted and downstream reviewer scientific validity remain unknown.",
+    "Native Claude/Codex activation and matched without-skill/with-skill LLM evaluations have not been observed.",
+    "2026-10-26: all seven experimental skill definitions merged in PR #17; functional integration and behavioral evaluation deferred, with no owner acceptance or stable release yet.",
+    "Queue observation 2026-10-26: DIA-003 is next eligible P0 in DIA-M1; DIA-002 is active with a Blocked flag for deferred independent release-archive/local install evidence. Behavioral model testing remains deferred by owner.",
+    "GitHub-native issue milestones are not configured; DIA-M0–DIA-M3 exist in the authoritative PRS ledger and are linked to issues by ID, not as native GitHub milestone objects."
+  ],
+  "governance": {
+    "purpose": "Portable review skills for conceptual, linguistic and scientific integrity (proposed, unapproved)",
+    "owner": "Studio Zettlerei",
+    "acceptanceAuthority": "Human project owner",
+    "changeAuthority": "Human project owner",
+    "approach": "adaptive",
+    "successCriteria": [],
+    "wbsCoverage": "not-assessed",
+    "workPackages": [],
+    "baselines": [
+      {
+        "id": "DIA-B01",
+        "kind": "working-scope-authorization",
+        "date": "2026-10-26",
+        "source": "User approved merge of PR #11 and directed next implementation stages",
+        "linkedSource": "https://github.com/interzettel/diakrisis/pull/11",
+        "note": "Approval covers the work-package scope, not acceptance of deliverables, research conclusions or autonomy.",
+        "status": "approved",
+        "approvedBy": "Human repository owner",
+        "approvedAt": "2026-10-26",
+        "approvalSource": "Owner instruction to merge PR #11 and proceed, 2026-10-26"
+      }
+    ],
+    "changeRequests": [],
+    "risks": [],
+    "tailoring": {
+      "governance": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "scope": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "schedule": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "finance": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "stakeholders": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "resources": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "risk": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      }
+    },
+    "operations": {
+      "status": "not-assessed",
+      "reason": "No operational release or deployment yet."
+    }
+  }
+}
