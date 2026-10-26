@@ -76,3 +76,7 @@ When a client cannot honestly supply a required artifact span or authority, prod
 - [Diakrisis foundation](FOUNDATION.md) and [authoritative Project Record Standard](https://github.com/interzettel/project-record-standard/blob/v0.4.1/standards/STANDARD.md).
 
 **No substantive source material was copied from external specifications.** This contract describes a project-specific decision model; its ontology and empirical suitability remain open to final human assessment.
+
+## DIA-008 implemented composition interface (2026-10-26)
+
+The offline, read-only [coordinator procedure](COORDINATION.md) and [coordinated-report schema](../schemas/coordinated-report.schema.json) now implement additive source provenance, declared complete-link grouping, preserved specialist findings and unresolved disagreement reporting. A grouped finding is **never dropped or silently rewritten**. The preexisting DIA-005 finding and review-report schemas remain unchanged. Structural tests passed; semantic group judgments, actual model behavior and DIA-007 acceptance remain unverified.
