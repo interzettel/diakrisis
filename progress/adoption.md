@@ -29,3 +29,7 @@
 ## 2026-10-26 issue/ledger milestone reconciliation
 
 All ten accounted GitHub issues (#1–#10) were re-read and given an explicit canonical `DIA-###`, PRS milestone `DIA-M#`, state, priority, prerequisites, and next evidence requirement. In the inspected GitHub issue metadata, **none has a native milestone assignment**. The API listing native milestone *objects* was unavailable; the PRS ledger remains authoritative for milestone mapping, not GitHub's issue milestone field. Owner-authorized issue-first workflow is now in `AGENTS.md`; cross-project template improvement tracked in [PRS #3](https://github.com/interzettel/project-record-standard/issues/3). `DIA-003 / issue #3 / DIA-M1` is the selected next available P0 package; `DIA-002` carries a Blocked flag with a specific final-verification dependency.
+
+## 2026-10-26 PRS licensing clarification handoff
+
+[DIA-002 / issue #2](https://github.com/interzettel/diakrisis/issues/2) now links the upstream [PRS license-decision issue #4](https://github.com/interzettel/project-record-standard/issues/4) and [unmerged MIT proposal PR #5](https://github.com/interzettel/project-record-standard/pull/5). **No permission or v0.4.1 coverage is yet confirmed.** The source-owner decision is separate from local Windows/Claude/Codex activation and independent archive digest verification, both deferred until the owner-directed final test phase. Required work stays **2/10**; DIA-M1 acceptance is still unknown.
