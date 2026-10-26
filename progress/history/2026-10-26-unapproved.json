@@ -1,0 +1,393 @@
+{
+  "contractVersion": "0.2.0",
+  "items": [
+    {
+      "id": "DIA-001",
+      "title": "Preserve research foundation",
+      "groupId": "DIA-FDN",
+      "milestoneId": "DIA-M0",
+      "state": "review",
+      "sourceState": "review",
+      "required": false,
+      "blocked": false,
+      "dependsOn": [],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P0",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/1",
+      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "note": "Proposed scope, not accepted",
+      "deferReason": "Owner has not yet accepted scoped denominator",
+      "evidence": []
+    },
+    {
+      "id": "DIA-002",
+      "title": "Install and verify Project Record Standard",
+      "groupId": "DIA-INF",
+      "milestoneId": "DIA-M1",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": false,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-001"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P0",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/2",
+      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "note": "Proposed scope, not accepted",
+      "deferReason": "Owner has not yet accepted scoped denominator",
+      "evidence": []
+    },
+    {
+      "id": "DIA-003",
+      "title": "Audit upstream standards and donors",
+      "groupId": "DIA-INF",
+      "milestoneId": "DIA-M1",
+      "state": "active",
+      "sourceState": "active",
+      "required": false,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-001"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P0",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/3",
+      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "note": "Proposed scope, not accepted",
+      "deferReason": "Owner has not yet accepted scoped denominator",
+      "evidence": []
+    },
+    {
+      "id": "DIA-004",
+      "title": "Activate pinned authoring tools",
+      "groupId": "DIA-INF",
+      "milestoneId": "DIA-M1",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": false,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-003"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P1",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/4",
+      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "note": "Proposed scope, not accepted",
+      "deferReason": "Owner has not yet accepted scoped denominator",
+      "evidence": []
+    },
+    {
+      "id": "DIA-005",
+      "title": "Define typed findings and authority contract",
+      "groupId": "DIA-INF",
+      "milestoneId": "DIA-M1",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": false,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-002",
+        "DIA-003"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P1",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/5",
+      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "note": "Proposed scope, not accepted",
+      "deferReason": "Owner has not yet accepted scoped denominator",
+      "evidence": []
+    },
+    {
+      "id": "DIA-006",
+      "title": "Build and test three pilot reviewers",
+      "groupId": "DIA-EVL",
+      "milestoneId": "DIA-M2",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": false,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-004",
+        "DIA-005"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P1",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/6",
+      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "note": "Proposed scope, not accepted",
+      "deferReason": "Owner has not yet accepted scoped denominator",
+      "evidence": []
+    },
+    {
+      "id": "DIA-007",
+      "title": "Evaluate pilots on genuine documents",
+      "groupId": "DIA-EVL",
+      "milestoneId": "DIA-M2",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": false,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-006"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P1",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/7",
+      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "note": "Proposed scope, not accepted",
+      "deferReason": "Owner has not yet accepted scoped denominator",
+      "evidence": []
+    },
+    {
+      "id": "DIA-008",
+      "title": "Expand reviewers and coordination",
+      "groupId": "DIA-ADP",
+      "milestoneId": "DIA-M3",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": false,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-007"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P2",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/8",
+      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "note": "Proposed scope, not accepted",
+      "deferReason": "Owner has not yet accepted scoped denominator",
+      "evidence": []
+    },
+    {
+      "id": "DIA-009",
+      "title": "Adopt framework in consumer repositories",
+      "groupId": "DIA-ADP",
+      "milestoneId": "DIA-M3",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": false,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-007"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P2",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/9",
+      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "note": "Proposed scope, not accepted",
+      "deferReason": "Owner has not yet accepted scoped denominator",
+      "evidence": []
+    },
+    {
+      "id": "DIA-010",
+      "title": "Version releases and evaluate drift",
+      "groupId": "DIA-ADP",
+      "milestoneId": "DIA-M3",
+      "state": "backlog",
+      "sourceState": "backlog",
+      "required": false,
+      "blocked": false,
+      "dependsOn": [
+        "DIA-008",
+        "DIA-009"
+      ],
+      "unmappedDependencies": [],
+      "completionBasis": "not-complete",
+      "kind": "work-package",
+      "owner": null,
+      "priority": "P2",
+      "issueUrl": "https://github.com/interzettel/diakrisis/issues/10",
+      "criterion": "See issue and docs/ROADMAP.md for acceptance criteria",
+      "note": "Proposed scope, not accepted",
+      "deferReason": "Owner has not yet accepted scoped denominator",
+      "evidence": []
+    }
+  ],
+  "groups": [
+    {
+      "id": "DIA-FDN",
+      "title": "Research foundation",
+      "panel": "Research foundation"
+    },
+    {
+      "id": "DIA-INF",
+      "title": "Upstream and records",
+      "panel": "Upstream and records"
+    },
+    {
+      "id": "DIA-EVL",
+      "title": "Reviewer evaluation",
+      "panel": "Reviewer evaluation"
+    },
+    {
+      "id": "DIA-ADP",
+      "title": "Adoption and release",
+      "panel": "Adoption and release"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "DIA-M0",
+      "title": "Documented basis",
+      "goal": "Evidence and review required: Documented basis",
+      "horizon": "Now",
+      "groupIds": [
+        "DIA-FDN"
+      ],
+      "gateItemIds": [
+        "DIA-001"
+      ],
+      "acceptanceRule": "unknown",
+      "sourceAccepted": null,
+      "unscopedWork": [],
+      "nextAction": "Owner acceptance and verified gate evidence pending",
+      "priority": null,
+      "sourceState": null,
+      "evidence": []
+    },
+    {
+      "id": "DIA-M1",
+      "title": "Reproducible foundation",
+      "goal": "Evidence and review required: Reproducible foundation",
+      "horizon": "Now",
+      "groupIds": [
+        "DIA-INF"
+      ],
+      "gateItemIds": [
+        "DIA-002",
+        "DIA-003",
+        "DIA-004",
+        "DIA-005"
+      ],
+      "acceptanceRule": "unknown",
+      "sourceAccepted": null,
+      "unscopedWork": [],
+      "nextAction": "Owner acceptance and verified gate evidence pending",
+      "priority": null,
+      "sourceState": null,
+      "evidence": []
+    },
+    {
+      "id": "DIA-M2",
+      "title": "Evaluated reviewers",
+      "goal": "Evidence and review required: Evaluated reviewers",
+      "horizon": "Next",
+      "groupIds": [
+        "DIA-EVL"
+      ],
+      "gateItemIds": [
+        "DIA-006",
+        "DIA-007"
+      ],
+      "acceptanceRule": "unknown",
+      "sourceAccepted": null,
+      "unscopedWork": [],
+      "nextAction": "Owner acceptance and verified gate evidence pending",
+      "priority": null,
+      "sourceState": null,
+      "evidence": []
+    },
+    {
+      "id": "DIA-M3",
+      "title": "Portable system",
+      "goal": "Evidence and review required: Portable system",
+      "horizon": "Later",
+      "groupIds": [
+        "DIA-ADP"
+      ],
+      "gateItemIds": [
+        "DIA-008",
+        "DIA-009",
+        "DIA-010"
+      ],
+      "acceptanceRule": "unknown",
+      "sourceAccepted": null,
+      "unscopedWork": [],
+      "nextAction": "Owner acceptance and verified gate evidence pending",
+      "priority": null,
+      "sourceState": null,
+      "evidence": []
+    }
+  ],
+  "warnings": [
+    "All ten work leaves remain excluded from required scope until owner acceptance. 0/0: Not measured.",
+    "Verified CI does not imply scientific quality, owner acceptance, or deployment."
+  ],
+  "governance": {
+    "purpose": "Portable review skills for conceptual, linguistic and scientific integrity (proposed, unapproved)",
+    "owner": "Studio Zettlerei",
+    "acceptanceAuthority": "Human project owner",
+    "changeAuthority": "Human project owner",
+    "approach": "adaptive",
+    "successCriteria": [],
+    "wbsCoverage": "not-assessed",
+    "workPackages": [],
+    "baselines": [],
+    "changeRequests": [],
+    "risks": [],
+    "tailoring": {
+      "governance": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "scope": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "schedule": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "finance": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "stakeholders": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "resources": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      },
+      "risk": {
+        "status": "not-assessed",
+        "reason": "Owner tailoring not yet accepted."
+      }
+    },
+    "operations": {
+      "status": "not-assessed",
+      "reason": "No operational release or deployment yet."
+    }
+  }
+}
