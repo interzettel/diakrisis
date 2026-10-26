@@ -373,7 +373,11 @@
         "date": "2026-10-26",
         "source": "User approved merge of PR #11 and directed next implementation stages",
         "linkedSource": "https://github.com/interzettel/diakrisis/pull/11",
-        "note": "Authorization to proceed on ten proposed packages, not owner acceptance of outputs, safety autonomy or milestone gates."
+        "note": "Approval covers the work-package scope, not acceptance of deliverables, research conclusions or autonomy.",
+        "status": "approved",
+        "approvedBy": "Human repository owner",
+        "approvedAt": "2026-10-26",
+        "approvalSource": "Owner instruction to merge PR #11 and proceed, 2026-10-26"
       }
     ],
     "changeRequests": [],
