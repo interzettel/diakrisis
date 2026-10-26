@@ -57,3 +57,7 @@
 - [NVIDIA SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator) provides optional live evaluations and deterministic checks; considered as a potential donor, **not imported** without licensing/security review.
 
 The existing skill remains an experimental candidate. This source pass is not evidence of model efficacy.
+
+## Live provider availability correction
+
+[GitHub's official July 30, 2026 retirement notice](https://github.blog/changelog/2026-07-30-github-models-is-now-retired/) confirms GitHub Models' playground and inference API are **no longer available**. Historical documentation about `models: read` and free GitHub Actions inference must not be used as a present-day evaluation plan. The project therefore has no GitHub Models dependency or speculative benchmark receipts. The authored local Ollama runner is an opt-in testing aid; its operation is not confirmed in this workspace.
