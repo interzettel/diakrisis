@@ -18,14 +18,14 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-26 against `a8bde2c3`.
+Observed 2026-10-26 against `085ad37f`.
 
 #### Milestone roadmap
 
 | Milestone | Horizon | Supporting required work | Outcome acceptance | Next gate |
 | --- | --- | ---: | --- | --- |
 | **DIA-M0 — Documented basis** | Now | 1/1 · 100.0% | Unknown / not assessed | Review the documented foundation and its source authority (work 1/1; acceptance still unknown). |
-| **DIA-M1 — Reproducible foundation** | Now | 1/4 · 25.0% | Unknown / not assessed | DIA-002 / #2 P0: MIT licensing for rights-controlled original PRS v0.4.1 source is approved and documented at upstream merged PR #5; no further license owner decision is pending. Remaining blocker is independent archive checksum/extraction and Windows Claude/Codex activation, expressly deferred by owner to final test phase. DIA-004 depends on completed DIA-003 but its live runner activation is likewise deferred. DIA-M1 acceptance unknown. |
+| **DIA-M1 — Reproducible foundation** | Now | 1/4 · 25.0% | Unknown / not assessed | DIA-005 / #5 finding+report contract revision 1 structurally implemented in PR #24 (positive/negative/abstention cases passed). DIA-003 complete; DIA-002 / #2 remains the P0 prerequisite Blocked only for owner-deferred local archive/runtime verification. DIA-004 / #4 runtime activation is also deferred. No further eligible unblocked completion gate in M1 until owner resumes the final test phase; M1 acceptance remains unknown. |
 | **DIA-M2 — Evaluated reviewers** | Next | 0/2 · 0.0% | Unknown / not assessed | Adjudicate blinded reviewer-vs-baseline runs including negative controls. |
 | **DIA-M3 — Portable system** | Later | 0/3 · 0.0% | Unknown / not assessed | Prove reversible consumer adoption, versioned publication and update compatibility. |
 
