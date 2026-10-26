@@ -114,7 +114,8 @@ def verify(consumer):
                 link = link.split("#", 1)[0]
                 if not link or ":" in link or link.startswith("/"):
                     continue
-                if not within(consumer, str(p.parent.relative_to(consumer) / link)).is_file():
+                target = (p.parent / link).resolve()
+                if not target.is_relative_to(consumer.resolve()) or not target.is_file():
                     raise ValueError("broken local reference in " + rel + ": " + link)
     if names != set(NAMES):
         raise ValueError("missing reviewer")
