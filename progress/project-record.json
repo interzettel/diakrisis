@@ -15,14 +15,27 @@
         "commit": null,
         "observedOn": "2026-10-26",
         "updatedOn": "2026-10-26",
-        "authority": "Local proposal; no approved baseline"
+        "authority": "Owner-directed initial working scope, effective 2026-10-26; implementation evidence and milestone acceptance remain separate."
       },
       "presentation": {
         "renderer": "host",
         "theme": "theme.json",
         "readmeMetric": "work",
         "progressUrl": null
-      }
+      },
+      "snapshots": [
+        {
+          "sourceFile": "history/2026-10-26-unapproved.json",
+          "source": {
+            "kind": "file-snapshot",
+            "path": "progress/history/2026-10-26-unapproved.json",
+            "commit": null,
+            "observedOn": "2026-10-26",
+            "updatedOn": "2026-10-26",
+            "authority": "Original repository unapproved bootstrap snapshot at merged PR #11; retained for scope history"
+          }
+        }
+      ]
     }
   ]
 }
