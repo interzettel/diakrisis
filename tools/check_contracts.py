@@ -14,7 +14,7 @@ REQUIRED = [
     "docs/AGENT-SKILLS-STANDARD.md", "docs/INSTALLATION.md",
     "progress/overview.md", "progress/discovery.json", "progress/adoption.md",
     "progress/project-record.json", "progress/ledger.json", "progress/theme.json",
-    "docs/REVIEW-CONTRACT.md", "schemas/finding.schema.json", "evals/pilot-cases.json",
+    "docs/REVIEW-CONTRACT.md", "docs/RESEARCH-GATE.md", "schemas/finding.schema.json", "evals/pilot-cases.json",
     "tools/bootstrap_skills.py",
 ]
 PINS = {
@@ -57,6 +57,11 @@ def check():
             errors.append(f"illegal skill name: {name}")
         if not content.startswith("---\n") or not re.search(r"^name: " + re.escape(name) + r"$", content, re.M):
             errors.append(f"invalid skill metadata: {skillfile}")
+        research_files = sorted((ROOT / "docs" / "research").glob(name + "-????-??-??.md"))
+        if not research_files:
+            errors.append(f"missing dated research gate: {name}")
+        elif "https://" not in research_files[-1].read_text(encoding="utf-8"):
+            errors.append(f"research gate lacks primary source URLs: {name}")
     bootstrap = (ROOT / "tools/bootstrap_skills.py").read_text(encoding="utf-8") if (ROOT / "tools/bootstrap_skills.py").exists() else ""
     for name, pin in PINS.items():
         if pin not in bootstrap:
