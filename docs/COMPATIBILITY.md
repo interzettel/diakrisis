@@ -22,11 +22,11 @@ A consumer adoption PR **must inspect its own filenames** before applying a bund
 
 ## Source provenance and integrity
 
-The manifest names one full source commit, the **single** `suite_version`, and for each of **16** upstream source files:
+The manifest names one full source commit, the **single** `suite_version`, and for each of **19** upstream source files:
 
 `source_path`, `source_git_blob`, `installed_path`, `installed_git_blob`, `transformation`, `source_revision`.
 
-Eight original support files remain byte-identical and eight paths are adapted for consumer-relative links. Run `--check-consumer /path/to/repo` to validate installed blob hashes, required local file references, JSON syntax and native skill identities **without network**. Run `--strict-current` to treat a different upstream Git commit as an update-required condition; default mode reports update availability without corrupting a valid older pinned consumer.
+The original reviewer/support files are retained with exact original and installed hashes; links adapted for the consumer are recorded individually. New source bundles also include the offline coordinator script, combined-report schema and coordination guidance. Existing consumer snapshots at earlier pinned revisions retain their original file count and must not be silently upgraded. Run `--check-consumer /path/to/repo` to validate installed blob hashes, required local file references, JSON syntax and native skill identities **without network**. Run `--strict-current` to treat a different upstream Git commit as an update-required condition; default mode reports update availability without corrupting a valid older pinned consumer.
 
 **Limits:** This integrity check is not a digital signature, independent provenance audit, malware check, model behavior test, permission review, or proof that a host actually discovers a native skill. Never treat identical SHA1 Git blob IDs as a substitute for reviewed source identity and independent release checksum. A different upstream commit is **source drift**, not automatically an incompatible version.
 
