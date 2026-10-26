@@ -1,63 +1,62 @@
 #!/usr/bin/env python3
-"""Fail if skill package/release metadata drift from authored Skill files."""
-import json
+"""Validate one-version Diakrisis suite registry; no per-skill release scheme."""
 from pathlib import Path
+import json
 import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "skills" / "versions.json"
-SEMVER = re.compile(r"^(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$")
+SEMVER = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$")
 NAME = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-
-
-def error(message):
-    raise ValueError(message)
 
 
 def check():
     data = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    if data.get("project") != "diakrisis":
-        error("wrong package project")
+    if data.get("schemaVersion") != 2 or data.get("project") != "diakrisis":
+        raise ValueError("expected Diakrisis one-version manifest, schema v2")
     suite = data["suite"]
     if not SEMVER.fullmatch(suite["version"]):
-        error("suite version is not SemVer")
+        raise ValueError("package version must be SemVer")
     if suite["status"] not in {"unreleased", "candidate", "published", "superseded"}:
-        error("invalid suite status")
+        raise ValueError("invalid suite publication status")
     if suite["status"] != "published" and (suite.get("releaseTag") or suite.get("releaseDate")):
-        error("unreleased suite must not report publication")
-    if suite["status"] == "published" and not all(suite.get(k) for k in ("releaseTag", "releaseDate")):
-        error("published suite missing release evidence")
-    known = set()
-    for field, released in (("skills", True), ("candidates", False)):
-        for item in data[field]:
-            name = item["name"]
-            if name in known or not NAME.fullmatch(name):
-                error(f"duplicate or invalid skill identity: {name}")
-            known.add(name)
-            version = item["version"] if released else item["proposedVersion"]
-            if not SEMVER.fullmatch(version):
-                error(f"invalid version: {name} {version}")
-            path = ROOT / ".agents" / "skills" / name / "SKILL.md"
-            if released:
-                if not path.exists() or not item.get("releaseTag") or not item.get("sourceCommit"):
-                    error(f"released skill missing bytes and provenance: {name}")
-                front = path.read_text(encoding="utf-8").split("---", 2)[1]
-                match = re.search(r'^  version:\s*["\']?([^"\'\n]+)', front, re.M)
-                if not match or match.group(1).strip() != version:
-                    error(f"version mismatch with SKILL.md: {name}")
-            else:
-                if item.get("released") is not False or not item.get("pullRequest"):
-                    error(f"unreleased candidate has inconsistent release status: {name}")
-    for skill in (ROOT / ".agents" / "skills").glob("*/SKILL.md"):
-        if skill.parent.name not in known:
-            error(f"unregistered authored skill: {skill.parent.name}")
-    print(f"PASS: suite {suite['version']}, {len(data['skills'])} released skill(s), {len(data['candidates'])} draft candidate(s)")
+        raise ValueError("unpublished suite cannot report a publication tag/date")
+    if suite["status"] == "published" and not (suite.get("releaseTag") and suite.get("releaseDate")):
+        raise ValueError("published package lacks release provenance")
+
+    included = data["skills"]
+    proposed = data["candidates"]
+    all_names = []
+    for name in included:
+        if not isinstance(name, str):
+            raise ValueError("included skills must be name strings, not individually versioned objects")
+        all_names.append(name)
+        path = ROOT / ".agents" / "skills" / name / "SKILL.md"
+        if not path.is_file():
+            raise ValueError("listed included skill missing from package: " + name)
+        front = path.read_text(encoding="utf-8").split("---", 2)[1]
+        if re.search(r"(?m)^\s*version\s*:", front):
+            raise ValueError("remove per-skill version metadata: " + name)
+    for candidate in proposed:
+        if set(candidate) - {"name", "status", "pullRequest"}:
+            raise ValueError("draft entry must not contain per-skill version/release fields")
+        name = candidate["name"]
+        if not candidate.get("pullRequest") or candidate.get("status") != "experimental":
+            raise ValueError("candidate needs experimental status and PR link")
+        all_names.append(name)
+    if len(all_names) != len(set(all_names)) or any(not NAME.fullmatch(n) for n in all_names):
+        raise ValueError("duplicate or invalid skill name")
+    unlisted = {p.parent.name for p in (ROOT / ".agents" / "skills").glob("*/SKILL.md")} - set(included)
+    if unlisted:
+        raise ValueError("authored skills not listed as included: " + ", ".join(sorted(unlisted)))
+    print(f"PASS: Diakrisis package {suite['version']} ({suite['status']}), "
+          f"{len(included)} included skill(s), {len(proposed)} draft(s)")
 
 
 if __name__ == "__main__":
     try:
         check()
-    except (OSError, ValueError, KeyError, IndexError) as e:
-        print("FAILED VERSION POLICY:", e, file=sys.stderr)
+    except (ValueError, KeyError, IndexError, OSError, TypeError) as exc:
+        print("FAILED PACKAGE VERSION POLICY:", exc, file=sys.stderr)
         sys.exit(1)
