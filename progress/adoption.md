@@ -25,4 +25,4 @@
 
 **Rollback:** remove only files introduced by the reviewed PR/installer receipt; never run `init` over authored records or delete source history. Source of truth stays in this repo, project issue labels are projections/discussion.
 
-**Status:** checked-in native ledger/manifest are present and the official v0.4.1 check and disposable installation passed in GitHub Actions. Required-scope denominator remains 0/0 (Not measured); owner acceptance, local runner discovery, official release checksums, branding, and any hosted tracker remain pending.
+**Status:** checked-in native ledger/manifest are present and the official v0.4.1 check and disposable installation passed in GitHub Actions. Working scope now records **1/10 required leaves** (DIA-001 merged and verified). Milestone acceptance, local runner discovery, official release checksums, branding, and any hosted tracker remain pending. Owner's direction to proceed authorizes development, not acceptance of outputs.
