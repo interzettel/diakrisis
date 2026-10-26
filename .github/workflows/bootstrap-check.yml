@@ -30,10 +30,7 @@ jobs:
           python tools/terminology_eval.py --dry-run > "$RUNNER_TEMP/terminology-eval-plan.json"
       - name: Validate package version registry
         run: python tools/check_skill_versions.py
-      - name: Emit updated README and SVG from source records
-        run: python tools/sync_readme.py --emit-hex
       - name: Verify README and SVG are byte-identical to governed ledger
-        if: false
         run: |
           python tools/sync_readme.py --check
           cp assets/progress.svg "$RUNNER_TEMP/progress.original.svg"
