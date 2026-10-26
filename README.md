@@ -79,10 +79,11 @@ These are integration targets, **not completed integrations**. Consumer reposito
 | `consistency-review` | Cross-document contradictions, version/decision drift |
 | `review-coordinator` | Route appropriate checks, deduplicate findings, never fabricate consensus |
 
-These are the intended modules, **not released capabilities**. `terminology-review` is an experimental first module in draft PR #17; the initial scope prioritizes terminology, conceptual modeling and arguments.
+All seven modules are **authored as experimental development skills in draft PR #17**, but none is a validated or released capability. The complete coordinated package shares one version; behavioral testing and installation in consumer repositories will follow after implementation.
 
 ## Repository navigation
 
+- [Getting started / review profiles](docs/USAGE.md)
 - [Foundation and design boundaries](docs/FOUNDATION.md)
 - [Prioritized roadmap and acceptance gates](docs/ROADMAP.md)
 - [External research and upstream inventory](docs/SOURCES.md)
