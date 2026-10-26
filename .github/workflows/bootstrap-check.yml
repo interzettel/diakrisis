@@ -24,6 +24,10 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/diakrisis-skill-test"
           python tools/bootstrap_skills.py --target "$RUNNER_TEMP/diakrisis-skill-test"
+      - name: Validate Project Record Standard ledger
+        run: |
+          PYTHONPATH=tools/upstream/project-record-standard/src python -m project_record check --config progress/project-record.json
+          PYTHONPATH=tools/upstream/project-record-standard/src python -m project_record adoption-plan --config progress/project-record.json
       - name: Install in disposable project and verify outputs
         run: |
           python tools/bootstrap_skills.py --target "$RUNNER_TEMP/diakrisis-skill-test" --apply
