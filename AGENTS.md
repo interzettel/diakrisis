@@ -33,7 +33,7 @@ Follow Project Record Standard v0.4.1 (contract 0.2.0). Project scope and accept
 
 ## Authoring new skills
 
-Before implementing **or materially revising** an authored skill, perform a fresh public-source research pass, compare current standards and donor methods with existing research, then commit a dated decision record; follow [research gate](docs/RESEARCH-GATE.md). Use Agent Skills specification, Anthropic skill-creator and Superpowers' skill-writing/TDD guidance **when installed and discoverable**. Start with a baseline scenario that exercises the proposed failure. Make test fixtures with correct and incorrect examples. Validate metadata, scripts and triggering; demonstrate improvement without excessive false positives. Work is incomplete without auditable evaluation results.
+Before implementing **or materially revising** an authored skill, perform a fresh public-source research pass, compare current standards and donor methods with existing research, then commit a dated decision record; follow [research gate](docs/RESEARCH-GATE.md). Use Agent Skills specification, Anthropic skill-creator and Superpowers' skill-writing/TDD guidance **when installed and discoverable**. During this owner-approved build phase, create well-scoped research-grounded skill modules first and **defer new behavioral test infrastructure and matched model comparisons until the suite is implemented**. Validate metadata and maintain honest experimental status; do not claim behavioral improvement or acceptance until later observed evaluations.
 
 ## Installation
 
