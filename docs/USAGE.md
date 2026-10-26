@@ -56,10 +56,10 @@ The suite never changes a manuscript or project repository simply because a crit
 - [Project Record Standard](https://github.com/interzettel/project-record-standard) retains source authority for ledger counts, acceptance and status flags; Diakrisis can flag contradictory wording.
 - [Personal Agent Stack](https://github.com/interzettel/personal-agent-stack) retains action authorization, secrets and runtime capabilities.
 
-No cross-repository integration has yet been installed or tested. Use reviewed independent PRs later; do not copy private fixtures into this public repo.
+A reversible project-local source integration was merged into Writing Kitchen in [its PR #24](https://github.com/yigit-denktas/writing-kitchen/pull/24), but its CI and native agent activation are unverified. Source integration is not accepted behavioral adoption; don't copy private fixtures into this public repo.
 
 ## Deferred verification
 
 At the user's request, live model comparisons, test infrastructure expansion and client-activation verification will be handled **after** the cohesive package is implemented. Existing CI can still catch broken metadata, invalid project records and stale README projections. Current skills are development quality only; there are no reported accuracy metrics.
 
-See [foundation](FOUNDATION.md), [review finding contract](REVIEW-CONTRACT.md), [single package versioning](VERSIONING.md) and [source records](research/).
+See [foundation](FOUNDATION.md), [review finding contract](REVIEW-CONTRACT.md), [deterministic coordination and runnable input](COORDINATION.md), [single package versioning](VERSIONING.md) and [source records](research/).
