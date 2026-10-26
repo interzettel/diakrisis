@@ -32,7 +32,9 @@ A proposed machine-readable finding contains:
 
 The review's `findings` collection may legitimately be empty. Count zero findings as *no detected issue under this method*, not scientific validity.
 
-## Evaluation plan
+## Deferred evaluation plan
+
+Owner requested the full integrated skill package be built before adding new behavioral testing infrastructure or executing comparative evaluations. The design below is **deferred work**, not a prerequisite to writing the development modules. Do not report planned comparisons as observed results. Existing CI metadata checks are distinct.
 
 **RED (no reviewer skill):** run held-out, realistic tasks with the same model/context/tools but without Diakrisis instructions; record which errors it misses and which valid statements it wrongly criticizes.
 
