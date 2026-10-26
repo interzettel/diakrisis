@@ -148,7 +148,7 @@
       "groupId": "DIA-INF",
       "milestoneId": "DIA-M1",
       "state": "active",
-      "sourceState": "backlog",
+      "sourceState": "contract-revision-1-implemented-structural-ci-passed-dependency-pending",
       "required": true,
       "blocked": false,
       "dependsOn": [
@@ -162,9 +162,18 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/5",
       "criterion": "Versioned typed finding schema and authority rules validated with examples, positive and negative controls.",
-      "note": "In owner-authorized working scope; completion governed by separate evidence/acceptance gates.",
+      "note": "Owner-directed build-before-test exception: finding JSON Schema contract revision 1, review-report envelope, scoped authority and coordinator deduplication rules plus synthetic positive/negative/abstention examples implemented in PR #24. Offline CI validated schema syntax and intentional negative rejection (run 40402756670). DIA-003 done; DIA-002 remains active with Blocked flag for deferred final local PRS verification, so DIA-005 remains In progress and no milestone acceptance is claimed. Real reviewer behavior and consumer context/authority applicability will be tested at end of build.",
       "deferReason": null,
-      "evidence": []
+      "evidence": [
+        {
+          "kind": "schema-implementation",
+          "source": "https://github.com/interzettel/diakrisis/pull/24"
+        },
+        {
+          "kind": "structural-schema-ci",
+          "source": "https://github.com/interzettel/diakrisis/actions/runs/40402756670"
+        }
+      ]
     },
     {
       "id": "DIA-006",
@@ -361,7 +370,7 @@
       "acceptanceRule": "unknown",
       "sourceAccepted": null,
       "unscopedWork": [],
-      "nextAction": "DIA-002 / #2 P0: MIT licensing for rights-controlled original PRS v0.4.1 source is approved and documented at upstream merged PR #5; no further license owner decision is pending. Remaining blocker is independent archive checksum/extraction and Windows Claude/Codex activation, expressly deferred by owner to final test phase. DIA-004 depends on completed DIA-003 but its live runner activation is likewise deferred. DIA-M1 acceptance unknown.",
+      "nextAction": "DIA-005 / #5 finding+report contract revision 1 structurally implemented in PR #24 (positive/negative/abstention cases passed). DIA-003 complete; DIA-002 / #2 remains the P0 prerequisite Blocked only for owner-deferred local archive/runtime verification. DIA-004 / #4 runtime activation is also deferred. No further eligible unblocked completion gate in M1 until owner resumes the final test phase; M1 acceptance remains unknown.",
       "priority": null,
       "sourceState": null,
       "evidence": []
@@ -415,7 +424,8 @@
     "2026-10-26: all seven experimental skill definitions merged in PR #17; functional integration and behavioral evaluation deferred, with no owner acceptance or stable release yet.",
     "GitHub-native issue milestones are not configured; DIA-M0–DIA-M3 exist in the authoritative PRS ledger and are linked to issues by ID, not as native GitHub milestone objects.",
     "2026-10-26: DIA-003 documentary audit complete via PR #20; required work 2/10. DIA-M1 supporting work 1/4 Done; milestone sourceAccepted remains unknown.",
-    "2026-10-26: owner-approved MIT covers rights-controlled original Project Record Standard v0.4.1 material, documented at upstream PR #5 (merged); historical release artifact and third-party rights unchanged. DIA-002 remains blocked only on owner-deferred live/archive verification."
+    "2026-10-26: owner-approved MIT covers rights-controlled original Project Record Standard v0.4.1 material, documented at upstream PR #5 (merged); historical release artifact and third-party rights unchanged. DIA-002 remains blocked only on owner-deferred live/archive verification.",
+    "2026-10-26: DIA-005 contract revision 1 implementation structurally verified in PR #24; no earned Done point while upstream DIA-002 and end-of-build verification remain pending. Required work stays 2/10."
   ],
   "governance": {
     "purpose": "Portable review skills for conceptual, linguistic and scientific integrity (proposed, unapproved)",

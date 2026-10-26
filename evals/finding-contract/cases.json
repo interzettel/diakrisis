@@ -1,0 +1,596 @@
+{
+  "kind": "synthetic structural controls — NOT language-model evaluation",
+  "contract_revision": 1,
+  "source": "DIA-005",
+  "valid_findings": [
+    {
+      "schema_version": 1,
+      "id": "F-001",
+      "reviewer": "terminology-review",
+      "artifact": {
+        "path": "docs/task-policy.md",
+        "revision": "abc123",
+        "span": "Blocked execution state"
+      },
+      "category": "state-designation-conflict",
+      "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+      "basis": [
+        {
+          "source": "standards/STANDARD.md",
+          "revision": "v0.4.1",
+          "span": "Blocked is a flag, not an execution state",
+          "reason": "The accepted state model distinguishes state from blocked flag.",
+          "verification": "inspected",
+          "applicability": "applicable"
+        }
+      ],
+      "evidence_status": "observed",
+      "disposition": "confirmed-conflict",
+      "severity": "major",
+      "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+      "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+      "requires_owner_decision": true,
+      "issue_key": "blocked-as-state"
+    },
+    {
+      "schema_version": 1,
+      "id": "F-002",
+      "reviewer": "terminology-review",
+      "artifact": {
+        "path": "docs/task-policy.md",
+        "revision": "abc123",
+        "span": "Blocked execution state"
+      },
+      "category": "state-designation-conflict",
+      "claim": "Unclear which of two unversioned glossaries is binding; a conflict cannot currently be established.",
+      "basis": [],
+      "evidence_status": "unknown",
+      "disposition": "abstain",
+      "severity": "informational",
+      "confidence_reason": "The available material lacks a precedence rule and source revision.",
+      "suggestion": null,
+      "requires_owner_decision": true,
+      "issue_key": "blocked-as-state"
+    },
+    {
+      "schema_version": 1,
+      "id": "F-003",
+      "reviewer": "communication-review",
+      "artifact": {
+        "path": "docs/task-policy.md",
+        "revision": "abc123",
+        "span": "Blocked execution state"
+      },
+      "category": "reader-ambiguity",
+      "claim": "The pronoun could refer to either reviewer or author.",
+      "basis": [],
+      "evidence_status": "inferred",
+      "disposition": "suggestion",
+      "severity": "minor",
+      "confidence_reason": "Both readings fit the quoted sentence; this is a reader-risk observation, not a direct rule violation.",
+      "suggestion": "Name the intended actor.",
+      "requires_owner_decision": false
+    }
+  ],
+  "invalid_findings": [
+    {
+      "reason": "Unobserved inference cannot be a confirmed conflict",
+      "record": {
+        "schema_version": 1,
+        "id": "F-001",
+        "reviewer": "terminology-review",
+        "artifact": {
+          "path": "docs/task-policy.md",
+          "revision": "abc123",
+          "span": "Blocked execution state"
+        },
+        "category": "state-designation-conflict",
+        "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+        "basis": [
+          {
+            "source": "standards/STANDARD.md",
+            "revision": "v0.4.1",
+            "span": "Blocked is a flag, not an execution state",
+            "reason": "The accepted state model distinguishes state from blocked flag.",
+            "verification": "inspected",
+            "applicability": "applicable"
+          }
+        ],
+        "evidence_status": "inferred",
+        "disposition": "confirmed-conflict",
+        "severity": "major",
+        "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+        "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+        "requires_owner_decision": true,
+        "issue_key": "blocked-as-state"
+      }
+    },
+    {
+      "reason": "Uninspected source cannot substantiate a confirmed conflict",
+      "record": {
+        "schema_version": 1,
+        "id": "F-001",
+        "reviewer": "terminology-review",
+        "artifact": {
+          "path": "docs/task-policy.md",
+          "revision": "abc123",
+          "span": "Blocked execution state"
+        },
+        "category": "state-designation-conflict",
+        "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+        "basis": [
+          {
+            "source": "standards/STANDARD.md",
+            "revision": "v0.4.1",
+            "span": "Blocked is a flag, not an execution state",
+            "reason": "The accepted state model distinguishes state from blocked flag.",
+            "verification": "not-inspected",
+            "applicability": "applicable"
+          }
+        ],
+        "evidence_status": "observed",
+        "disposition": "confirmed-conflict",
+        "severity": "major",
+        "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+        "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+        "requires_owner_decision": true,
+        "issue_key": "blocked-as-state"
+      }
+    },
+    {
+      "reason": "Confirmed conflict needs a source basis",
+      "record": {
+        "schema_version": 1,
+        "id": "F-001",
+        "reviewer": "terminology-review",
+        "artifact": {
+          "path": "docs/task-policy.md",
+          "revision": "abc123",
+          "span": "Blocked execution state"
+        },
+        "category": "state-designation-conflict",
+        "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+        "basis": [],
+        "evidence_status": "observed",
+        "disposition": "confirmed-conflict",
+        "severity": "major",
+        "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+        "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+        "requires_owner_decision": true,
+        "issue_key": "blocked-as-state"
+      }
+    },
+    {
+      "reason": "Abstention is not a blocking verdict",
+      "record": {
+        "schema_version": 1,
+        "id": "F-002",
+        "reviewer": "terminology-review",
+        "artifact": {
+          "path": "docs/task-policy.md",
+          "revision": "abc123",
+          "span": "Blocked execution state"
+        },
+        "category": "state-designation-conflict",
+        "claim": "Unclear which of two unversioned glossaries is binding; a conflict cannot currently be established.",
+        "basis": [],
+        "evidence_status": "unknown",
+        "disposition": "abstain",
+        "severity": "blocking-candidate",
+        "confidence_reason": "The available material lacks a precedence rule and source revision.",
+        "suggestion": null,
+        "requires_owner_decision": true,
+        "issue_key": "blocked-as-state"
+      }
+    },
+    {
+      "reason": "Unknown wire contract revision",
+      "record": {
+        "schema_version": 2,
+        "id": "F-001",
+        "reviewer": "terminology-review",
+        "artifact": {
+          "path": "docs/task-policy.md",
+          "revision": "abc123",
+          "span": "Blocked execution state"
+        },
+        "category": "state-designation-conflict",
+        "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+        "basis": [
+          {
+            "source": "standards/STANDARD.md",
+            "revision": "v0.4.1",
+            "span": "Blocked is a flag, not an execution state",
+            "reason": "The accepted state model distinguishes state from blocked flag.",
+            "verification": "inspected",
+            "applicability": "applicable"
+          }
+        ],
+        "evidence_status": "observed",
+        "disposition": "confirmed-conflict",
+        "severity": "major",
+        "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+        "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+        "requires_owner_decision": true,
+        "issue_key": "blocked-as-state"
+      }
+    },
+    {
+      "reason": "Coordinator is not a finding-producing specialist",
+      "record": {
+        "schema_version": 1,
+        "id": "F-001",
+        "reviewer": "review-coordinator",
+        "artifact": {
+          "path": "docs/task-policy.md",
+          "revision": "abc123",
+          "span": "Blocked execution state"
+        },
+        "category": "state-designation-conflict",
+        "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+        "basis": [
+          {
+            "source": "standards/STANDARD.md",
+            "revision": "v0.4.1",
+            "span": "Blocked is a flag, not an execution state",
+            "reason": "The accepted state model distinguishes state from blocked flag.",
+            "verification": "inspected",
+            "applicability": "applicable"
+          }
+        ],
+        "evidence_status": "observed",
+        "disposition": "confirmed-conflict",
+        "severity": "major",
+        "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+        "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+        "requires_owner_decision": true,
+        "issue_key": "blocked-as-state"
+      }
+    },
+    {
+      "reason": "Extra fields disallowed",
+      "record": {
+        "schema_version": 1,
+        "id": "F-001",
+        "reviewer": "terminology-review",
+        "artifact": {
+          "path": "docs/task-policy.md",
+          "revision": "abc123",
+          "span": "Blocked execution state"
+        },
+        "category": "state-designation-conflict",
+        "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+        "basis": [
+          {
+            "source": "standards/STANDARD.md",
+            "revision": "v0.4.1",
+            "span": "Blocked is a flag, not an execution state",
+            "reason": "The accepted state model distinguishes state from blocked flag.",
+            "verification": "inspected",
+            "applicability": "applicable"
+          }
+        ],
+        "evidence_status": "observed",
+        "disposition": "confirmed-conflict",
+        "severity": "major",
+        "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+        "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+        "requires_owner_decision": true,
+        "issue_key": "blocked-as-state",
+        "extra": "hallucinated"
+      }
+    },
+    {
+      "reason": "Missing exact local anchor",
+      "record": {
+        "schema_version": 1,
+        "id": "F-001",
+        "reviewer": "terminology-review",
+        "artifact": {
+          "path": "docs/task-policy.md",
+          "revision": "abc123",
+          "span": ""
+        },
+        "category": "state-designation-conflict",
+        "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+        "basis": [
+          {
+            "source": "standards/STANDARD.md",
+            "revision": "v0.4.1",
+            "span": "Blocked is a flag, not an execution state",
+            "reason": "The accepted state model distinguishes state from blocked flag.",
+            "verification": "inspected",
+            "applicability": "applicable"
+          }
+        ],
+        "evidence_status": "observed",
+        "disposition": "confirmed-conflict",
+        "severity": "major",
+        "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+        "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+        "requires_owner_decision": true,
+        "issue_key": "blocked-as-state"
+      }
+    },
+    {
+      "reason": "Disputed source applicability cannot substantiate confirmed conflict",
+      "record": {
+        "schema_version": 1,
+        "id": "F-001",
+        "reviewer": "terminology-review",
+        "artifact": {
+          "path": "docs/task-policy.md",
+          "revision": "abc123",
+          "span": "Blocked execution state"
+        },
+        "category": "state-designation-conflict",
+        "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+        "basis": [
+          {
+            "source": "standards/STANDARD.md",
+            "revision": "v0.4.1",
+            "span": "Blocked is a flag, not an execution state",
+            "reason": "The accepted state model distinguishes state from blocked flag.",
+            "verification": "inspected",
+            "applicability": "disputed"
+          }
+        ],
+        "evidence_status": "observed",
+        "disposition": "confirmed-conflict",
+        "severity": "major",
+        "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+        "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+        "requires_owner_decision": true,
+        "issue_key": "blocked-as-state"
+      }
+    },
+    {
+      "reason": "Abstention must not prescribe a silent edit",
+      "record": {
+        "schema_version": 1,
+        "id": "F-002",
+        "reviewer": "terminology-review",
+        "artifact": {
+          "path": "docs/task-policy.md",
+          "revision": "abc123",
+          "span": "Blocked execution state"
+        },
+        "category": "state-designation-conflict",
+        "claim": "Unclear which of two unversioned glossaries is binding; a conflict cannot currently be established.",
+        "basis": [],
+        "evidence_status": "unknown",
+        "disposition": "abstain",
+        "severity": "informational",
+        "confidence_reason": "The available material lacks a precedence rule and source revision.",
+        "suggestion": "Silently replace the authoritative glossary.",
+        "requires_owner_decision": true,
+        "issue_key": "blocked-as-state"
+      }
+    }
+  ],
+  "valid_reports": [
+    {
+      "schema_version": 1,
+      "review_id": "R-conflict",
+      "status": "issues-identified",
+      "coverage": {
+        "examined": [
+          {
+            "source": "docs/task-policy.md",
+            "revision": "abc123",
+            "scope": "state and blocked-flag semantics"
+          }
+        ],
+        "not_examined": []
+      },
+      "findings": [
+        {
+          "schema_version": 1,
+          "id": "F-001",
+          "reviewer": "terminology-review",
+          "artifact": {
+            "path": "docs/task-policy.md",
+            "revision": "abc123",
+            "span": "Blocked execution state"
+          },
+          "category": "state-designation-conflict",
+          "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+          "basis": [
+            {
+              "source": "standards/STANDARD.md",
+              "revision": "v0.4.1",
+              "span": "Blocked is a flag, not an execution state",
+              "reason": "The accepted state model distinguishes state from blocked flag.",
+              "verification": "inspected",
+              "applicability": "applicable"
+            }
+          ],
+          "evidence_status": "observed",
+          "disposition": "confirmed-conflict",
+          "severity": "major",
+          "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+          "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+          "requires_owner_decision": true,
+          "issue_key": "blocked-as-state"
+        }
+      ],
+      "limitations": [
+        "Owner has not accepted a replacement passage."
+      ]
+    },
+    {
+      "schema_version": 1,
+      "review_id": "R-abstain",
+      "status": "insufficient-evidence",
+      "coverage": {
+        "examined": [
+          {
+            "source": "docs/task-policy.md",
+            "scope": "authorities referenced by passage"
+          }
+        ],
+        "not_examined": [
+          "Original accepted glossary was unavailable."
+        ]
+      },
+      "findings": [
+        {
+          "schema_version": 1,
+          "id": "F-002",
+          "reviewer": "terminology-review",
+          "artifact": {
+            "path": "docs/task-policy.md",
+            "revision": "abc123",
+            "span": "Blocked execution state"
+          },
+          "category": "state-designation-conflict",
+          "claim": "Unclear which of two unversioned glossaries is binding; a conflict cannot currently be established.",
+          "basis": [],
+          "evidence_status": "unknown",
+          "disposition": "abstain",
+          "severity": "informational",
+          "confidence_reason": "The available material lacks a precedence rule and source revision.",
+          "suggestion": null,
+          "requires_owner_decision": true,
+          "issue_key": "blocked-as-state"
+        }
+      ],
+      "limitations": [
+        "Cannot determine governing source order."
+      ]
+    },
+    {
+      "schema_version": 1,
+      "review_id": "R-none",
+      "status": "no-issues-detected",
+      "coverage": {
+        "examined": [
+          {
+            "source": "draft.md",
+            "scope": "one definition paragraph"
+          }
+        ],
+        "not_examined": [
+          "Other chapters"
+        ]
+      },
+      "findings": [],
+      "limitations": [
+        "No issues detected only in examined paragraph, not a validity certificate."
+      ]
+    },
+    {
+      "schema_version": 1,
+      "review_id": "R-suggestion",
+      "status": "issues-identified",
+      "coverage": {
+        "examined": [
+          {
+            "source": "draft.md",
+            "scope": "pronoun reference"
+          }
+        ],
+        "not_examined": []
+      },
+      "findings": [
+        {
+          "schema_version": 1,
+          "id": "F-003",
+          "reviewer": "communication-review",
+          "artifact": {
+            "path": "docs/task-policy.md",
+            "revision": "abc123",
+            "span": "Blocked execution state"
+          },
+          "category": "reader-ambiguity",
+          "claim": "The pronoun could refer to either reviewer or author.",
+          "basis": [],
+          "evidence_status": "inferred",
+          "disposition": "suggestion",
+          "severity": "minor",
+          "confidence_reason": "Both readings fit the quoted sentence; this is a reader-risk observation, not a direct rule violation.",
+          "suggestion": "Name the intended actor.",
+          "requires_owner_decision": false
+        }
+      ],
+      "limitations": []
+    }
+  ],
+  "invalid_reports": [
+    {
+      "reason": "No issues detected cannot hide a finding",
+      "record": {
+        "schema_version": 1,
+        "review_id": "R-none",
+        "status": "no-issues-detected",
+        "coverage": {
+          "examined": [
+            {
+              "source": "draft.md",
+              "scope": "one definition paragraph"
+            }
+          ],
+          "not_examined": [
+            "Other chapters"
+          ]
+        },
+        "findings": [
+          {
+            "schema_version": 1,
+            "id": "F-001",
+            "reviewer": "terminology-review",
+            "artifact": {
+              "path": "docs/task-policy.md",
+              "revision": "abc123",
+              "span": "Blocked execution state"
+            },
+            "category": "state-designation-conflict",
+            "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+            "basis": [
+              {
+                "source": "standards/STANDARD.md",
+                "revision": "v0.4.1",
+                "span": "Blocked is a flag, not an execution state",
+                "reason": "The accepted state model distinguishes state from blocked flag.",
+                "verification": "inspected",
+                "applicability": "applicable"
+              }
+            ],
+            "evidence_status": "observed",
+            "disposition": "confirmed-conflict",
+            "severity": "major",
+            "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+            "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+            "requires_owner_decision": true,
+            "issue_key": "blocked-as-state"
+          }
+        ],
+        "limitations": [
+          "No issues detected only in examined paragraph, not a validity certificate."
+        ]
+      }
+    },
+    {
+      "reason": "Issues identified must contain at least one finding",
+      "record": {
+        "schema_version": 1,
+        "review_id": "R-conflict",
+        "status": "issues-identified",
+        "coverage": {
+          "examined": [
+            {
+              "source": "docs/task-policy.md",
+              "revision": "abc123",
+              "scope": "state and blocked-flag semantics"
+            }
+          ],
+          "not_examined": []
+        },
+        "findings": [],
+        "limitations": [
+          "Owner has not accepted a replacement passage."
+        ]
+      }
+    }
+  ]
+}

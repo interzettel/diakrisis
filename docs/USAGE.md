@@ -37,7 +37,7 @@ For a very narrow question, invoke a named reviewer directly rather than the coo
 - Intended domain/audience/language and author-preferred style.
 - Local canonical definitions, ADRs, protocols, glossary and precedence rules.
 - Desired output: compact prose findings or source-linked records conforming to `schemas/finding.schema.json` where honest.
-- What the review **must not do**, especially automated edits, commits or publication.
+- What the review **must not do**, especially automated edits, commits or publication. For machine-readable results, use the [single-suite contract revision 1](REVIEW-CONTRACT.md) (finding + source-coverage report); never invent required fields.
 
 ## How findings work together
 
