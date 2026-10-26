@@ -1,10 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/interzettel/diakrisis/schemas/finding.schema.json",
-  "title": "Diakrisis candidate review finding v0 (not a scientifically validated judge)",
+  "title": "Diakrisis evidence-linked finding — contract revision 1 (experimental)",
+  "description": "Machine-readable evidence-bound advisory finding. Contract revision is independent of the single Diakrisis suite SemVer; schema validity does not imply factual accuracy.",
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "schema_version",
     "id",
     "reviewer",
     "artifact",
@@ -18,9 +20,14 @@
     "requires_owner_decision"
   ],
   "properties": {
+    "schema_version": {
+      "const": 1,
+      "description": "Wire-format revision, not an individual skill version."
+    },
     "id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "maxLength": 120
     },
     "reviewer": {
       "type": "string",
@@ -35,11 +42,11 @@
     },
     "artifact": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
         "path",
         "span"
       ],
-      "additionalProperties": false,
       "properties": {
         "path": {
           "type": "string",
@@ -53,7 +60,8 @@
         },
         "span": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Quoted phrase or exact location in the inspected artifact; no fabricated excerpts."
         }
       }
     },
@@ -63,19 +71,34 @@
     },
     "claim": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "Bounded finding or explicit unresolved question; an abstention must not assert an established defect."
     },
     "basis": {
       "type": "array",
-      "minItems": 1,
+      "uniqueItems": true,
       "items": {
         "type": "object",
+        "additionalProperties": false,
         "required": [
           "source",
-          "reason"
+          "reason",
+          "verification",
+          "applicability"
         ],
         "properties": {
           "source": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Actual filename/URL/identifier; not merely a source imagined to exist."
+          },
+          "revision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "span": {
             "type": "string",
             "minLength": 1
           },
@@ -83,14 +106,22 @@
             "type": "string",
             "minLength": 1
           },
-          "revision": {
-            "type": [
-              "string",
-              "null"
-            ]
+          "verification": {
+            "enum": [
+              "inspected",
+              "not-inspected"
+            ],
+            "description": "Whether this source itself was actually inspected for the cited assertion."
+          },
+          "applicability": {
+            "enum": [
+              "applicable",
+              "uncertain",
+              "disputed"
+            ],
+            "description": "Applicability is contextual to the examined artifact and its declared authority."
           }
-        },
-        "additionalProperties": false
+        }
       }
     },
     "evidence_status": {
@@ -114,11 +145,13 @@
         "minor",
         "major",
         "blocking-candidate"
-      ]
+      ],
+      "description": "Impact estimate, not workflow blocked state or approval."
     },
     "confidence_reason": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "Grounded rationale; not a fabricated numeric confidence score."
     },
     "suggestion": {
       "type": [
@@ -128,6 +161,89 @@
     },
     "requires_owner_decision": {
       "type": "boolean"
+    },
+    "issue_key": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional shared underlying issue; coordinator must inspect content before deduplicating."
+    },
+    "related_findings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "IDs of genuinely related findings, not an assertion of independent evidence."
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "disposition": {
+            "const": "confirmed-conflict"
+          }
+        },
+        "required": [
+          "disposition"
+        ]
+      },
+      "then": {
+        "properties": {
+          "evidence_status": {
+            "const": "observed"
+          },
+          "basis": {
+            "minItems": 1,
+            "contains": {
+              "type": "object",
+              "required": [
+                "verification",
+                "applicability",
+                "span"
+              ],
+              "properties": {
+                "verification": {
+                  "const": "inspected"
+                },
+                "applicability": {
+                  "const": "applicable"
+                },
+                "span": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "disposition": {
+            "const": "abstain"
+          }
+        },
+        "required": [
+          "disposition"
+        ]
+      },
+      "then": {
+        "properties": {
+          "evidence_status": {
+            "const": "unknown"
+          },
+          "severity": {
+            "const": "informational"
+          },
+          "suggestion": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
 }
