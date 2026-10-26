@@ -1,6 +1,6 @@
 # Diakrisis project overview
 
-**Recorded:** 2026-10-26. **Scope status:** initial proposal, not accepted. **Owner:** Studio Zettlerei / interzettel (human owner acceptance required).
+**Recorded:** 2026-10-26. **Scope status:** ten-package initial working scope authorized by owner instruction to merge PR #11 and proceed on 2026-10-26; no milestone acceptance inferred. **Owner:** Studio Zettlerei / interzettel (human owner acceptance required).
 
 **Purpose:** Provide portable, source-grounded review skills and an evaluation harness for writing, scientific research, project documentation, and conceptual modeling.
 
