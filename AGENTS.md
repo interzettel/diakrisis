@@ -27,7 +27,7 @@ Follow Project Record Standard v0.4.1 (contract 0.2.0). Project scope and accept
 
 ## Authoring new skills
 
-Use Agent Skills specification, Anthropic skill-creator and Superpowers' skill-writing/TDD guidance **when installed and discoverable**. Start with a baseline scenario that exercises the proposed failure. Make test fixtures with correct and incorrect examples. Validate metadata, scripts and triggering; demonstrate improvement without excessive false positives. Work is incomplete without auditable evaluation results.
+Before any new or materially revised Diakrisis skill, **perform a fresh web-search pass**, verify relevant primary standards and donor skills, compare findings with existing repository research, and commit the dated source/decision record first; follow [the research gate](docs/RESEARCH-GATE.md). Use Agent Skills specification, Anthropic skill-creator and Superpowers' skill-writing/TDD guidance **when installed and discoverable**. Start with a baseline scenario that exercises the proposed failure. Make test fixtures with correct and incorrect examples. Validate metadata, scripts and triggering; demonstrate improvement without excessive false positives. Work is incomplete without auditable evaluation results.
 
 ## Installation
 
