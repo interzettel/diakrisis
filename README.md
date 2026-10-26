@@ -18,7 +18,7 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-26 against `085ad37f`.
+Observed 2026-10-26 against `36981152`.
 
 #### Milestone roadmap
 
@@ -27,7 +27,7 @@ Observed 2026-10-26 against `085ad37f`.
 | **DIA-M0 — Documented basis** | Now | 1/1 · 100.0% | Unknown / not assessed | Review the documented foundation and its source authority (work 1/1; acceptance still unknown). |
 | **DIA-M1 — Reproducible foundation** | Now | 1/4 · 25.0% | Unknown / not assessed | DIA-005 / #5 finding+report contract revision 1 structurally implemented in PR #24 (positive/negative/abstention cases passed). DIA-003 complete; DIA-002 / #2 remains the P0 prerequisite Blocked only for owner-deferred local archive/runtime verification. DIA-004 / #4 runtime activation is also deferred. No further eligible unblocked completion gate in M1 until owner resumes the final test phase; M1 acceptance remains unknown. |
 | **DIA-M2 — Evaluated reviewers** | Next | 0/2 · 0.0% | Unknown / not assessed | Adjudicate blinded reviewer-vs-baseline runs including negative controls. |
-| **DIA-M3 — Portable system** | Later | 0/3 · 0.0% | Unknown / not assessed | Prove reversible consumer adoption, versioned publication and update compatibility. |
+| **DIA-M3 — Portable system** | Later | 0/3 · 0.0% | Unknown / not assessed | DIA-009 / #9 first Writing Kitchen consumer source integration merged (WK PR #24), source hashes verified through GitHub tree but hosted CI failed without accessible logs and live activation untested. Await DIA-007 reviewer/false-positive gate, consumer CI diagnosis, native agent-discovery and authority/privacy checks before adoption acceptance. Other proposed consumers and DIA-010 packaging remain development candidates, not accepted milestones. |
 
 #### Work packages
 
@@ -43,7 +43,7 @@ States represent recorded implementation progress; a closed issue, passing test 
 | [DIA-006](https://github.com/interzettel/diakrisis/issues/6) | Build and test three pilot reviewers | In progress | P1 | DIA-004, DIA-005 | [Evidence](https://github.com/interzettel/diakrisis/pull/17) |
 | [DIA-007](https://github.com/interzettel/diakrisis/issues/7) | Evaluate pilots on genuine documents | Planned | P1 | DIA-006 | Evidence-linked evaluation on safe copies of real research/project documents, including false-positive and preservation checks. |
 | [DIA-008](https://github.com/interzettel/diakrisis/issues/8) | Expand reviewers and coordination | In progress | P2 | DIA-007 | [Evidence](https://github.com/interzettel/diakrisis/pull/17) |
-| [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | Planned | P2 | DIA-007 | Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions. |
+| [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | In progress | P2 | DIA-007 | Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions. |
 | [DIA-010](https://github.com/interzettel/diakrisis/issues/10) | Version releases and evaluate drift | Planned | P2 | DIA-008, DIA-009 | Versioned skill releases, pinned consumers, provenance/compatibility and update-drift checks established with publication evidence. |
 
 **Versioning:** Suite `0.1.0-dev.0` — **unreleased**; included skills: **7**. Draft candidates: None. [Single package version policy](docs/VERSIONING.md).
