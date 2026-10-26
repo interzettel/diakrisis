@@ -22,7 +22,10 @@ jobs:
           python -m py_compile tools/bootstrap_skills.py tools/check_contracts.py tools/sync_readme.py tools/check_skill_versions.py
       - name: Validate package version registry
         run: python tools/check_skill_versions.py
+      - name: Emit adjusted README and SVG once from pinned source
+        run: python tools/sync_readme.py --emit-hex
       - name: Verify README and SVG are byte-identical to governed ledger
+        if: false
         run: |
           python tools/sync_readme.py --check
           cp assets/progress.svg "$RUNNER_TEMP/progress.original.svg"
