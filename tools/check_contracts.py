@@ -50,6 +50,42 @@ def check():
             errors.append("review schema lacks required/closed fields")
     except (ValueError, OSError, KeyError, TypeError) as e:
         errors.append(f"invalid pilot fixtures/review schema: {e}")
+    # Source-only alignment check. This cannot prove remote GitHub issue status:
+    # issue/PR reconciliation is an explicit read performed by the agent.
+    try:
+        ledger = json.loads((ROOT / "progress/ledger.json").read_text(encoding="utf-8"))
+        items = ledger["items"]
+        milestones = {m["id"]: m for m in ledger["milestones"]}
+        ids = [i["id"] for i in items]
+        if len(ids) != len(set(ids)):
+            errors.append("duplicate accounting work-package IDs")
+        issue_links = []
+        for item in items:
+            issue = item.get("issueUrl", "")
+            issue_links.append(issue)
+            if not re.fullmatch(r"DIA-\d{3}", item["id"]):
+                errors.append("invalid stable work ID: " + str(item.get("id")))
+            if not re.fullmatch(r"https://github\.com/interzettel/diakrisis/issues/\d+", issue):
+                errors.append("noncanonical issue link: " + str(item["id"]))
+            milestone = item.get("milestoneId")
+            if milestone not in milestones:
+                errors.append("missing canonical milestone for " + str(item["id"]))
+            elif item["id"] not in milestones[milestone].get("gateItemIds", []):
+                errors.append("milestone gate does not reference " + str(item["id"]))
+            if not item.get("criterion", "").strip():
+                errors.append("missing acceptance criterion for " + str(item["id"]))
+            if item.get("state") == "done" and not item.get("evidence"):
+                errors.append("Done without evidence: " + str(item["id"]))
+            if item.get("blocked") and not item.get("note", "").strip():
+                errors.append("Blocked without rationale/next action: " + str(item["id"]))
+        if len(issue_links) != len(set(issue_links)):
+            errors.append("two accounting leaves map to the same GitHub issue")
+        for m in ledger["milestones"]:
+            for item_id in m.get("gateItemIds", []):
+                if item_id not in ids:
+                    errors.append("milestone gate references nonexistent leaf: " + item_id)
+    except (ValueError, OSError, KeyError, TypeError) as e:
+        errors.append(f"invalid issue/milestone mapping: {e}")
     for skillfile in sorted((ROOT / ".agents/skills").glob("*/SKILL.md")):
         name = skillfile.parent.name
         content = skillfile.read_text(encoding="utf-8")

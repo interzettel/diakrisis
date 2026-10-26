@@ -25,7 +25,7 @@
     {
       "surface": "issues",
       "status": "complete",
-      "observation": "Created and verified 10 bounded work-package issues, DIA-001..DIA-010, during bootstrap."
+      "observation": "Reconciled actual GitHub issues #1–#10 and PRs #11–#18 with canonical work IDs; one closed, nine open. Issue bodies identify primary PRS milestone, status and dependencies. Native issue milestones unassigned in inspected snapshot."
     },
     {
       "surface": "pull requests and branches",
@@ -47,6 +47,46 @@
     "A remote GitHub write is not a Windows/Claude/Codex installation",
     "Do not report verified PRS progress without running its validator and observing relevant scope acceptance"
   ],
-  "observationUpdate": "2026-10-26: 10 work-package issues created, draft PR #11 opened, source-pinned skill installation and official PRS ledger check passed in isolated CI; local runner activation untested.",
-  "ciEvidence": "https://github.com/interzettel/diakrisis/actions/runs/40368887009"
+  "observationUpdate": "2026-10-26: Full authoritative issue reconciliation of DIA-001–DIA-010 after merging skills PR #17 and README PR #18; one closed counted issue, nine open, four ledger milestones, all ten issues had no assigned native GitHub milestone. Native milestone inventory not accessible via available read endpoint. Shared governance enhancement filed at PRS #3.",
+  "ciEvidence": "https://github.com/interzettel/diakrisis/actions/runs/40368887009",
+  "issueReconciliation": {
+    "observedOn": "2026-10-26",
+    "issues": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "closed": [
+      1
+    ],
+    "open": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "canonicalMilestones": [
+      "DIA-M0",
+      "DIA-M1",
+      "DIA-M2",
+      "DIA-M3"
+    ],
+    "nativeMilestoneAssignmentsObserved": 0,
+    "nativeMilestoneInventory": "unverified-endpoint-unavailable",
+    "selectedNext": "DIA-003",
+    "blockedForDeferredVerification": "DIA-002",
+    "source": "https://github.com/interzettel/diakrisis/issues"
+  }
 }

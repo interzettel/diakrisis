@@ -1,46 +1,49 @@
-# Roadmap and work packages
+# Diakrisis roadmap — issue- and milestone-linked
 
-**Recorded:** 2026-10-26. **Status:** ten-package working scope approved for development on 2026-10-26; one foundation leaf (DIA-001) completed through merged PR #11. This does not establish any milestone acceptance. Native PRS v0.2.0 ledger validated separately.
+**Working scope authorized:** 2026-10-26. **Reference:** [Project Record Standard v0.4.1](https://github.com/interzettel/project-record-standard/releases/tag/v0.4.1) (record contract `0.2.0`). **Source of truth:** [ledger](../progress/ledger.json) and [manifest](../progress/project-record.json), not this prose or issue closure.
 
-The project follows [Project Record Standard v0.4.1](https://github.com/interzettel/project-record-standard/releases/tag/v0.4.1), contract 0.2.0, for terminology, stable IDs, separate completion and acceptance, evidence, and scope changes. Its installer preview/apply and official ledger check succeeded in isolated GitHub Actions CI on 2026-10-26; Windows/Claude/Codex runtime discovery, owner scope acceptance, and hosted tracker remain unverified.
+**Observation:** 2026-10-26 after [seven-skill merge PR #17](https://github.com/interzettel/diakrisis/pull/17) and [README reconciliation PR #18](https://github.com/interzettel/diakrisis/pull/18). All seven skill instructions are on `main` as a single experimental, unreleased `0.1.0-dev.0` package. Only **DIA-001** meets its complete-leaf criterion; **required work 1/10 (10.0%)**. All four milestone acceptance gates remain **unknown**, not failed or accepted. Owner explicitly deferred interactive model testing until end of build.
 
-**Prerequisite for any additional reviewer:** complete the [research gate](RESEARCH-GATE.md) before skill implementation or material revision; source-refresh and matched baseline/treatment evaluation are independent gates.\n\n## Sequencing and gates
+## Current authorized queue
 
-| Order | Package | Priority | Completion gate | Depends on |
-| --- | --- | --- | --- | --- |
-| 0 | **DIA-001 Persist foundation** | P0 | Research, README, scope, provenance and unresolved decisions versioned | — |
-| 1 | **DIA-002 Establish project records** | P0 | PRS pinned, installation preview/check, manifest, ledger, named milestone gates, verification receipts | DIA-001 |
-| 2 | **DIA-003 Audit upstream skill standards and donors** | P0 | Agent Skills spec reviewed; Superpowers, Anthropic skill-creator, scientific skills inventoried with licenses/revisions | DIA-001 |
-| 3 | **DIA-004 Integrate authoring toolchains** | P1 | Verified source/pin and secure install of Superpowers + skill-creator into a supported runtime; do not overwrite other skills | DIA-003 |
-| 4 | **DIA-005 Define common finding contract** | P1 | Versioned schema and authority rules with validation, examples and negative controls | DIA-002, DIA-003 |
-| 5 | **DIA-006 Implement three pilot reviewer skills** | P1 | Terminology, conceptual-model, argument reviews conform to spec; baseline and post-skill evals; independent adjudication | DIA-004, DIA-005 |
-| 6 | **DIA-007 End-to-end research and writing pilots** | P1 | Tests on copies of real project documents; source spans, abstentions and false-positive metrics audited | DIA-006 |
-| 7 | **DIA-008 Expand remaining skills and coordination** | P2 | Method, communication, consistency, coordinator; conflict-resolution tests | DIA-007 |
-| 8 | **DIA-009 Cross-repo adoption** | P2 | Optional bounded PRs with consumer authority, integration tests, rollback | DIA-007 |
-| 9 | **DIA-010 Release, update and drift policy** | P2 | Versioned release, pinned adoption, compatibility matrix, upstream watch policy | DIA-008, DIA-009 |
+**NEXT — [DIA-003 / GitHub #3](https://github.com/interzettel/diakrisis/issues/3), milestone DIA-M1, P0.** Finalize existing external **Agent Skills + donor audit**: at least Superpowers, Anthropic skill-creator, Project Record Standard, K-Dense Scientific Agent Skills, KalarisLabs Research Agent Skills, Vale and W3C instruments. Record for each precise source revision (or retrieval gap), license applicability, security/portability concerns, existing Diakrisis overlap and **reuse / adapt / reference / reject** decision with rationale. Output: `docs/research/DONOR-AUDIT.md`, source links, and issue/ledger status reconciliation. No new reviewer or testing infrastructure belongs to this item.
 
-**Priority rules:** P0 = blocks trustworthy bootstrap; P1 = next required work; P2 = subsequent scoped work; P3 = investigation/deferred. Proposed priority is not a declaration of issue-state completion.
+**Why not #2 first?** [DIA-002 / #2](https://github.com/interzettel/diakrisis/issues/2) is the other P0 in DIA-M1. Native PRS ledger, installation in isolated GitHub Actions and README parity passed; its remaining independent downloaded-release-checksum and local-machine activation/extraction receipts are deferred by owner to the end-of-build verification stage. It has a **Blocked flag with explicit reason**, not a new execution state. Other work may proceed while this bounded prerequisite evidence waits. The published archive hash is noted in the ledger, but is **not** misrepresented as a locally calculated digest.
 
-## Milestone proposals
+## Accounted work and dependencies
 
-- **M0: Documented basis** — DIA-001 evidence reviewed, scope proposed and open questions visible.
-- **M1: Reproducible foundation** — DIA-002 through DIA-005; verified standard and toolchain, authoritative record and evaluation contract.
-- **M2: Tested minimum viable reviewers** — DIA-006 and DIA-007; positive and negative controls; human adjudication.
-- **M3: Portable system** — DIA-008 through DIA-010; cross-repository integration, maintainability, releases.
+These ten records alone constitute the current required-work denominator. GitHub issues provide delivery/discussion; each has one canonical ledger milestone. **None of the ten tracked GitHub issues had a native milestone assigned in the 2026-10-26 inspection**, so these DIA-M IDs are *ledger checkpoints*, not GitHub milestone objects.
 
-Milestones are **acceptance gates**, not tasks or percentages. No milestone is accepted by the existence of this plan.
+| ID / issue | Ledger milestone | Priority | State | Dependencies | Remaining criterion |
+| --- | --- | --- | --- | --- | --- |
+| [DIA-001 / #1](https://github.com/interzettel/diakrisis/issues/1) | DIA-M0 | P0 | Done | — | Foundation preserved (met); M0 acceptance separately pending |
+| [DIA-002 / #2](https://github.com/interzettel/diakrisis/issues/2) | DIA-M1 | P0 | In progress, **Blocked** | DIA-001 | Independent source/archive and runtime evidence after owner-directed test deferral |
+| [DIA-003 / #3](https://github.com/interzettel/diakrisis/issues/3) | DIA-M1 | P0 | In progress, **NEXT** | DIA-001 | Completed license/security/portability/reuse donor matrix |
+| [DIA-004 / #4](https://github.com/interzettel/diakrisis/issues/4) | DIA-M1 | P1 | Planned | DIA-003 | Verified interactive Claude/Codex authoring toolchain activation and rollback; deferred to final test phase |
+| [DIA-005 / #5](https://github.com/interzettel/diakrisis/issues/5) | DIA-M1 | P1 | In progress (not eligible to finish) | DIA-002, DIA-003 | Shared finding schema/authority rules and verification remain accepted only after prerequisites |
+| [DIA-006 / #6](https://github.com/interzettel/diakrisis/issues/6) | DIA-M2 | P1 | In progress (authored early by owner direction) | DIA-004, DIA-005 | Empirical review quality and independent adjudication postponed |
+| [DIA-007 / #7](https://github.com/interzettel/diakrisis/issues/7) | DIA-M2 | P1 | Planned | DIA-006 | Actual real-document evaluation/negative control evidence postponed |
+| [DIA-008 / #8](https://github.com/interzettel/diakrisis/issues/8) | DIA-M3 | P2 | In progress (authored early by owner direction) | DIA-007 | Cross-skill composition and coordinator behavior assessment postponed |
+| [DIA-009 / #9](https://github.com/interzettel/diakrisis/issues/9) | DIA-M3 | P2 | Planned | DIA-007 | Reviewed, reversible consumer integration PRs |
+| [DIA-010 / #10](https://github.com/interzettel/diakrisis/issues/10) | DIA-M3 | P2 | Planned | DIA-008, DIA-009 | **One package version**, publication receipts, pinned consumers and drift policy |
 
-## Decisions to resolve
+The owner instructed **build all seven instructions before behavioral testing**. That explains out-of-sequence drafting of #6/#8 but does **not** remove prerequisites from completion and acceptance.
 
-- Whether the initial scope of ten packages and three pilot reviewers is accepted.
-- Which local runtime(s) are the first installation targets (Claude Code, Codex, or both).
-- How findings are adjudicated when project definitions and external standards disagree.
-- Which validation thresholds are release-blocking; avoid invented reliability metrics.
-- Public/private boundary for experimental documents, source quotations and agent telemetry.
+## Milestones and exit criteria
 
-## Immediate next move
+| Ledger checkpoint | Required leaves | Outcome gate | Acceptance |
+| --- | --- | --- | --- |
+| **DIA-M0 — Documented basis** | DIA-001 | Owner reviews source-bound foundation and scope | Unknown; 1/1 supporting work Done |
+| **DIA-M1 — Reproducible foundation** | DIA-002–DIA-005 | Source/licensing audit, local runtime activation, approved findings contract | Unknown; 0/4 supporting work Done |
+| **DIA-M2 — Evaluated reviewers** | DIA-006–DIA-007 | Source-backed paired reviewer studies including legitimate negatives | Unknown; 0/2 supporting work Done |
+| **DIA-M3 — Portable system** | DIA-008–DIA-010 | Skill composition, reversible consumer adoption and one suite release | Unknown; 0/3 supporting work Done |
 
-Finish source verification and install/validate Project Record Standard in a **clean staging checkout**. Inspect changes, then create the authoritative manifest/ledger. After that, integrate upstream authoring tools and run *baseline* tests before shipping skills. GitHub issues can record delivery discussions; they must not become a competing authoritative completion ledger.
-## Owner-approved build-first sequencing — 2026-10-26
+No milestone can be accepted merely because an issue closes, a prompt exists, or CI validates metadata. No Pages deployment is requested; the [README graphic](../README.md#project-tracker) is the view.
 
-All seven specialist/coordinator skill modules were authored and merged in [PR #17](https://github.com/interzettel/diakrisis/pull/17) on 2026-10-26, before any further model test infrastructure or behavioral evaluation. Each module has a dated pre-implementation web-source record in `docs/research/`. Structural packaging checks remain in CI. No DIA-006, DIA-007, or DIA-008 completion or milestone acceptance is inferred from authored instructions or the merge; comparative evaluations and integrated behavioral checks remain **deferred until the owner-directed final test phase**, at the owner's direction. Suite SemVer applies to the **whole package only**, not individual modules.
+## Mandatory work selection and update
+
+The [AGENTS operating protocol](../AGENTS.md) governs selection: re-read the **actual** issues and PRs, canonical work records, dependency and blocker states; announce exact **ID + issue + milestone + expected deliverable**; stay within authorized scope. For unclear criteria, **announce a bounded detailing pass first**, preserve IDs and denominator, and ask for approval only when scope/authority changes.
+
+At completion or blocker change: preserve prior evidence, update the ledger and linked issue, inspect the milestone, regenerate `README.md` and `assets/progress.svg`, run the native PRS validator and parity CI, then name the **next exact eligible issue**. GitHub issue/PR closure does not itself write or refresh these authoritative records.
+
+Shared-system improvement: [Project Record Standard #3](https://github.com/interzettel/project-record-standard/issues/3).
