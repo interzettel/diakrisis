@@ -4,7 +4,7 @@
 
 A local-first, evidence-aware collection of portable Agent Skills for reviewing conceptual structures, terminology, reasoning, research methods, and written communication.
 
-**Status: bootstrap / research and planning.** Official Project Record Standard validation and isolated skill installation have passed in GitHub Actions; no local Claude/Codex activation or skill-efficacy evaluation is yet verified. This repository is not yet a validated scientific-review product. No skill output is automatically authoritative; no review grants an agent permission to publish, merge, or alter another repository.
+**Status: seven coordinated experimental skills implemented on `main`.** Package `0.1.0-dev.0` remains unreleased. Structural checks pass; consumer integrations, live agent activation, and behavioral review evaluations are deferred. No skill output is automatically authoritative, and no review grants an agent permission to publish, merge, or alter another repository.
 
 ## Project tracker
 
@@ -18,7 +18,7 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-26 against `9e4e3fd9`.
+Observed 2026-10-26 against `8e8ffd1c`.
 
 #### Milestone roadmap
 
@@ -40,9 +40,9 @@ States represent recorded implementation progress; a closed issue, passing test 
 | [DIA-003](https://github.com/interzettel/diakrisis/issues/3) | Audit upstream standards and donors | In progress | P0 | DIA-001 | Agent Skills standard and upstream donor licenses, security and revision comparisons documented with reuse decisions. |
 | [DIA-004](https://github.com/interzettel/diakrisis/issues/4) | Activate pinned authoring tools | Planned | P1 | DIA-003 | Portable Superpowers/skill-creator/PRS install and discovery verified in an actual Claude Code or Codex session, including rollback. |
 | [DIA-005](https://github.com/interzettel/diakrisis/issues/5) | Define typed findings and authority contract | In progress | P1 | DIA-002, DIA-003 | Versioned typed finding schema and authority rules validated with examples, positive and negative controls. |
-| [DIA-006](https://github.com/interzettel/diakrisis/issues/6) | Build and test three pilot reviewers | In progress | P1 | DIA-004, DIA-005 | Three specialist skills completed with portable metadata, matched no-skill/with-skill runs and human-adjudicated behavior results. |
+| [DIA-006](https://github.com/interzettel/diakrisis/issues/6) | Build and test three pilot reviewers | In progress | P1 | DIA-004, DIA-005 | [Evidence](https://github.com/interzettel/diakrisis/pull/17) |
 | [DIA-007](https://github.com/interzettel/diakrisis/issues/7) | Evaluate pilots on genuine documents | Planned | P1 | DIA-006 | Evidence-linked evaluation on safe copies of real research/project documents, including false-positive and preservation checks. |
-| [DIA-008](https://github.com/interzettel/diakrisis/issues/8) | Expand reviewers and coordination | In progress | P2 | DIA-007 | Method, communication, cross-document consistency and coordinator integration passes composition/conflict tests. |
+| [DIA-008](https://github.com/interzettel/diakrisis/issues/8) | Expand reviewers and coordination | In progress | P2 | DIA-007 | [Evidence](https://github.com/interzettel/diakrisis/pull/17) |
 | [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | Planned | P2 | DIA-007 | Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions. |
 | [DIA-010](https://github.com/interzettel/diakrisis/issues/10) | Version releases and evaluate drift | Planned | P2 | DIA-008, DIA-009 | Versioned skill releases, pinned consumers, provenance/compatibility and update-drift checks established with publication evidence. |
 
@@ -79,7 +79,7 @@ These are integration targets, **not completed integrations**. Consumer reposito
 | `consistency-review` | Cross-document contradictions, version/decision drift |
 | `review-coordinator` | Route appropriate checks, deduplicate findings, never fabricate consensus |
 
-All seven modules are **authored as experimental development skills in draft PR #17**, but none is a validated or released capability. The complete coordinated package shares one version; behavioral testing and installation in consumer repositories will follow after implementation.
+All seven modules are **merged into `main`** in [PR #17](https://github.com/interzettel/diakrisis/pull/17). They form one **unreleased experimental package**; consumer integrations, behavioral evaluation, and publication remain separate future work.
 
 ## Repository navigation
 

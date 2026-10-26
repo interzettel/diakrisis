@@ -134,7 +134,7 @@
       "groupId": "DIA-EVL",
       "milestoneId": "DIA-M2",
       "state": "active",
-      "sourceState": "seven-developmental-skills-authored",
+      "sourceState": "seven-modules-merged-experimental",
       "required": true,
       "blocked": false,
       "dependsOn": [
@@ -148,12 +148,16 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/6",
       "criterion": "Three specialist skills completed with portable metadata, matched no-skill/with-skill runs and human-adjudicated behavior results.",
-      "note": "Terminology, conceptual-model and argument modules drafted alongside remaining specialists; comparative efficacy pending owner-delayed evaluation.",
+      "note": "Seven coordinated experimental reviewer modules merged into main via PR #17; real reviewer accuracy, activation and owner acceptance remain to be assessed.",
       "deferReason": null,
       "evidence": [
         {
-          "kind": "implementation-branch",
+          "kind": "merged-pr",
           "source": "https://github.com/interzettel/diakrisis/pull/17"
+        },
+        {
+          "kind": "ci-verification",
+          "source": "https://github.com/interzettel/diakrisis/actions/runs/40386332620"
         }
       ]
     },
@@ -186,7 +190,7 @@
       "groupId": "DIA-ADP",
       "milestoneId": "DIA-M3",
       "state": "active",
-      "sourceState": "seven-skills-authored-in-draft-pr",
+      "sourceState": "seven-modules-merged-experimental",
       "required": true,
       "blocked": false,
       "dependsOn": [
@@ -199,12 +203,16 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/8",
       "criterion": "Method, communication, cross-document consistency and coordinator integration passes composition/conflict tests.",
-      "note": "Seven research-grounded modules authored in PR #17; coordinator and review composition await end-of-build evaluation. No acceptance credit.",
+      "note": "Seven experimental skills including coordinator merged via PR #17. Integration effectiveness and final behavioral evaluation remain pending; work remains In progress.",
       "deferReason": null,
       "evidence": [
         {
-          "kind": "implementation-branch",
+          "kind": "merged-pr",
           "source": "https://github.com/interzettel/diakrisis/pull/17"
+        },
+        {
+          "kind": "ci-verification",
+          "source": "https://github.com/interzettel/diakrisis/actions/runs/40386332620"
         }
       ]
     },
@@ -366,7 +374,7 @@
     "Initial working scope authorized 2026-10-26; one completed foundation leaf; all other work remains open.",
     "Milestone sourceAccepted and downstream reviewer scientific validity remain unknown.",
     "Native Claude/Codex activation and matched without-skill/with-skill LLM evaluations have not been observed.",
-    "Owner-directed build-first 2026-10-26: all seven skill instructions authored in draft PR #17, structural checks only; behavioral evaluation and owner acceptance deferred.",
+    "2026-10-26: all seven experimental skill definitions merged in PR #17; functional integration and behavioral evaluation deferred, with no owner acceptance or stable release yet.",
     "Progress remains 1/10 Done; draft skill content is not a completed/accepted work package."
   ],
   "governance": {

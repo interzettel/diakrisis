@@ -30,10 +30,10 @@ Repeat the pass when changing an important technical assumption, upstream standa
 
 | Skill | Most recent prereq research | Implementation | Model behavior |
 | --- | --- | --- | --- |
-| `terminology-review` | [2026-10-26](research/terminology-review-2026-10-26.md) | Experimental in PR #17 | Deferred by owner |
-| `conceptual-model-review` | [2026-10-26](research/conceptual-model-review-2026-10-26.md) | Experimental in PR #17 | Deferred by owner |
-| `argument-review` | [2026-10-26](research/argument-review-2026-10-26.md) | Experimental in PR #17 | Deferred by owner |
-| `method-review` | [2026-10-26](research/method-review-2026-10-26.md) | Experimental in PR #17 | Deferred by owner |
-| `communication-review` | [2026-10-26](research/communication-review-2026-10-26.md) | Experimental in PR #17 | Deferred by owner |
-| `consistency-review` | [2026-10-26](research/consistency-review-2026-10-26.md) | Experimental in PR #17 | Deferred by owner |
-| `review-coordinator` | [2026-10-26](research/review-coordinator-2026-10-26.md) | Experimental in PR #17 | Deferred by owner |
+| `terminology-review` | [2026-10-26](research/terminology-review-2026-10-26.md) | Implemented on `main` via [PR #17](https://github.com/interzettel/diakrisis/pull/17); experimental | Deferred by owner |
+| `conceptual-model-review` | [2026-10-26](research/conceptual-model-review-2026-10-26.md) | Implemented on `main` via [PR #17](https://github.com/interzettel/diakrisis/pull/17); experimental | Deferred by owner |
+| `argument-review` | [2026-10-26](research/argument-review-2026-10-26.md) | Implemented on `main` via [PR #17](https://github.com/interzettel/diakrisis/pull/17); experimental | Deferred by owner |
+| `method-review` | [2026-10-26](research/method-review-2026-10-26.md) | Implemented on `main` via [PR #17](https://github.com/interzettel/diakrisis/pull/17); experimental | Deferred by owner |
+| `communication-review` | [2026-10-26](research/communication-review-2026-10-26.md) | Implemented on `main` via [PR #17](https://github.com/interzettel/diakrisis/pull/17); experimental | Deferred by owner |
+| `consistency-review` | [2026-10-26](research/consistency-review-2026-10-26.md) | Implemented on `main` via [PR #17](https://github.com/interzettel/diakrisis/pull/17); experimental | Deferred by owner |
+| `review-coordinator` | [2026-10-26](research/review-coordinator-2026-10-26.md) | Implemented on `main` via [PR #17](https://github.com/interzettel/diakrisis/pull/17); experimental | Deferred by owner |
