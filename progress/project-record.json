@@ -35,6 +35,17 @@
             "updatedOn": "2026-10-26",
             "authority": "Original repository unapproved bootstrap snapshot at merged PR #11; retained for scope history"
           }
+        },
+        {
+          "sourceFile": "history/2026-10-26-before-DIA-003-completion.json",
+          "source": {
+            "kind": "file-snapshot",
+            "path": "progress/history/2026-10-26-before-DIA-003-completion.json",
+            "commit": null,
+            "observedOn": "2026-10-26",
+            "updatedOn": "2026-10-26",
+            "authority": "Snapshot of 1/10 required work before evidence-backed DIA-003 completion; preserved for source history"
+          }
         }
       ]
     }
