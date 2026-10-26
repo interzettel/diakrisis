@@ -26,7 +26,7 @@ A Git commit pin identifies source bytes, not necessarily a trusted release or a
 
 ## Known capability gap
 
-Available workspace cannot fetch GitHub with ordinary `git clone` (DNS resolution unavailable), but the authenticated GitHub connector reads/writes repository data. We can stage source-managed files through the connector. That is **not** equivalent to installation or execution on the user's Windows/Claude/Codex environment. Verified local installs and test receipts are independent gates.
+Available workspace cannot fetch GitHub with ordinary `git clone` (DNS resolution unavailable), but the authenticated GitHub connector reads/writes repository data. We staged pinned sources via the connector; GitHub Actions successfully installed all three skill toolkits in an isolated disposable checkout and passed the official Project Record Standard ledger check on 2026-10-26. This does **not** demonstrate activation on the user's Windows/Claude/Codex environment. Verified local installs and test receipts are independent gates.
 
 ## Security and license rules
 
