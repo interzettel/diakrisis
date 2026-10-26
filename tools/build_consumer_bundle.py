@@ -21,8 +21,10 @@ NAMES = ("argument-review", "communication-review", "conceptual-model-review",
 SKILLS = tuple(".agents/skills/" + n + "/SKILL.md" for n in NAMES)
 SUPPORT = (".agents/skills/terminology-review/references/CASES.md",
            "LICENSE", "docs/FOUNDATION.md", "docs/REVIEW-CONTRACT.md",
+           "docs/COORDINATION.md",
            "docs/research/DIA-005-AUTHORITY.md", "evals/finding-contract/cases.json",
            "schemas/finding.schema.json", "schemas/review-report.schema.json",
+           "schemas/coordinated-report.schema.json", "tools/coordinate_reviews.py",
            "skills/versions.json")
 INPUTS = SKILLS + SUPPORT
 MANIFEST = "integrations/diakrisis/source-manifest.json"
@@ -52,6 +54,10 @@ def transform(src, data, sha):
                       "../../../integrations/diakrisis/schemas/finding.schema.json")
         t = t.replace("../../../docs/REVIEW-CONTRACT.md",
                       "../../../integrations/diakrisis/docs/REVIEW-CONTRACT.md")
+        t = t.replace("../../../docs/COORDINATION.md",
+                      "../../../integrations/diakrisis/docs/COORDINATION.md")
+        t = t.replace("../../../schemas/coordinated-report.schema.json",
+                      "../../../integrations/diakrisis/schemas/coordinated-report.schema.json")
         t = t.replace("schemas/finding.schema.json", "integrations/diakrisis/schemas/finding.schema.json") if src.endswith("terminology-review/SKILL.md") else t
         return t.encode("utf-8"), "consumer-path-rewrites-v1"
     if src == "docs/FOUNDATION.md":
@@ -61,6 +67,15 @@ def transform(src, data, sha):
         ).replace(
             "(USAGE.md)",
             "(https://github.com/interzettel/diakrisis/blob/" + sha + "/docs/USAGE.md)"
+        )
+        return t.encode("utf-8"), "pin-nonbundled-document-links"
+    if src == "docs/COORDINATION.md":
+        t = data.decode("utf-8").replace(
+            "../tests/test_coordinator_composition.py",
+            "https://github.com/interzettel/diakrisis/blob/" + sha + "/tests/test_coordinator_composition.py"
+        ).replace(
+            "(research/review-coordinator-2026-10-26.md)",
+            "(https://github.com/interzettel/diakrisis/blob/" + sha + "/docs/research/review-coordinator-2026-10-26.md)"
         )
         return t.encode("utf-8"), "pin-nonbundled-document-links"
     return data, "byte-identical"
