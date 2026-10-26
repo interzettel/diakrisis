@@ -13,6 +13,8 @@ REQUIRED = [
     "docs/ROADMAP.md", "docs/SOURCES.md",
     "docs/AGENT-SKILLS-STANDARD.md", "docs/INSTALLATION.md",
     "progress/overview.md", "progress/discovery.json", "progress/adoption.md",
+    "progress/project-record.json", "progress/ledger.json", "progress/theme.json",
+    "docs/REVIEW-CONTRACT.md", "schemas/finding.schema.json", "evals/pilot-cases.json",
     "tools/bootstrap_skills.py",
 ]
 PINS = {
@@ -33,6 +35,21 @@ def check():
         assert data.get("coverage")
     except (ValueError, OSError, AssertionError) as e:
         errors.append(f"invalid discovery record: {e}")
+    try:
+        fixture = json.loads((ROOT / "evals/pilot-cases.json").read_text(encoding="utf-8"))
+        examples = fixture["cases"]
+        ids = [x["id"] for x in examples]
+        if len(ids) != len(set(ids)):
+            errors.append("duplicate evaluation fixture IDs")
+        for reviewer in ["terminology-review", "conceptual-model-review", "argument-review"]:
+            selected = [c for c in examples if c["reviewer"] == reviewer]
+            if {c["class"] for c in selected} != {"positive", "negative-control"}:
+                errors.append(f"missing positive/negative-control pair for {reviewer}")
+        schema = json.loads((ROOT / "schemas/finding.schema.json").read_text(encoding="utf-8"))
+        if not schema.get("required") or schema.get("additionalProperties") is not False:
+            errors.append("review schema lacks required/closed fields")
+    except (ValueError, OSError, KeyError, TypeError) as e:
+        errors.append(f"invalid pilot fixtures/review schema: {e}")
     for skillfile in sorted((ROOT / ".agents/skills").glob("*/SKILL.md")):
         name = skillfile.parent.name
         content = skillfile.read_text(encoding="utf-8")
