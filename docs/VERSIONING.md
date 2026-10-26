@@ -39,6 +39,6 @@ A skill can be **experimental** while included in development builds; released s
 
 ## Current package
 
-**`0.1.0-dev.0`, unreleased.** There are zero published skills in the package. `terminology-review` remains a draft candidate in [PR #12](https://github.com/interzettel/diakrisis/pull/12); structural tests passed, but comparative model behavior is not yet established.
+**`0.1.0-dev.0`, unreleased.** All seven coordinated skills were merged into `main` in [PR #17](https://github.com/interzettel/diakrisis/pull/17); [DIA-005](https://github.com/interzettel/diakrisis/issues/5) added the shared evidence/authority contract. Structural checks and source packaging are development work, not actual model behavior or a stable release. [Nonpublishing deterministic consumer-bundle procedure](COMPATIBILITY.md) is the source/upgrade/rollback policy; no GitHub Release has been published.
 
 There is no GitHub Pages deployment for Diakrisis. The repository README tracker is a projection of governed project records, not a release channel. This is a deliberate small-project tailoring of the [Project Record Standard](https://github.com/interzettel/project-record-standard).
