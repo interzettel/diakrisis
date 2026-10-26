@@ -237,7 +237,7 @@
       "groupId": "DIA-ADP",
       "milestoneId": "DIA-M3",
       "state": "active",
-      "sourceState": "seven-modules-merged-experimental",
+      "sourceState": "coordinator-offline-composition-implemented-structural-ci-passed;behavioral-acceptance-deferred",
       "required": true,
       "blocked": false,
       "dependsOn": [
@@ -250,7 +250,7 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/8",
       "criterion": "Method, communication, cross-document consistency and coordinator integration passes composition/conflict tests.",
-      "note": "Seven experimental skills including coordinator merged via PR #17. Integration effectiveness and final behavioral evaluation remain pending; work remains In progress.",
+      "note": "Owner-authorized build-first DIA-008 implementation: six specialist reports accepted through DIA-005 typed schemas; source-preserving deterministic coordinator in tools/coordinate_reviews.py, additive coordinated-report.schema.json, complete-link explicit grouping, unresolved disagreement, provenance digests, abstention/negative coverage, offline examples/tests, and expanded 19-file portable bundle with consumer links. Source PR #27 CI run 40417198629 passed full static, schema, reproducibility and refusal controls. DIA-007 actual evaluated reviewer quality and empirical composition remain deferred by owner; suite unreleased; issue In progress, no M3 acceptance or Done point.",
       "deferReason": null,
       "evidence": [
         {
@@ -260,6 +260,14 @@
         {
           "kind": "ci-verification",
           "source": "https://github.com/interzettel/diakrisis/actions/runs/40386332620"
+        },
+        {
+          "kind": "coordinator-implementation-pr",
+          "source": "https://github.com/interzettel/diakrisis/pull/27"
+        },
+        {
+          "kind": "coordinator-composition-ci",
+          "source": "https://github.com/interzettel/diakrisis/actions/runs/40417198629"
         }
       ]
     },
@@ -433,7 +441,7 @@
       "acceptanceRule": "unknown",
       "sourceAccepted": null,
       "unscopedWork": [],
-      "nextAction": "DIA-009 / #9 first Writing Kitchen source integration merged (WK PR #24), but live consumer CI and agent activation unresolved; DIA-010 / #10 reproducible offline package builder implemented in Diakrisis PR #26 and source tests passed. Neither work package is Done. Owner-deferred DIA-007/008 behavior and composition gates, accepted consumer verification, and stable release publication receipts remain outstanding. DIA-M3 acceptance unknown.",
+      "nextAction": "DIA-008 / #8 offline coordinator composition and 19-file portable bundle implemented in PR #27, structural CI green. DIA-009 Writing Kitchen source integration merged but consumer CI/native activation unverified; Spatial Laboratory PR #18 open awaiting explicit owner merge authorization. DIA-010 unreleased deterministic builder exists. No behavioral evaluation completed: DIA-007 and DIA-008/009 acceptance gates remain deferred, no stable package release. M3 acceptance unknown.",
       "priority": null,
       "sourceState": null,
       "evidence": []
@@ -449,7 +457,8 @@
     "2026-10-26: owner-approved MIT covers rights-controlled original Project Record Standard v0.4.1 material, documented at upstream PR #5 (merged); historical release artifact and third-party rights unchanged. DIA-002 remains blocked only on owner-deferred live/archive verification.",
     "2026-10-26: DIA-005 contract revision 1 implementation structurally verified in PR #24; no earned Done point while upstream DIA-002 and end-of-build verification remain pending. Required work stays 2/10.",
     "2026-10-26: Owner-authorized DIA-009 build-before-test exception; first consumer Writing Kitchen code merged with precise source manifest. No Done/acceptance credit until DIA-007 and consumer checks; WK CI failed, root cause unverified. Required work stays 2/10.",
-    "2026-10-26: DIA-010 development bundle ZIP/SHA256/compatibility code authored in PR #26, structurally verified in GitHub Actions; package 0.1.0-dev.0 is still unreleased and no publication evidence exists. Work stays 2/10 Done until remaining dependency/acceptance gates."
+    "2026-10-26: DIA-010 development bundle ZIP/SHA256/compatibility code authored in PR #26, structurally verified in GitHub Actions; package 0.1.0-dev.0 is still unreleased and no publication evidence exists. Work stays 2/10 Done until remaining dependency/acceptance gates.",
+    "2026-10-26: DIA-008 deterministic coordinator implemented with validated source-preserving grouping and complete-link checks (PR #27), and portable 19-file builder verified in CI; this is structural functionality, not accepted/validated reviewer behavior. Required work stays 2/10."
   ],
   "governance": {
     "purpose": "Portable review skills for conceptual, linguistic and scientific integrity (proposed, unapproved)",
