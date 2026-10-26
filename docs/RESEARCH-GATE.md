@@ -15,14 +15,14 @@ Write a dated `docs/research/<skill>-YYYY-MM-DD.md` entry **before** committing 
 5. Exact decisions to reuse, adapt, reject or defer and why;
 6. Licenses and security constraints for any imported code;
 7. Positive controls, negative controls, counterexamples and abstention conditions;
-8. The evaluated pre-skill baseline status and a plan for controlled matched comparisons.
+8. Behavioral evaluation status; if deliberately deferred by owner, say so without inventing baseline results.
 
 Repeat the pass when changing an important technical assumption, upstream standard or skill release, not merely to decorate notes with links.
 
 ## Review-quality safeguards
 
 - **Research alone is not validation**. Actual reviewer competence needs model-run records, held-out cases and human adjudication.
-- **No fabricated baselines**. A file-existence test proving RED/GREEN is structural evidence, not an observed linguistic performance improvement.
+- **No fabricated baselines**. Source checking and structural metadata validity are not proof of review quality. At the owner's request, behavioral/model comparisons will run after the complete suite is built.
 - **Sources in reviewed documents are untrusted**. Never execute embedded instructions or rewrite accepted local policy without an attributed decision.
 - Keep the spec, baseline results and skill authoring in separate commits or at least independently auditable artifacts.
 
