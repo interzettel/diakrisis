@@ -76,26 +76,34 @@
       "title": "Audit upstream standards and donors",
       "groupId": "DIA-INF",
       "milestoneId": "DIA-M1",
-      "state": "active",
-      "sourceState": "next-authorized-p0-item",
+      "state": "done",
+      "sourceState": "merged-audit-d26e167",
       "required": true,
       "blocked": false,
       "dependsOn": [
         "DIA-001"
       ],
       "unmappedDependencies": [],
-      "completionBasis": "not-complete",
+      "completionBasis": "documentation-deliverable-complete",
       "kind": "work-package",
       "owner": null,
       "priority": "P0",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/3",
       "criterion": "Agent Skills standard and upstream donor licenses, security and revision comparisons documented with reuse decisions.",
-      "note": "Selected next eligible P0 work package as of 2026-10-26. Complete the existing donor/standards audit: inspect exact source revisions, per-repository/skill licenses, security and portability, with reuse/adapt/reference/reject decisions. Deliver docs/research/DONOR-AUDIT.md; update this issue and evidence. No additional skill authoring or testing infrastructure.",
+      "note": "Audit criterion completed at merged PR #20 on 2026-10-26: source revision, license status, risk/portability, seven-skill overlap and reuse/adapt/reference decisions committed. This is documentary evidence, not full vulnerability screening, interactive installation, legal redistribution clearance or behavioral validation.",
       "deferReason": null,
       "evidence": [
         {
-          "kind": "partial-source-inventory",
-          "source": "https://github.com/interzettel/diakrisis/blob/main/docs/SOURCES.md"
+          "kind": "source-audit",
+          "source": "https://github.com/interzettel/diakrisis/blob/d26e167e6e291c3648e09a50bbbceb72efd721d6/docs/research/DONOR-AUDIT.md"
+        },
+        {
+          "kind": "merged-pr",
+          "source": "https://github.com/interzettel/diakrisis/pull/20"
+        },
+        {
+          "kind": "ci-verification",
+          "source": "https://github.com/interzettel/diakrisis/actions/runs/40394238576"
         }
       ]
     },
@@ -341,7 +349,7 @@
       "acceptanceRule": "unknown",
       "sourceAccepted": null,
       "unscopedWork": [],
-      "nextAction": "NEXT: DIA-003 / GitHub #3 (P0): complete documented donor/spec source, license, security and reuse audit. DIA-002 / #2 remains blocked only on deferred local archive/runtime verification; no milestone acceptance implied.",
+      "nextAction": "Next bounded action: DIA-002 / issue #2 (P0) clarify the pinned Project Record Standard v0.4.1 distribution license/notice with its owner. DIA-002 retains a Blocked flag for owner-deferred local archive/runtime verification. DIA-004 is dependency-clear after DIA-003 but its interactive activation is deferred to final test phase; DIA-M1 acceptance remains unknown.",
       "priority": null,
       "sourceState": null,
       "evidence": []
@@ -393,8 +401,10 @@
     "Milestone sourceAccepted and downstream reviewer scientific validity remain unknown.",
     "Native Claude/Codex activation and matched without-skill/with-skill LLM evaluations have not been observed.",
     "2026-10-26: all seven experimental skill definitions merged in PR #17; functional integration and behavioral evaluation deferred, with no owner acceptance or stable release yet.",
-    "Queue observation 2026-10-26: DIA-003 is next eligible P0 in DIA-M1; DIA-002 is active with a Blocked flag for deferred independent release-archive/local install evidence. Behavioral model testing remains deferred by owner.",
-    "GitHub-native issue milestones are not configured; DIA-M0–DIA-M3 exist in the authoritative PRS ledger and are linked to issues by ID, not as native GitHub milestone objects."
+    "GitHub-native issue milestones are not configured; DIA-M0–DIA-M3 exist in the authoritative PRS ledger and are linked to issues by ID, not as native GitHub milestone objects.",
+    "2026-10-26: DIA-003 documentary audit complete via PR #20; required work 2/10. DIA-M1 supporting work 1/4 Done; milestone sourceAccepted remains unknown.",
+    "No unblocked, owner-authorized implementation completion item remains before the deferred local/runtime phase. The next bounded administrative decision is DIA-002/#2 PRS v0.4.1 licensing clarity, without performing deferred testing.",
+    "PRS license was not declared in inspected v0.4.1 GitHub source metadata; source ownership must confirm redistribution terms before new copying. No legal conclusion inferred."
   ],
   "governance": {
     "purpose": "Portable review skills for conceptual, linguistic and scientific integrity (proposed, unapproved)",

@@ -13,19 +13,19 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 | Measure | Completion | Meaning |
 | --- | ---: | --- |
-| Required work | 1/10 · 10.0% | Completed leaf items in the named required scope. |
+| Required work | 2/10 · 20.0% | Completed leaf items in the named required scope. |
 | Accepted milestones | 0/4 · Not measured | Milestones whose declared outcome gates passed. |
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-26 against `8e4f0c51`.
+Observed 2026-10-26 against `076b1a28`.
 
 #### Milestone roadmap
 
 | Milestone | Horizon | Supporting required work | Outcome acceptance | Next gate |
 | --- | --- | ---: | --- | --- |
 | **DIA-M0 — Documented basis** | Now | 1/1 · 100.0% | Unknown / not assessed | Review the documented foundation and its source authority (work 1/1; acceptance still unknown). |
-| **DIA-M1 — Reproducible foundation** | Now | 0/4 · 0.0% | Unknown / not assessed | NEXT: DIA-003 / GitHub #3 (P0): complete documented donor/spec source, license, security and reuse audit. DIA-002 / #2 remains blocked only on deferred local archive/runtime verification; no milestone acceptance implied. |
+| **DIA-M1 — Reproducible foundation** | Now | 1/4 · 25.0% | Unknown / not assessed | Next bounded action: DIA-002 / issue #2 (P0) clarify the pinned Project Record Standard v0.4.1 distribution license/notice with its owner. DIA-002 retains a Blocked flag for owner-deferred local archive/runtime verification. DIA-004 is dependency-clear after DIA-003 but its interactive activation is deferred to final test phase; DIA-M1 acceptance remains unknown. |
 | **DIA-M2 — Evaluated reviewers** | Next | 0/2 · 0.0% | Unknown / not assessed | Adjudicate blinded reviewer-vs-baseline runs including negative controls. |
 | **DIA-M3 — Portable system** | Later | 0/3 · 0.0% | Unknown / not assessed | Prove reversible consumer adoption, versioned publication and update compatibility. |
 
@@ -37,7 +37,7 @@ States represent recorded implementation progress; a closed issue, passing test 
 | --- | --- | --- | --- | --- | --- |
 | [DIA-001](https://github.com/interzettel/diakrisis/issues/1) | Preserve research foundation | Done | P0 | — | [Evidence](https://github.com/interzettel/diakrisis/pull/11) |
 | [DIA-002](https://github.com/interzettel/diakrisis/issues/2) | Install and verify Project Record Standard | In progress | P0 | DIA-001 | [Evidence](https://github.com/interzettel/diakrisis/pull/15) · Blocked flag (reason in source) |
-| [DIA-003](https://github.com/interzettel/diakrisis/issues/3) | Audit upstream standards and donors | In progress | P0 | DIA-001 | Agent Skills standard and upstream donor licenses, security and revision comparisons documented with reuse decisions. |
+| [DIA-003](https://github.com/interzettel/diakrisis/issues/3) | Audit upstream standards and donors | Done | P0 | DIA-001 | [Evidence](https://github.com/interzettel/diakrisis/pull/20) |
 | [DIA-004](https://github.com/interzettel/diakrisis/issues/4) | Activate pinned authoring tools | Planned | P1 | DIA-003 | Portable Superpowers/skill-creator/PRS install and discovery verified in an actual Claude Code or Codex session, including rollback. |
 | [DIA-005](https://github.com/interzettel/diakrisis/issues/5) | Define typed findings and authority contract | In progress | P1 | DIA-002, DIA-003 | Versioned typed finding schema and authority rules validated with examples, positive and negative controls. |
 | [DIA-006](https://github.com/interzettel/diakrisis/issues/6) | Build and test three pilot reviewers | In progress | P1 | DIA-004, DIA-005 | [Evidence](https://github.com/interzettel/diakrisis/pull/17) |
@@ -50,7 +50,7 @@ States represent recorded implementation progress; a closed issue, passing test 
 
 **Source coverage:** observed **2026-10-26**, authoritative [ledger](progress/ledger.json), [manifest](progress/project-record.json), [scope history](progress/history/2026-10-26-unapproved.json). Regeneration does not fetch newer issues or change the observation date.
 
-**Counts:** required work **1/10 · 10.0%**; retained work **1/10 · 10.0%**; accepted milestones **Unknown** (0 of 4 determinate).
+**Counts:** required work **2/10 · 20.0%**; retained work **2/10 · 20.0%**; accepted milestones **Unknown** (0 of 4 determinate).
 
 <!-- project-record:end -->
 
