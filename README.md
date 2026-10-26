@@ -41,6 +41,9 @@ These are **planned modules** rather than a list of shipped capabilities. The in
 - [Agent Skills specification review](docs/AGENT-SKILLS-STANDARD.md)
 - [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
 - [Project-record adoption and source authority](progress/adoption.md)
+- [Proposed PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)
+- [Provisional review finding contract](docs/REVIEW-CONTRACT.md) and [RED-phase test cases](evals/README.md)
+- [Installation and verification](docs/INSTALLATION.md)
 
 ## Quality and non-goals
 
