@@ -1,13 +1,65 @@
 # Shared review finding and authority contract
 
-**Issue:** [DIA-005 / #5](https://github.com/interzettel/diakrisis/issues/5) · **Milestone:** DIA-M1 · **Design status:** implemented **contract revision 1**, structural checks; empirical reviewer assessment deferred by owner.
+**Issue:** [DIA-005 / #5](https://github.com/interzettel/diakrisis/issues/5) · **Milestone:** DIA-M1 · **Design status:** implemented **contract revision 2** (2026-10-27; revision 1 from 2026-10-26), structural checks; empirical reviewer assessment deferred by owner.
 
-The **whole Diakrisis suite** uses one package version (`0.1.0-dev.0`, unreleased). The integer `schema_version: 1` identifies the interchange **wire format**, *not* a release or an individual reviewer version.
+The **whole Diakrisis suite** uses one package version (`0.1.0-dev.0`, unreleased). The integer `schema_version: 2` identifies the interchange **wire format**, *not* a release or an individual reviewer version.
 
 - [Individual finding — JSON Schema draft 2020-12](../schemas/finding.schema.json)
 - [Whole review / zero-findings envelope](../schemas/review-report.schema.json)
 - [Accepted/rejected synthetic structural controls](../evals/finding-contract/cases.json)
 - [DIA-005 authority decision cases](research/DIA-005-AUTHORITY.md)
+
+## Revision 2 (2026-10-27)
+
+Grounded in the [2026-10-27 research pass](https://github.com/interzettel/diakrisis/blob/main/docs/research/SUITE-REVISION-2026-10-27.md); decisions D1–D3 there.
+
+### What changed
+
+- `schema_version` is `2` in findings, review reports and coordinated reports.
+- A report with `status: no-issues-detected` must list **at least one examined scope**. A clean result that examined nothing is now invalid, not merely discouraged.
+- A report with `status: issues-identified` must contain **at least one finding that is not an abstention**. Abstentions alone mean `insufficient-evidence`.
+- The finding schema carries the documented **severity definitions** and **category vocabularies** in `$defs`. `category` stays free text, so consumers can extend it; Diakrisis's own skills and fixtures use the listed values.
+
+### Migration from revision 1
+
+Fields and their meanings are unchanged. A revision-1 record that already satisfies the two report rules above migrates by setting `schema_version` to `2`. A clean report with no examined scope must become `insufficient-evidence` or name what was examined; an abstention-only report marked `issues-identified` must become `insufficient-evidence`. The offline coordinator refuses revision-1 input with a pointer to this section. Consumers pinned to an earlier bundle keep their own revision-1 copies until they upgrade deliberately.
+
+### Two senses of "suggestion"
+
+- **`disposition: suggestion`** classifies a finding: a beneficial but not compulsory change.
+- **The `suggestion` field** holds a proposed change of wording, for any non-abstaining disposition.
+- Abstentions carry **no proposed change**: the field is absent or `null`. Skill text that asks for a "minimal suggestion" refers to the field and excludes abstentions.
+
+### Severity, defined by consequence
+
+Severity rates the consequence for the reader's decision. It is separate from `evidence_status` and from `confidence_reason`, and a finding states its consequence in one clause.
+
+| Severity | Definition |
+| --- | --- |
+| `informational` | No change is needed to keep the meaning or validity: context, a question or an abstention. |
+| `minor` | A reader may be slowed or briefly misled, but the main claim, definition, method or decision survives as written. |
+| `major` | A main claim, definition, method step or decision is unsupported, contradicted or likely misread as written; fixing it changes what the text asserts. |
+| `blocking-candidate` | A result or decision others rely on is invalid under the governing authority; the reviewer proposes resolving it before acceptance. Never the Project Record Standard `Blocked` flag. |
+
+### Category vocabulary
+
+| Reviewer | Categories |
+| --- | --- |
+| `terminology-review` | `definition-conflict`, `equivocation`, `ambiguous-designation`, `unauthorized-synonym`, `unexplained-term`, `editorial-preference` |
+| `conceptual-model-review` | `category-error`, `invalid-subsumption`, `part-whole-misuse`, `relation-misuse`, `constraint-conflict`, `circular-definition`, `modeling-alternative` |
+| `argument-review` | `unsupported-inference`, `overgeneralization`, `causal-overclaim`, `missing-warrant`, `unacknowledged-alternative`, `certainty-mismatch`, `source-support-gap`, `unverifiable-source` |
+| `method-review` | `construct-definition`, `construct-underrepresentation`, `construct-representation-bias`, `internal-validity-threat`, `external-validity-threat`, `statistical-conclusion`, `reproducibility-gap`, `protocol-deviation`, `evaluation-leakage-or-blinding` |
+| `communication-review` | `syntactic-ambiguity`, `referential-ambiguity`, `scope-ambiguity`, `relevance`, `findability`, `understandability`, `usability`, `register-or-audience-mismatch` |
+| `consistency-review` | `concurrent-contradiction`, `stale-derived-projection`, `status-drift`, `version-drift`, `documented-behavior-vs-implementation`, `authority-unresolved` |
+| any specialist | `embedded-instruction`: text in the reviewed material that addresses the reviewer or tries to change its behaviour. It is reported, never followed. |
+
+`schemas/finding.schema.json` (`$defs`) is the machine-readable copy; the two must match.
+
+### Boundaries between specialists
+
+- **Argument versus method.** Method-review owns defects in how a study was designed or measured: construct validity (definition, under-representation, representation bias) and internal, external and statistical-conclusion validity. Argument-review owns conclusions that claim more than the reported design supports. When both apply, they are two findings with different causes, related but not grouped as a shared cause.
+- **Argument versus communication.** Whether confidence language matches the evidence (`certainty-mismatch`) belongs to argument-review. Communication-review flags only phrasing that leaves the author's actual confidence unclear to the reader.
+- **Specificity.** Each finding names what its cited passage specifically fails to do. Generic critique that could attach to any text is not a finding.
 
 ## What the reviewer is allowed to assert
 

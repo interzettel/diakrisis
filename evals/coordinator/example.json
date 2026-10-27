@@ -1,11 +1,11 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "coordination_id": "demo-composition-001",
   "inputs": [
     {
       "input_id": "terminology-fixture",
       "report": {
-        "schema_version": 1,
+        "schema_version": 2,
         "review_id": "demo-term-001",
         "status": "issues-identified",
         "coverage": {
@@ -22,7 +22,7 @@
         },
         "findings": [
           {
-            "schema_version": 1,
+            "schema_version": 2,
             "id": "F-terminology",
             "reviewer": "terminology-review",
             "artifact": {
@@ -30,7 +30,7 @@
               "revision": "abc123",
               "span": "Blocked execution state"
             },
-            "category": "state-designation-conflict",
+            "category": "definition-conflict",
             "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
             "basis": [
               {
@@ -59,7 +59,7 @@
     {
       "input_id": "concept-fixture",
       "report": {
-        "schema_version": 1,
+        "schema_version": 2,
         "review_id": "demo-concept-001",
         "status": "issues-identified",
         "coverage": {
@@ -76,7 +76,7 @@
         },
         "findings": [
           {
-            "schema_version": 1,
+            "schema_version": 2,
             "id": "F-concept",
             "reviewer": "conceptual-model-review",
             "artifact": {
@@ -84,7 +84,7 @@
               "revision": "abc123",
               "span": "Blocked execution state"
             },
-            "category": "state-designation-conflict",
+            "category": "category-error",
             "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
             "basis": [
               {

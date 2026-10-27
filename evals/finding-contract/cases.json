@@ -1,10 +1,10 @@
 {
   "kind": "synthetic structural controls — NOT language-model evaluation",
-  "contract_revision": 1,
+  "contract_revision": 2,
   "source": "DIA-005",
   "valid_findings": [
     {
-      "schema_version": 1,
+      "schema_version": 2,
       "id": "F-001",
       "reviewer": "terminology-review",
       "artifact": {
@@ -12,7 +12,7 @@
         "revision": "abc123",
         "span": "Blocked execution state"
       },
-      "category": "state-designation-conflict",
+      "category": "definition-conflict",
       "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
       "basis": [
         {
@@ -33,7 +33,7 @@
       "issue_key": "blocked-as-state"
     },
     {
-      "schema_version": 1,
+      "schema_version": 2,
       "id": "F-002",
       "reviewer": "terminology-review",
       "artifact": {
@@ -41,7 +41,7 @@
         "revision": "abc123",
         "span": "Blocked execution state"
       },
-      "category": "state-designation-conflict",
+      "category": "definition-conflict",
       "claim": "Unclear which of two unversioned glossaries is binding; a conflict cannot currently be established.",
       "basis": [],
       "evidence_status": "unknown",
@@ -53,7 +53,7 @@
       "issue_key": "blocked-as-state"
     },
     {
-      "schema_version": 1,
+      "schema_version": 2,
       "id": "F-003",
       "reviewer": "communication-review",
       "artifact": {
@@ -61,7 +61,7 @@
         "revision": "abc123",
         "span": "Blocked execution state"
       },
-      "category": "reader-ambiguity",
+      "category": "referential-ambiguity",
       "claim": "The pronoun could refer to either reviewer or author.",
       "basis": [],
       "evidence_status": "inferred",
@@ -76,7 +76,7 @@
     {
       "reason": "Unobserved inference cannot be a confirmed conflict",
       "record": {
-        "schema_version": 1,
+        "schema_version": 2,
         "id": "F-001",
         "reviewer": "terminology-review",
         "artifact": {
@@ -84,7 +84,7 @@
           "revision": "abc123",
           "span": "Blocked execution state"
         },
-        "category": "state-designation-conflict",
+        "category": "definition-conflict",
         "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
         "basis": [
           {
@@ -108,7 +108,7 @@
     {
       "reason": "Uninspected source cannot substantiate a confirmed conflict",
       "record": {
-        "schema_version": 1,
+        "schema_version": 2,
         "id": "F-001",
         "reviewer": "terminology-review",
         "artifact": {
@@ -116,7 +116,7 @@
           "revision": "abc123",
           "span": "Blocked execution state"
         },
-        "category": "state-designation-conflict",
+        "category": "definition-conflict",
         "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
         "basis": [
           {
@@ -140,7 +140,7 @@
     {
       "reason": "Confirmed conflict needs a source basis",
       "record": {
-        "schema_version": 1,
+        "schema_version": 2,
         "id": "F-001",
         "reviewer": "terminology-review",
         "artifact": {
@@ -148,7 +148,7 @@
           "revision": "abc123",
           "span": "Blocked execution state"
         },
-        "category": "state-designation-conflict",
+        "category": "definition-conflict",
         "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
         "basis": [],
         "evidence_status": "observed",
@@ -163,7 +163,7 @@
     {
       "reason": "Abstention is not a blocking verdict",
       "record": {
-        "schema_version": 1,
+        "schema_version": 2,
         "id": "F-002",
         "reviewer": "terminology-review",
         "artifact": {
@@ -171,7 +171,7 @@
           "revision": "abc123",
           "span": "Blocked execution state"
         },
-        "category": "state-designation-conflict",
+        "category": "definition-conflict",
         "claim": "Unclear which of two unversioned glossaries is binding; a conflict cannot currently be established.",
         "basis": [],
         "evidence_status": "unknown",
@@ -186,7 +186,7 @@
     {
       "reason": "Unknown wire contract revision",
       "record": {
-        "schema_version": 2,
+        "schema_version": 3,
         "id": "F-001",
         "reviewer": "terminology-review",
         "artifact": {
@@ -194,7 +194,7 @@
           "revision": "abc123",
           "span": "Blocked execution state"
         },
-        "category": "state-designation-conflict",
+        "category": "definition-conflict",
         "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
         "basis": [
           {
@@ -218,7 +218,7 @@
     {
       "reason": "Coordinator is not a finding-producing specialist",
       "record": {
-        "schema_version": 1,
+        "schema_version": 2,
         "id": "F-001",
         "reviewer": "review-coordinator",
         "artifact": {
@@ -250,7 +250,7 @@
     {
       "reason": "Extra fields disallowed",
       "record": {
-        "schema_version": 1,
+        "schema_version": 2,
         "id": "F-001",
         "reviewer": "terminology-review",
         "artifact": {
@@ -258,7 +258,7 @@
           "revision": "abc123",
           "span": "Blocked execution state"
         },
-        "category": "state-designation-conflict",
+        "category": "definition-conflict",
         "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
         "basis": [
           {
@@ -283,7 +283,7 @@
     {
       "reason": "Missing exact local anchor",
       "record": {
-        "schema_version": 1,
+        "schema_version": 2,
         "id": "F-001",
         "reviewer": "terminology-review",
         "artifact": {
@@ -291,7 +291,7 @@
           "revision": "abc123",
           "span": ""
         },
-        "category": "state-designation-conflict",
+        "category": "definition-conflict",
         "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
         "basis": [
           {
@@ -315,7 +315,7 @@
     {
       "reason": "Disputed source applicability cannot substantiate confirmed conflict",
       "record": {
-        "schema_version": 1,
+        "schema_version": 2,
         "id": "F-001",
         "reviewer": "terminology-review",
         "artifact": {
@@ -323,7 +323,7 @@
           "revision": "abc123",
           "span": "Blocked execution state"
         },
-        "category": "state-designation-conflict",
+        "category": "definition-conflict",
         "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
         "basis": [
           {
@@ -347,7 +347,7 @@
     {
       "reason": "Abstention must not prescribe a silent edit",
       "record": {
-        "schema_version": 1,
+        "schema_version": 2,
         "id": "F-002",
         "reviewer": "terminology-review",
         "artifact": {
@@ -355,7 +355,7 @@
           "revision": "abc123",
           "span": "Blocked execution state"
         },
-        "category": "state-designation-conflict",
+        "category": "definition-conflict",
         "claim": "Unclear which of two unversioned glossaries is binding; a conflict cannot currently be established.",
         "basis": [],
         "evidence_status": "unknown",
@@ -366,11 +366,43 @@
         "requires_owner_decision": true,
         "issue_key": "blocked-as-state"
       }
+    },
+    {
+      "reason": "Revision 1 record is not valid under contract revision 2",
+      "record": {
+        "schema_version": 1,
+        "id": "F-rev1",
+        "reviewer": "terminology-review",
+        "artifact": {
+          "path": "docs/task-policy.md",
+          "revision": "abc123",
+          "span": "Blocked execution state"
+        },
+        "category": "definition-conflict",
+        "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
+        "basis": [
+          {
+            "source": "standards/STANDARD.md",
+            "revision": "v0.4.1",
+            "span": "Blocked is a flag, not an execution state",
+            "reason": "The accepted state model distinguishes state from blocked flag.",
+            "verification": "inspected",
+            "applicability": "applicable"
+          }
+        ],
+        "evidence_status": "observed",
+        "disposition": "confirmed-conflict",
+        "severity": "major",
+        "confidence_reason": "Both exact clauses are available and concern the same versioned project vocabulary.",
+        "suggestion": "Describe the current execution state and the independent blocked flag separately.",
+        "requires_owner_decision": true,
+        "issue_key": "blocked-as-state"
+      }
     }
   ],
   "valid_reports": [
     {
-      "schema_version": 1,
+      "schema_version": 2,
       "review_id": "R-conflict",
       "status": "issues-identified",
       "coverage": {
@@ -385,7 +417,7 @@
       },
       "findings": [
         {
-          "schema_version": 1,
+          "schema_version": 2,
           "id": "F-001",
           "reviewer": "terminology-review",
           "artifact": {
@@ -393,7 +425,7 @@
             "revision": "abc123",
             "span": "Blocked execution state"
           },
-          "category": "state-designation-conflict",
+          "category": "definition-conflict",
           "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
           "basis": [
             {
@@ -419,7 +451,7 @@
       ]
     },
     {
-      "schema_version": 1,
+      "schema_version": 2,
       "review_id": "R-abstain",
       "status": "insufficient-evidence",
       "coverage": {
@@ -435,7 +467,7 @@
       },
       "findings": [
         {
-          "schema_version": 1,
+          "schema_version": 2,
           "id": "F-002",
           "reviewer": "terminology-review",
           "artifact": {
@@ -443,7 +475,7 @@
             "revision": "abc123",
             "span": "Blocked execution state"
           },
-          "category": "state-designation-conflict",
+          "category": "definition-conflict",
           "claim": "Unclear which of two unversioned glossaries is binding; a conflict cannot currently be established.",
           "basis": [],
           "evidence_status": "unknown",
@@ -460,7 +492,7 @@
       ]
     },
     {
-      "schema_version": 1,
+      "schema_version": 2,
       "review_id": "R-none",
       "status": "no-issues-detected",
       "coverage": {
@@ -480,7 +512,7 @@
       ]
     },
     {
-      "schema_version": 1,
+      "schema_version": 2,
       "review_id": "R-suggestion",
       "status": "issues-identified",
       "coverage": {
@@ -494,7 +526,7 @@
       },
       "findings": [
         {
-          "schema_version": 1,
+          "schema_version": 2,
           "id": "F-003",
           "reviewer": "communication-review",
           "artifact": {
@@ -502,7 +534,7 @@
             "revision": "abc123",
             "span": "Blocked execution state"
           },
-          "category": "reader-ambiguity",
+          "category": "referential-ambiguity",
           "claim": "The pronoun could refer to either reviewer or author.",
           "basis": [],
           "evidence_status": "inferred",
@@ -520,7 +552,7 @@
     {
       "reason": "No issues detected cannot hide a finding",
       "record": {
-        "schema_version": 1,
+        "schema_version": 2,
         "review_id": "R-none",
         "status": "no-issues-detected",
         "coverage": {
@@ -536,7 +568,7 @@
         },
         "findings": [
           {
-            "schema_version": 1,
+            "schema_version": 2,
             "id": "F-001",
             "reviewer": "terminology-review",
             "artifact": {
@@ -544,7 +576,7 @@
               "revision": "abc123",
               "span": "Blocked execution state"
             },
-            "category": "state-designation-conflict",
+            "category": "definition-conflict",
             "claim": "The passage treats Blocked as a workflow state although the accepted project standard models it as a separate flag.",
             "basis": [
               {
@@ -573,7 +605,7 @@
     {
       "reason": "Issues identified must contain at least one finding",
       "record": {
-        "schema_version": 1,
+        "schema_version": 2,
         "review_id": "R-conflict",
         "status": "issues-identified",
         "coverage": {
@@ -589,6 +621,68 @@
         "findings": [],
         "limitations": [
           "Owner has not accepted a replacement passage."
+        ]
+      }
+    },
+    {
+      "reason": "No issues detected requires at least one examined scope",
+      "record": {
+        "schema_version": 2,
+        "review_id": "R-blind",
+        "status": "no-issues-detected",
+        "coverage": {
+          "examined": [],
+          "not_examined": [
+            "Other chapters"
+          ]
+        },
+        "findings": [],
+        "limitations": [
+          "No issues detected only in examined paragraph, not a validity certificate."
+        ]
+      }
+    },
+    {
+      "reason": "Issues identified cannot consist only of abstentions",
+      "record": {
+        "schema_version": 2,
+        "review_id": "R-only-abstentions",
+        "status": "issues-identified",
+        "coverage": {
+          "examined": [
+            {
+              "source": "docs/task-policy.md",
+              "scope": "authorities referenced by passage"
+            }
+          ],
+          "not_examined": [
+            "Original accepted glossary was unavailable."
+          ]
+        },
+        "findings": [
+          {
+            "schema_version": 2,
+            "id": "F-002",
+            "reviewer": "terminology-review",
+            "artifact": {
+              "path": "docs/task-policy.md",
+              "revision": "abc123",
+              "span": "Blocked execution state"
+            },
+            "category": "definition-conflict",
+            "claim": "Unclear which of two unversioned glossaries is binding; a conflict cannot currently be established.",
+            "basis": [],
+            "evidence_status": "unknown",
+            "disposition": "abstain",
+            "severity": "informational",
+            "confidence_reason": "The available material lacks a precedence rule and source revision.",
+            "suggestion": null,
+            "requires_owner_decision": true,
+            "issue_key": "blocked-as-state"
+          }
+        ],
+        "limitations": [
+          "Cannot determine governing source order."
         ]
       }
     }

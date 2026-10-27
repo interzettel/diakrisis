@@ -20,6 +20,7 @@ from referencing import Registry, Resource
 
 ROOT = Path(__file__).resolve().parents[1]
 DIR = ROOT / "schemas"
+CONTRACT_REVISION = 2
 
 
 def canonical(item: object) -> bytes:
@@ -48,7 +49,12 @@ def validate(check: Draft202012Validator, obj: object, label: str) -> None:
 def compose(payload: dict) -> dict:
     if not isinstance(payload, dict) or set(payload) != {
         "schema_version", "coordination_id", "inputs", "relations"
-    } or payload["schema_version"] != 1:
+    }:
+        raise ValueError("unsupported coordinator input format")
+    if payload["schema_version"] == 1:
+        raise ValueError("contract revision 1 input: migrate to schema_version 2 "
+                         "(see docs/REVIEW-CONTRACT.md, migration from revision 1)")
+    if payload["schema_version"] != CONTRACT_REVISION:
         raise ValueError("unsupported coordinator input format")
     coord_id = payload["coordination_id"]
     if not isinstance(coord_id, str) or not coord_id:
@@ -191,10 +197,10 @@ def compose(payload: dict) -> dict:
     else:
         status = "issues-identified"
     result = {
-        "schema_version": 1,
+        "schema_version": CONTRACT_REVISION,
         "coordination_id": coord_id,
         "report": {
-            "schema_version": 1,
+            "schema_version": CONTRACT_REVISION,
             "review_id": coord_id,
             "status": status,
             "coverage": {

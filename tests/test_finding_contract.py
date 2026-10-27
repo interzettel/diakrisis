@@ -22,7 +22,9 @@ class FindingContractTests(unittest.TestCase):
     def test_schemas_are_valid_draft_2020_12(self):
         Draft202012Validator.check_schema(FINDING)
         Draft202012Validator.check_schema(REPORT)
-        self.assertEqual(CASES["contract_revision"], 1)
+        self.assertEqual(CASES["contract_revision"], 2)
+        self.assertEqual(FINDING["properties"]["schema_version"], {"const": 2, "description": FINDING["properties"]["schema_version"]["description"]})
+        self.assertEqual(REPORT["properties"]["schema_version"]["const"], 2)
         self.assertIn("finding.schema.json", REPORT["properties"]["findings"]["items"]["$ref"])
 
     def test_accepted_findings(self):
@@ -53,6 +55,49 @@ class FindingContractTests(unittest.TestCase):
             with self.subTest(reason=case["reason"]):
                 self.assertTrue(list(REPORT_CHECK.iter_errors(case["record"])),
                                 "An invalid report was accepted: " + case["reason"])
+
+    def test_revision_2_report_rules(self):
+        # Revision 2: a clean result needs examined scope; "issues identified"
+        # needs at least one finding that is not an abstention.
+        reasons = {c["reason"] for c in CASES["invalid_reports"]}
+        self.assertIn("No issues detected requires at least one examined scope", reasons)
+        self.assertIn("Issues identified cannot consist only of abstentions", reasons)
+
+    def test_vocabulary_covers_every_specialist(self):
+        defs = FINDING["$defs"]
+        for reviewer in FINDING["properties"]["reviewer"]["enum"]:
+            with self.subTest(reviewer=reviewer):
+                self.assertTrue(defs["category-" + reviewer]["enum"])
+        self.assertIn("embedded-instruction", defs["category-any-reviewer"]["enum"])
+        levels = [option["const"] for option in defs["severity"]["oneOf"]]
+        self.assertEqual(levels, ["informational", "minor", "major", "blocking-candidate"])
+        self.assertTrue(all(option["description"] for option in defs["severity"]["oneOf"]))
+
+    def test_repository_fixtures_use_the_documented_categories(self):
+        defs = FINDING["$defs"]
+        records = list(CASES["valid_findings"])
+        for report in CASES["valid_reports"]:
+            records.extend(report["findings"])
+        for record in records:
+            with self.subTest(id=record["id"]):
+                allowed = set(defs["category-" + record["reviewer"]]["enum"])
+                allowed |= set(defs["category-any-reviewer"]["enum"])
+                self.assertIn(record["category"], allowed)
+
+    def test_contract_document_matches_schema_vocabulary(self):
+        import re
+        text = (ROOT / "docs/REVIEW-CONTRACT.md").read_text(encoding="utf-8")
+        defs = FINDING["$defs"]
+        for reviewer in FINDING["properties"]["reviewer"]["enum"]:
+            with self.subTest(reviewer=reviewer):
+                row = re.search(r"^\| `" + re.escape(reviewer) + r"` \| (.+) \|$", text, re.M)
+                self.assertIsNotNone(row, "category row missing in REVIEW-CONTRACT.md")
+                documented = re.findall(r"`([a-z-]+)`", row.group(1))
+                self.assertEqual(documented, defs["category-" + reviewer]["enum"])
+        for option in defs["severity"]["oneOf"]:
+            with self.subTest(severity=option["const"]):
+                self.assertIn("| `" + option["const"] + "` | " + option["description"].replace(
+                    "Project Record Standard Blocked flag", "Project Record Standard `Blocked` flag") + " |", text)
 
     def test_contract_bounds_no_fabricated_efficacy(self):
         self.assertNotIn("accuracy", FINDING["properties"])

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/interzettel/diakrisis/schemas/finding.schema.json",
-  "title": "Diakrisis evidence-linked finding — contract revision 1 (experimental)",
+  "title": "Diakrisis evidence-linked finding — contract revision 2 (experimental)",
   "description": "Machine-readable evidence-bound advisory finding. Contract revision is independent of the single Diakrisis suite SemVer; schema validity does not imply factual accuracy.",
   "type": "object",
   "additionalProperties": false,
@@ -21,8 +21,8 @@
   ],
   "properties": {
     "schema_version": {
-      "const": 1,
-      "description": "Wire-format revision, not an individual skill version."
+      "const": 2,
+      "description": "Wire-format revision, not an individual skill version. Revision 2 since 2026-10-27; see REVIEW-CONTRACT.md for migration from revision 1."
     },
     "id": {
       "type": "string",
@@ -67,7 +67,8 @@
     },
     "category": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "Free text so consumers can extend it. Diakrisis skills and fixtures use the documented vocabulary in $defs (category-<reviewer> and category-any-reviewer)."
     },
     "claim": {
       "type": "string",
@@ -140,13 +141,8 @@
       ]
     },
     "severity": {
-      "enum": [
-        "informational",
-        "minor",
-        "major",
-        "blocking-candidate"
-      ],
-      "description": "Impact estimate, not workflow blocked state or approval."
+      "$ref": "#/$defs/severity",
+      "description": "Impact estimate by consequence for the reader's decision; not a workflow blocked state, approval or confidence."
     },
     "confidence_reason": {
       "type": "string",
@@ -245,5 +241,108 @@
         }
       }
     }
-  ]
+  ],
+  "$defs": {
+    "severity": {
+      "description": "Severity levels defined by consequence (contract revision 2).",
+      "oneOf": [
+        {
+          "const": "informational",
+          "description": "No change is needed to keep the meaning or validity: context, a question or an abstention."
+        },
+        {
+          "const": "minor",
+          "description": "A reader may be slowed or briefly misled, but the main claim, definition, method or decision survives as written."
+        },
+        {
+          "const": "major",
+          "description": "A main claim, definition, method step or decision is unsupported, contradicted or likely misread as written; fixing it changes what the text asserts."
+        },
+        {
+          "const": "blocking-candidate",
+          "description": "A result or decision others rely on is invalid under the governing authority; the reviewer proposes resolving it before acceptance. Never the Project Record Standard Blocked flag."
+        }
+      ]
+    },
+    "category-terminology-review": {
+      "description": "Documented categories for terminology-review (annotation; category stays free text).",
+      "enum": [
+        "definition-conflict",
+        "equivocation",
+        "ambiguous-designation",
+        "unauthorized-synonym",
+        "unexplained-term",
+        "editorial-preference"
+      ]
+    },
+    "category-conceptual-model-review": {
+      "description": "Documented categories for conceptual-model-review (annotation; category stays free text).",
+      "enum": [
+        "category-error",
+        "invalid-subsumption",
+        "part-whole-misuse",
+        "relation-misuse",
+        "constraint-conflict",
+        "circular-definition",
+        "modeling-alternative"
+      ]
+    },
+    "category-argument-review": {
+      "description": "Documented categories for argument-review (annotation; category stays free text).",
+      "enum": [
+        "unsupported-inference",
+        "overgeneralization",
+        "causal-overclaim",
+        "missing-warrant",
+        "unacknowledged-alternative",
+        "certainty-mismatch",
+        "source-support-gap",
+        "unverifiable-source"
+      ]
+    },
+    "category-method-review": {
+      "description": "Documented categories for method-review (annotation; category stays free text).",
+      "enum": [
+        "construct-definition",
+        "construct-underrepresentation",
+        "construct-representation-bias",
+        "internal-validity-threat",
+        "external-validity-threat",
+        "statistical-conclusion",
+        "reproducibility-gap",
+        "protocol-deviation",
+        "evaluation-leakage-or-blinding"
+      ]
+    },
+    "category-communication-review": {
+      "description": "Documented categories for communication-review (annotation; category stays free text).",
+      "enum": [
+        "syntactic-ambiguity",
+        "referential-ambiguity",
+        "scope-ambiguity",
+        "relevance",
+        "findability",
+        "understandability",
+        "usability",
+        "register-or-audience-mismatch"
+      ]
+    },
+    "category-consistency-review": {
+      "description": "Documented categories for consistency-review (annotation; category stays free text).",
+      "enum": [
+        "concurrent-contradiction",
+        "stale-derived-projection",
+        "status-drift",
+        "version-drift",
+        "documented-behavior-vs-implementation",
+        "authority-unresolved"
+      ]
+    },
+    "category-any-reviewer": {
+      "description": "Categories any specialist may use.",
+      "enum": [
+        "embedded-instruction"
+      ]
+    }
+  }
 }
