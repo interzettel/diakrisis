@@ -32,7 +32,7 @@ The output must **not exist**. Nothing is fetched, no reviewed documents are cha
 }
 ```
 
-Every input report must follow [review-report.schema.json](../schemas/review-report.schema.json), and each embedded finding must follow [finding.schema.json](../schemas/finding.schema.json). Specialist reports must have unique `review_id` and globally unique finding `id`. A coordinator **cannot invent, silently repair or reclassify missing findings** to make malformed input pass.
+Every input report must follow [review-report.schema.json](../schemas/review-report.schema.json), and each embedded finding must follow [finding.schema.json](../schemas/finding.schema.json). Specialist reports must have unique `review_id` and globally unique finding `id`, and the `coordination_id` must differ from every input `review_id` (it becomes the combined report's own ID). A coordinator **cannot invent, silently repair or reclassify missing findings** to make malformed input pass.
 
 The additive [coordinated-report.schema.json](../schemas/coordinated-report.schema.json) wraps the existing, unchanged `report` format with `sources` (origin review IDs and deterministic SHA-256 of each submitted report's canonical JSON), `groups`, `disagreements` and an explicit relationship policy. **This does not change the existing finding/review wire revision** or give any reviewer a separate version.
 
@@ -52,14 +52,14 @@ The combined `report` is valid against DIA-005's original schema. It unions exac
 
 - At least one non-abstention finding → `issues-identified`.
 - Only abstentions or missing authority → `insufficient-evidence`.
-- Zero findings **and** every included source reports `no-issues-detected` and at least one explicit examined scope → `no-issues-detected`, *not* certification.
+- Zero findings **and** every included source reports `no-issues-detected` **and every included source lists at least one explicit examined scope** → `no-issues-detected`, *not* certification. A source that claims no issues but examined nothing makes the whole result `insufficient-evidence`; it cannot borrow another source's coverage.
 - Zero findings without that coverage → `insufficient-evidence`.
 
 This is **deterministic composition/structural evaluation**, not paired human-rated LLM behavior, independent reviewers, secure private-data handling, genuine external-source verification, or owner acceptance. The deferred DIA-007 evaluation and DIA-M3 gate remain outstanding.
 
 ## Safety and boundary
 
-The CLI reads one explicitly authorized local JSON file and creates one new local output file; no network access, automatic repairs, publishing, execution of text from reviewed artifacts, API credentials, global installs or repository mutation is performed. As with other Diakrisis tools, **do not feed confidential manuscripts or unapproved personal records** into public CI fixtures. Use synthetic examples only in this repository.
+The CLI reads one explicitly authorized local JSON file and creates one new local output file. It refuses an input that is a symlink and any output path that already exists, including a dangling symlink, and creates the output with an exclusive open so it never writes through a link; no network access, automatic repairs, publishing, execution of text from reviewed artifacts, API credentials, global installs or repository mutation is performed. As with other Diakrisis tools, **do not feed confidential manuscripts or unapproved personal records** into public CI fixtures. Use synthetic examples only in this repository.
 
 The companion test cases in [tests/test_coordinator_composition.py](../tests/test_coordinator_composition.py) test structural outcomes, source preservation, disagreement and non-transitivity refusal. Tests cannot attest reviewer epistemic reliability.
 

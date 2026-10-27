@@ -176,6 +176,52 @@ class CoordinatorTests(unittest.TestCase):
             self.assertNotEqual(second.returncode, 0)
             self.assertEqual(result.read_bytes(), original)
 
+    def test_clean_source_that_examined_nothing_cannot_make_aggregate_clean(self):
+        blind = report("R-blind", [])
+        blind["coverage"]["examined"] = []
+        combined = compose(bundle(blind, report("R-seen", [])))
+        self.assertEqual(combined["report"]["status"], "insufficient-evidence")
+
+    def test_coordination_id_must_not_reuse_an_input_review_id(self):
+        with self.assertRaisesRegex(ValueError, "coordination ID"):
+            compose(bundle(report("coord-001", [])))
+
+    def _run_cli(self, source, result):
+        import subprocess
+        import sys
+        return subprocess.run([sys.executable, str(ROOT / "tools/coordinate_reviews.py"),
+                               "--input", str(source), "--output", str(result)],
+                              capture_output=True, text=True)
+
+    def test_cli_refuses_symlinked_input(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            real = root / "source.json"
+            real.write_text(json.dumps(bundle(report("R-a", []))), encoding="utf-8")
+            alias = root / "alias.json"
+            try:
+                alias.symlink_to(real)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"cannot create symlink: {exc}")
+            run = self._run_cli(alias, root / "out.json")
+            self.assertNotEqual(run.returncode, 0)
+            self.assertFalse((root / "out.json").exists())
+
+    def test_cli_refuses_output_that_is_a_dangling_symlink(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            source = root / "source.json"
+            source.write_text(json.dumps(bundle(report("R-a", []))), encoding="utf-8")
+            elsewhere = root / "elsewhere.json"
+            output = root / "out.json"
+            try:
+                output.symlink_to(elsewhere)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"cannot create symlink: {exc}")
+            run = self._run_cli(source, output)
+            self.assertNotEqual(run.returncode, 0)
+            self.assertFalse(elsewhere.exists())
+
 
 if __name__ == "__main__":
     unittest.main()
