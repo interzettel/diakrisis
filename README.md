@@ -18,7 +18,7 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-27 against `0ac99ee5`.
+Observed 2026-10-27 against `c0288c65`.
 
 #### Milestone roadmap
 
