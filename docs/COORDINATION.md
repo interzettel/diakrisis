@@ -16,7 +16,7 @@ The output must **not exist**. Nothing is fetched, no reviewed documents are cha
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "coordination_id": "user-provided-review-id",
   "inputs": [
     {"input_id": "specialist-run-1", "report": {"...": "one complete validated DIA-005 review-report"}}

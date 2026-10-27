@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/interzettel/diakrisis/schemas/review-report.schema.json",
-  "title": "Diakrisis review report envelope — contract revision 1 (experimental)",
+  "title": "Diakrisis review report envelope — contract revision 2 (experimental)",
   "description": "Source coverage and bounded review outcomes; empty findings never means scientific certification.",
   "type": "object",
   "additionalProperties": false,
@@ -15,7 +15,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": 1
+      "const": 2
     },
     "review_id": {
       "type": "string",
@@ -101,7 +101,20 @@
       "then": {
         "properties": {
           "findings": {
-            "minItems": 1
+            "minItems": 1,
+            "contains": {
+              "type": "object",
+              "required": [
+                "disposition"
+              ],
+              "properties": {
+                "disposition": {
+                  "not": {
+                    "const": "abstain"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -121,6 +134,13 @@
         "properties": {
           "findings": {
             "maxItems": 0
+          },
+          "coverage": {
+            "properties": {
+              "examined": {
+                "minItems": 1
+              }
+            }
           }
         }
       }

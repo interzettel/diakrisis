@@ -18,14 +18,14 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-27 against `cd62137a`.
+Observed 2026-10-27 against `0ac99ee5`.
 
 #### Milestone roadmap
 
 | Milestone | Horizon | Supporting required work | Outcome acceptance | Next gate |
 | --- | --- | ---: | --- | --- |
 | **DIA-M0 — Documented basis** | Now | 1/1 · 100.0% | Unknown / not assessed | Review the documented foundation and its source authority (work 1/1; acceptance still unknown). |
-| **DIA-M1 — Reproducible foundation** | Now | 1/4 · 25.0% | Unknown / not assessed | DIA-005 / #5 finding+report contract revision 1 structurally implemented in PR #24 (positive/negative/abstention cases passed). DIA-003 complete; DIA-002 / #2 remains the P0 prerequisite Blocked only for owner-deferred local archive/runtime verification. DIA-004 / #4 runtime activation is also deferred. No further eligible unblocked completion gate in M1 until owner resumes the final test phase; M1 acceptance remains unknown. |
+| **DIA-M1 — Reproducible foundation** | Now | 1/4 · 25.0% | Unknown / not assessed | DIA-005 / #5 finding+report contract structurally implemented: revision 1 in PR #24, revision 2 in PR #41 (2026-10-27), with positive, negative and abstention cases. DIA-003 complete; DIA-002 / #2 remains the P0 prerequisite Blocked only for owner-deferred local archive/runtime verification. DIA-004 / #4 runtime activation is also deferred. No further eligible unblocked completion gate in M1 until owner resumes the final test phase; M1 acceptance remains unknown. |
 | **DIA-M2 — Evaluated reviewers** | Next | 0/2 · 0.0% | Unknown / not assessed | Adjudicate blinded reviewer-vs-baseline runs including negative controls. |
 | **DIA-M3 — Portable system** | Later | 0/3 · 0.0% | Unknown / not assessed | DIA-009 / #9 private consumer Actions blocker isolated to **no runner allocated** (runner_id 0, zero steps) for Writing Kitchen and Spatial Laboratory, including before Diakrisis integration. Owner confirmed 2026-10-27 that monthly private Actions usage is exhausted and declined extra spending; retry once the quota renews, and meanwhile run consumer checks offline. Spatial Laboratory PR #18 still needs explicit owner merge approval. DIA-008 coordinator and DIA-010 offline bundle structurally implemented; DIA-007 behavior/consumer verification and stable release gates deferred. M3 acceptance unknown. |
 
@@ -93,7 +93,7 @@ All seven modules are **merged into `main`** in [PR #17](https://github.com/inte
 - [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
 - [Project-record adoption and source authority](progress/adoption.md)
 - [PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)
-- [Evidence-bound finding contract (revision 1)](docs/REVIEW-CONTRACT.md), [review report schema](schemas/review-report.schema.json), [offline coordinator composition](docs/COORDINATION.md) and [synthetic contract controls](evals/finding-contract/cases.json)
+- [Evidence-bound finding contract (revision 2)](docs/REVIEW-CONTRACT.md), [review report schema](schemas/review-report.schema.json), [offline coordinator composition](docs/COORDINATION.md) and [synthetic contract controls](evals/finding-contract/cases.json)
 - [Installation and verification](docs/INSTALLATION.md)
 
 ## Quality and non-goals

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/interzettel/diakrisis/schemas/coordinated-report.schema.json",
-  "title": "DIA-008 additive coordinated report revision 1",
+  "title": "DIA-008 additive coordinated report — contract revision 2",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -15,7 +15,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": 1
+      "const": 2
     },
     "coordination_id": {
       "type": "string",

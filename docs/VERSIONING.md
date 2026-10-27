@@ -41,6 +41,8 @@ A skill can be **experimental** while included in development builds; released s
 
 ## Current package
 
+**Contract revision 2 inside `0.1.0-dev.0` (2026-10-27).** The shared wire format moved from revision 1 to revision 2 ([REVIEW-CONTRACT.md](REVIEW-CONTRACT.md)) without renaming the unreleased development version, so pinned consumers keep matching their own manifests. Under the release policy above this is an incompatible contract change; the next proposed package version must account for it.
+
 **`0.1.0-dev.0`, unreleased.** All seven coordinated skills were merged into `main` in [PR #17](https://github.com/interzettel/diakrisis/pull/17); [DIA-005](https://github.com/interzettel/diakrisis/issues/5) added the shared evidence/authority contract. Structural checks and source packaging are development work, not actual model behavior or a stable release. [Nonpublishing deterministic consumer-bundle procedure](COMPATIBILITY.md) is the source/upgrade/rollback policy; no GitHub Release has been published.
 
 There is no GitHub Pages deployment for Diakrisis. The repository README tracker is a projection of governed project records, not a release channel. This is a deliberate small-project tailoring of the [Project Record Standard](https://github.com/interzettel/project-record-standard).

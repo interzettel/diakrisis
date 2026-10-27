@@ -27,7 +27,7 @@ def report(identifier, findings, status=None):
     if status is None:
         status = "issues-identified" if findings else "no-issues-detected"
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "review_id": identifier,
         "status": status,
         "coverage": {
@@ -40,7 +40,7 @@ def report(identifier, findings, status=None):
 
 
 def bundle(*reviews, relations=None):
-    return {"schema_version": 1, "coordination_id": "coord-001",
+    return {"schema_version": 2, "coordination_id": "coord-001",
             "inputs": [{"input_id": "I-" + r["review_id"], "report": r}
                        for r in reviews], "relations": relations or []}
 
@@ -177,10 +177,18 @@ class CoordinatorTests(unittest.TestCase):
             self.assertEqual(result.read_bytes(), original)
 
     def test_clean_source_that_examined_nothing_cannot_make_aggregate_clean(self):
+        # Contract revision 2 rejects such a report at input validation; the
+        # per-source status rule stays as a second line of defence.
         blind = report("R-blind", [])
         blind["coverage"]["examined"] = []
-        combined = compose(bundle(blind, report("R-seen", [])))
-        self.assertEqual(combined["report"]["status"], "insufficient-evidence")
+        with self.assertRaisesRegex(ValueError, "input"):
+            compose(bundle(blind, report("R-seen", [])))
+
+    def test_revision_1_input_is_refused_with_migration_hint(self):
+        old = bundle(report("R-a", []))
+        old["schema_version"] = 1
+        with self.assertRaisesRegex(ValueError, "revision 1"):
+            compose(old)
 
     def test_coordination_id_must_not_reuse_an_input_review_id(self):
         with self.assertRaisesRegex(ValueError, "coordination ID"):
