@@ -4,6 +4,8 @@
 
 The reviewers are designed to work together and share one finding contract. Simpler accounting is preferable until independent releases become a demonstrated need.
 
+**Superseded proposal:** [issue #14](https://github.com/interzettel/diakrisis/issues/14) (*Specify versioning and compatibility for individual Agent Skills*) was closed as "completed" after [PR #15](https://github.com/interzettel/diakrisis/pull/15) shipped an initial version registry. The owner then requested simplification, and [PR #16](https://github.com/interzettel/diakrisis/pull/16) replaced per-skill versions with this single-suite policy. Read #14 as historical context, not as a per-skill versioning decision.
+
 ## Single version source
 
 `skills/versions.json` owns the version of the **whole Diakrisis package** (`suite.version`). It also lists which skills are actually included in that package and which are merely draft proposals. These lists contain skill *names and status*, not individual versions.
