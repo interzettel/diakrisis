@@ -8,70 +8,125 @@
       "kind": "positive",
       "context": "This project's approved glossary defines Blocked as an independent flag with a reason and owner, not as an execution state. Workflow states are Ready, In progress and Done.",
       "text": "Every blocked work item enters the Blocked execution state.",
-      "expected": "Flag scoped definition conflict; do not claim all task tools use the same model."
+      "expected": "Flag scoped definition conflict; do not claim all task tools use the same model.",
+      "exposure": {
+        "status": "seen-same-skill",
+        "checked": "2026-10-27",
+        "source": ".agents/skills/terminology-review/references/CASES.md",
+        "basis": "near-verbatim of 'Positive: local normative conflict'"
+      }
     },
     {
       "id": "TERM-A2",
       "kind": "negative-control",
       "context": "This document defines driftline as a reproducibly calculated boundary and uses the term consistently throughout.",
       "text": "We extract the driftline after triangulation.",
-      "expected": "No finding just because driftline is unusual."
+      "expected": "No finding just because driftline is unusual.",
+      "exposure": {
+        "status": "seen-same-skill",
+        "checked": "2026-10-27",
+        "source": ".agents/skills/terminology-review/references/CASES.md",
+        "basis": "same scenario as 'Negative: novel but coherent vocabulary' (driftline)"
+      }
     },
     {
       "id": "TERM-A3",
       "kind": "positive",
       "context": "In the glossary Review means the process of examining an artifact; Review result means the recorded outcome of that process.",
       "text": "The review was approved and stored as the final JSON artifact. That review has six fields.",
-      "expected": "Flag or request clarification for shifting Review from activity to artifact; preserve meaning."
+      "expected": "Flag or request clarification for shifting Review from activity to artifact; preserve meaning.",
+      "exposure": {
+        "status": "held-out",
+        "checked": "2026-10-27",
+        "basis": "different term; shares only the general polysemy pattern"
+      }
     },
     {
       "id": "TERM-A4",
       "kind": "negative-control",
       "context": "The methods section explicitly defines Review event as an immutable timestamped record, and Review activity as an operation.",
       "text": "The Review event refers to the completed Review activity.",
-      "expected": "No false conceptual category correction."
+      "expected": "No false conceptual category correction.",
+      "exposure": {
+        "status": "seen-other-skill",
+        "checked": "2026-10-27",
+        "source": ".agents/skills/conceptual-model-review/SKILL.md",
+        "basis": "ReviewEvent scenario from the conceptual-model skill; the terminology skill does not load that file"
+      }
     },
     {
       "id": "TERM-A5",
       "kind": "positive",
       "context": "The introduction defines reliable as reproducible across independent repeated runs; later statistical reliability refers to internal consistency of ratings.",
       "text": "Reliable results were obtained because Cronbach's alpha was above the threshold.",
-      "expected": "Flag possible equivocation on reliable unless author distinguishes measures."
+      "expected": "Flag possible equivocation on reliable unless author distinguishes measures.",
+      "exposure": {
+        "status": "held-out",
+        "checked": "2026-10-27",
+        "basis": "no matching skill example found"
+      }
     },
     {
       "id": "TERM-A6",
       "kind": "negative-control",
       "context": "A paper quotes an 1850 source that uses now-obsolete technical terminology, and clearly labels it as historical.",
       "text": "The historical author called the process 'animal electricity', a term we retain only within quotations.",
-      "expected": "Preserve quoted language; optionally discuss editorial context but no confirmed error."
+      "expected": "Preserve quoted language; optionally discuss editorial context but no confirmed error.",
+      "exposure": {
+        "status": "seen-same-skill",
+        "checked": "2026-10-27",
+        "source": ".agents/skills/terminology-review/references/CASES.md",
+        "basis": "same scenario as 'Negative: quotations or historical language'"
+      }
     },
     {
       "id": "TERM-A7",
       "kind": "uncertain",
       "context": "An English/German glossary has English 'review' and German 'Prüfung', but target domain and regional context are unspecified.",
       "text": "The Prüfung concludes before the review.",
-      "expected": "Ask whether two process steps are distinguished; don't assume translation equivalence."
+      "expected": "Ask whether two process steps are distinguished; don't assume translation equivalence.",
+      "exposure": {
+        "status": "held-out",
+        "checked": "2026-10-27",
+        "basis": "no matching skill example found"
+      }
     },
     {
       "id": "TERM-A8",
       "kind": "uncertain",
       "context": "Two official source documents use the term 'review' differently, with no precedence policy.",
       "text": "The review begins once the review is accepted.",
-      "expected": "Abstain or request authority clarification; no unjustified confirmed-conflict verdict."
+      "expected": "Abstain or request authority clarification; no unjustified confirmed-conflict verdict.",
+      "exposure": {
+        "status": "held-out",
+        "checked": "2026-10-27",
+        "basis": "no matching skill example found"
+      }
     },
     {
       "id": "TERM-A9",
       "kind": "positive",
       "context": "A study defines 'quality' exclusively as fraction of geometric constraints satisfied, not as overall architectural merit.",
       "text": "The quality score proves our output is better architecture.",
-      "expected": "Identify potentially misleading use of quality relative to definition; route broader inference and measurement validity to argument/method reviewer."
+      "expected": "Identify potentially misleading use of quality relative to definition; route broader inference and measurement validity to argument/method reviewer.",
+      "exposure": {
+        "status": "seen-same-skill",
+        "checked": "2026-10-27",
+        "source": ".agents/skills/terminology-review/references/CASES.md",
+        "basis": "same scenario as 'Challenge: term/concept vs observation' (a score proving architecture quality)"
+      }
     },
     {
       "id": "TERM-A10",
       "kind": "negative-control",
       "context": "The document explicitly distinguishes model-as-data-model from model-as-statistical-predictor on first use and repeats the qualifier at topic shifts.",
       "text": "The data model stores the predictor model's version.",
-      "expected": "No gratuitous warning about familiar polysemy when domains are already clarified."
+      "expected": "No gratuitous warning about familiar polysemy when domains are already clarified.",
+      "exposure": {
+        "status": "held-out",
+        "checked": "2026-10-27",
+        "basis": "no matching skill example found"
+      }
     }
   ]
 }
