@@ -18,7 +18,7 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-26 against `bd3e5670`.
+Observed 2026-10-27 against `cd62137a`.
 
 #### Milestone roadmap
 
@@ -48,7 +48,7 @@ States represent recorded implementation progress; a closed issue, passing test 
 
 **Versioning:** Suite `0.1.0-dev.0` — **unreleased**; included skills: **7**. Draft candidates: None. [Single package version policy](docs/VERSIONING.md).
 
-**Source coverage:** observed **2026-10-26**, authoritative [ledger](progress/ledger.json), [manifest](progress/project-record.json), [scope history](progress/history/2026-10-26-unapproved.json). Regeneration does not fetch newer issues or change the observation date.
+**Source coverage:** observed **2026-10-27**, authoritative [ledger](progress/ledger.json), [manifest](progress/project-record.json), [scope history](progress/history/2026-10-26-unapproved.json). Regeneration does not fetch newer issues or change the observation date.
 
 **Counts:** required work **2/10 · 20.0%**; retained work **2/10 · 20.0%**; accepted milestones **Unknown** (0 of 4 determinate).
 
@@ -56,7 +56,7 @@ States represent recorded implementation progress; a closed issue, passing test 
 
 ## Why it exists
 
-A grammatically impeccable assertion can still misuse a term, confuse a state with a class, conceal an unsupported inference, or contradict an accepted research method. Diakrisis helps researchers, writers, and coding agents **find and explain** those problems without silently replacing their judgment.
+A grammatically impeccable assertion can still misuse a term, confuse a state with a class, conceal an unsupported inference, or contradict an accepted research method. Diakrisis is designed to help researchers, writers, and coding agents **find and explain** those problems without silently replacing their judgment.
 
 ## Intended consumers
 
@@ -67,7 +67,7 @@ A grammatically impeccable assertion can still misuse a term, confuse a state wi
 
 These are integration targets, **not completed integrations**. Consumer repositories retain their own policies, canonical sources, and approval gates.
 
-## Proposed review capabilities
+## Review capabilities
 
 | Skill | Distinct responsibility |
 | --- | --- |
@@ -92,7 +92,7 @@ All seven modules are **merged into `main`** in [PR #17](https://github.com/inte
 - [Suite versioning](docs/VERSIONING.md) · [Offline consumer bundling and compatibility](docs/COMPATIBILITY.md) · [README generation policy](docs/README-TRACKER.md)
 - [Project overview](progress/overview.md) and [discovery coverage](progress/discovery.json)
 - [Project-record adoption and source authority](progress/adoption.md)
-- [Proposed PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)
+- [PRS ledger](progress/ledger.json) and [validated PRS manifest](progress/project-record.json)
 - [Evidence-bound finding contract (revision 1)](docs/REVIEW-CONTRACT.md), [review report schema](schemas/review-report.schema.json), [offline coordinator composition](docs/COORDINATION.md) and [synthetic contract controls](evals/finding-contract/cases.json)
 - [Installation and verification](docs/INSTALLATION.md)
 
@@ -104,7 +104,7 @@ No automatic rewriting of an author's meaning, no fabricated citations, no propr
 
 ## Setup / upstreams
 
-Use the [official Agent Skills specification](https://agentskills.io/specification). `SKILL.md` belongs in discoverable directories (planned `.agents/skills/`). Superpowers, Anthropic's skill-creator, and Project Record Standard are **upstreams requiring verified, pinned installation and runner-specific activation**, not capabilities installed by viewing this README. See [source audit](docs/SOURCES.md) and [roadmap](docs/ROADMAP.md). Any installation instructions must preserve existing agent configuration and provide a dry run.
+Use the [official Agent Skills specification](https://agentskills.io/specification). `SKILL.md` belongs in discoverable directories; this repository uses `.agents/skills/`. Superpowers, Anthropic's skill-creator, and Project Record Standard are **upstreams requiring verified, pinned installation and runner-specific activation**, not capabilities installed by viewing this README. See [source audit](docs/SOURCES.md) and [roadmap](docs/ROADMAP.md). Any installation instructions must preserve existing agent configuration and provide a dry run.
 
 ## Governance
 
