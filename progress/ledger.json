@@ -162,7 +162,7 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/5",
       "criterion": "Versioned typed finding schema and authority rules validated with examples, positive and negative controls.",
-      "note": "Owner-directed build-before-test exception: finding JSON Schema contract revision 1, review-report envelope, scoped authority and coordinator deduplication rules plus synthetic positive/negative/abstention examples implemented in PR #24. Offline CI validated schema syntax and intentional negative rejection (run 40402756670). DIA-003 done; DIA-002 remains active with Blocked flag for deferred final local PRS verification, so DIA-005 remains In progress and no milestone acceptance is claimed. Real reviewer behavior and consumer context/authority applicability will be tested at end of build. 2026-10-27: contract revision 2 (PR #41): wire schema_version 2, clean reports need examined scope, issues-identified needs a non-abstention finding, severity and category vocabularies in schema $defs, migration documented; still no Done point while DIA-002 and end-of-build verification remain.",
+      "note": "Owner-directed build-before-test exception: finding JSON Schema contract revision 1, review-report envelope, scoped authority and coordinator deduplication rules plus synthetic positive/negative/abstention examples implemented in PR #24. Offline CI validated schema syntax and intentional negative rejection (run 40402756670). DIA-003 done; DIA-002 remains active with Blocked flag for deferred final local PRS verification, so DIA-005 remains In progress and no milestone acceptance is claimed. Real reviewer behavior and consumer context/authority applicability will be tested at end of build. 2026-10-27: contract revision 2 (PR #41): wire schema_version 2, clean reports need examined scope, issues-identified needs a non-abstention finding, severity and category vocabularies in schema $defs, migration documented; still no Done point while DIA-002 and end-of-build verification remain. 2026-10-27: deterministic quote checker tools/check_spans.py (PR #44) verifies that quoted spans exist at the stated revision; existence only, not support.",
       "deferReason": null,
       "evidence": [
         {
@@ -176,6 +176,10 @@
         {
           "kind": "contract-revision-2-implementation",
           "source": "https://github.com/interzettel/diakrisis/pull/41"
+        },
+        {
+          "kind": "quote-checker",
+          "source": "https://github.com/interzettel/diakrisis/pull/44"
         }
       ]
     },
@@ -481,7 +485,8 @@
     "2026-10-26: DIA-008 deterministic coordinator implemented with validated source-preserving grouping and complete-link checks (PR #27), and portable 19-file builder verified in CI; this is structural functionality, not accepted/validated reviewer behavior. Required work stays 2/10.",
     "2026-10-27: DIA-009 consumer CI does not execute; both private repos fail before runner allocation. GitHub account/Actions control is an external owner-required check. No code-test failure is established. Work remains 2/10 Done.",
     "2026-10-27: DIA-005 contract revision 2 implemented in PR #41 (structural checks only); DIA-005 stays In progress. Required work stays 2/10.",
-    "2026-10-27: all seven skills revised to contract revision 2 in PR #43 (structural); DIA-006 and DIA-008 stay In progress. Required work stays 2/10."
+    "2026-10-27: all seven skills revised to contract revision 2 in PR #43 (structural); DIA-006 and DIA-008 stay In progress. Required work stays 2/10.",
+    "2026-10-27: DIA-005 quote checker added in PR #44 (structural tool); DIA-005 stays In progress. Required work stays 2/10."
   ],
   "governance": {
     "purpose": "Portable review skills for conceptual, linguistic and scientific integrity",
