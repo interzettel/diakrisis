@@ -195,14 +195,27 @@ def verify_report(consumer):
     return {"manifest": manifest, "roster": roster, "upstream": upstream}
 
 
+def uncommitted(paths, root=ROOT):
+    """Bundled paths whose working copy differs from HEAD: modified, staged,
+    deleted or untracked. The manifest pins HEAD, so these cannot be bundled."""
+    out = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all", "--", *paths],
+                         cwd=root, capture_output=True, text=True, check=True).stdout
+    return sorted({line[3:].strip() for line in out.splitlines() if line.strip()})
+
+
 def build(output):
     output = output.resolve()
     if output.is_relative_to(ROOT) or ROOT == output:
         raise ValueError("output must be outside source tree")
     if output.exists() and any(output.iterdir()):
         raise ValueError("output directory not empty")
-    output.mkdir(parents=True, exist_ok=True)
     sha = commit_sha()
+    dirty = uncommitted(INPUTS)
+    if dirty:
+        raise ValueError("bundled files differ from commit " + sha[:12] + ": " + ", ".join(dirty)
+                         + ". Commit or stash them first; the manifest pins that commit, "
+                         "so every bundled file must match it")
+    output.mkdir(parents=True, exist_ok=True)
     reg = json.loads((ROOT / "skills/versions.json").read_text())
     if set(reg["skills"]) != set(NAMES) or reg["suite"]["status"] != "unreleased":
         raise ValueError("unsupported package roster or release status")
