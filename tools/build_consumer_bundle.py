@@ -64,7 +64,6 @@ def transform(src, data, sha):
                       "../../../integrations/diakrisis/docs/COORDINATION.md")
         t = t.replace("../../../schemas/coordinated-report.schema.json",
                       "../../../integrations/diakrisis/schemas/coordinated-report.schema.json")
-        t = t.replace("schemas/finding.schema.json", "integrations/diakrisis/schemas/finding.schema.json") if src.endswith("terminology-review/SKILL.md") else t
         return t.encode("utf-8"), "consumer-path-rewrites-v1"
     if src == "docs/FOUNDATION.md":
         t = data.decode("utf-8").replace(
