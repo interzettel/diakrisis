@@ -61,6 +61,10 @@ Severity rates the consequence for the reader's decision. It is separate from `e
 - **Argument versus communication.** Whether confidence language matches the evidence (`certainty-mismatch`) belongs to argument-review. Communication-review flags only phrasing that leaves the author's actual confidence unclear to the reader.
 - **Specificity.** Each finding names what its cited passage specifically fails to do. Generic critique that could attach to any text is not a finding.
 
+### Checking that quotes exist
+
+The schema cannot tell whether a quoted span is real. `tools/check_spans.py` (repository tool, not shipped in the consumer bundle) reads a finding, report, coordinated report or coordinator input and checks every artifact and basis span that names a local file: at the stated commit through git, or in the working tree when no revision is given. It reports `found`, `found-normalized` (only after collapsing whitespace, a sign of retyping), `missing`, `file-not-found` or `not-checkable` (remote source, location instead of quote, path outside the root, revision not available). It exits non-zero on `missing` or `file-not-found`, and with `--strict` also on `found-normalized`. A found quote proves only that the text exists, never that it supports the claim.
+
 ## What the reviewer is allowed to assert
 
 A **finding** is an advisory, bounded observation about an exact passage, not a final decision or source edit. Distinguish:
