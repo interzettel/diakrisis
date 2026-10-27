@@ -25,6 +25,8 @@ Both consumer workflows request standard `runs-on: ubuntu-latest`. Spatial Labor
 
 **Hypothesis (not confirmed):** GitHub-hosted runner dispatch is blocked by the account's private Actions billing/usage budget, quota, failed payment/hold, repository Actions permissions, or another backend allocation condition. GitHub documents private-repo minute limits and billing restrictions in [Actions billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions). Similar cases are described in [GitHub community discussion #183940](https://github.com/orgs/community/discussions/183940), but this is **not** direct evidence of this owner's billing state.
 
+**Owner confirmation (2026-10-27):** The owner confirmed that the account's **monthly private GitHub Actions usage is exhausted** and does **not** wish to add spending. This is now the recorded explanation for `runner_id: 0`, `steps: []`. It rests on the owner's statement; GitHub billing pages were not independently inspected by an agent. Consequently, steps 1–2 of the repair path below are settled by owner decision: wait for the quota to renew, and use offline/local checks meanwhile. Do not ask the owner to pay, raise budgets, change repository visibility or modify workflows to bypass the limit.
+
 ## Correct repair path
 
 1. Repository owner checks **GitHub account Settings → Billing & licensing (or Billing & plans) → Actions usage / Budgets and alerts** for the owner account, including free-minute balance, any `$0` budget limit, payment notices, and whether Actions are enabled for private repos.
