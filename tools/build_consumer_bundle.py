@@ -27,6 +27,12 @@ SUPPORT = (".agents/skills/terminology-review/references/CASES.md",
            "schemas/coordinated-report.schema.json", "tools/coordinate_reviews.py",
            "skills/versions.json")
 INPUTS = SKILLS + SUPPORT
+# DIA-008 added these three files; consumers pinned before it (e.g. Writing
+# Kitchen at a72b28e) carry the 16-file roster that PR #26 first shipped.
+COORDINATOR_SUPPORT = ("docs/COORDINATION.md", "schemas/coordinated-report.schema.json",
+                       "tools/coordinate_reviews.py")
+LEGACY_INPUTS = tuple(p for p in INPUTS if p not in COORDINATOR_SUPPORT)
+ROSTERS = {"current-19": frozenset(INPUTS), "legacy-16": frozenset(LEGACY_INPUTS)}
 MANIFEST = "integrations/diakrisis/source-manifest.json"
 LINKS = re.compile(r"\]\(([^)\s]+)(?:\s+[^)]*)?\)")
 
@@ -81,40 +87,85 @@ def transform(src, data, sha):
     return data, "byte-identical"
 
 
-def within(root, rel):
+def within(root, rel, reject_symlinks=False):
     part = Path(rel)
     if part.is_absolute() or ".." in part.parts:
         raise ValueError("unsafe path: " + rel)
+    if reject_symlinks:
+        # Inspect each component BEFORE resolving: resolve() follows links, so a
+        # symlink check on the resolved path can never fire.
+        current = root
+        for name in part.parts:
+            current = current / name
+            if current.is_symlink():
+                raise ValueError("symlink in consumer path: " + rel)
     target = (root / part).resolve()
     if not target.is_relative_to(root.resolve()):
         raise ValueError("path escaped checkout: " + rel)
     return target
 
 
+def upstream_blobs(revision, paths):
+    """Git blob IDs of `paths` at `revision` in this checkout, or None when the
+    revision is not available here (shallow clone, other machine, no git)."""
+    try:
+        present = subprocess.run(["git", "cat-file", "-e", revision + "^{commit}"], cwd=ROOT,
+                                 capture_output=True, text=True, check=False)
+    except OSError:
+        return None
+    if present.returncode != 0:
+        return None
+    blobs = {}
+    for path in paths:
+        found = subprocess.run(["git", "rev-parse", revision + ":" + path], cwd=ROOT,
+                               capture_output=True, text=True, check=False)
+        if found.returncode != 0:
+            raise ValueError("file not present in upstream revision: " + path)
+        blobs[path] = found.stdout.strip()
+    return blobs
+
+
 def verify(consumer):
+    return verify_report(consumer)["manifest"]
+
+
+def verify_report(consumer):
+    """Check a consumer bundle; report its roster and whether the recorded
+    source blobs could be compared with upstream git in this checkout."""
+    consumer = consumer.resolve()
     manifest = json.loads((consumer / MANIFEST).read_text(encoding="utf-8"))
     reg = json.loads((consumer / "integrations/diakrisis/skills/versions.json").read_text(encoding="utf-8"))
     if manifest["suite_version"] != reg["suite"]["version"] or set(reg["skills"]) != set(NAMES):
         raise ValueError("package version or skill registry differs")
     if manifest["source_repository"] != "interzettel/diakrisis":
         raise ValueError("different upstream")
-    if len(manifest["files"]) != len(INPUTS):
-        raise ValueError("wrong number of included files")
+    # Untrusted input reaches git arguments below: allow only a full commit ID.
+    if not re.fullmatch("[0-9a-f]{40}", str(manifest["source_revision"])):
+        raise ValueError("source revision is not a full git commit ID")
+    sources = [f["source_path"] for f in manifest["files"]]
+    if len(sources) != len(set(sources)):
+        raise ValueError("duplicate source path in manifest")
+    roster = next((name for name, paths in ROSTERS.items() if set(sources) == paths), None)
+    if roster is None:
+        raise ValueError("file set matches neither the legacy 16-file nor the current "
+                         "19-file roster (partial, extra or mixed bundle)")
     names = set()
     seen = set()
     for f in manifest["files"]:
         rel = f["installed_path"]
+        if rel != dest_of(f["source_path"]):
+            raise ValueError("unexpected installed path: " + rel)
         if rel in seen:
             raise ValueError("duplicate path: " + rel)
         seen.add(rel)
-        p = within(consumer, rel)
-        if not p.is_file() or p.is_symlink():
-            raise ValueError("missing or symlinked: " + rel)
+        p = within(consumer, rel, reject_symlinks=True)
+        if not p.is_file():
+            raise ValueError("missing file: " + rel)
         data = p.read_bytes()
         if blob(data) != f["installed_git_blob"]:
             raise ValueError("local file drift: " + rel)
         if f["transformation"] == "byte-identical" and blob(data) != f["source_git_blob"]:
-            raise ValueError("source blob drift: " + rel)
+            raise ValueError("installed file differs from its recorded source blob: " + rel)
         if f["source_revision"] != manifest["source_revision"]:
             raise ValueError("mixed source revisions")
         if p.name == "SKILL.md":
@@ -134,7 +185,15 @@ def verify(consumer):
                     raise ValueError("broken local reference in " + rel + ": " + link)
     if names != set(NAMES):
         raise ValueError("missing reviewer")
-    return manifest
+    blobs = upstream_blobs(manifest["source_revision"], sources)
+    if blobs is None:
+        upstream = "not-verifiable-here"
+    else:
+        for f in manifest["files"]:
+            if blobs[f["source_path"]] != f["source_git_blob"]:
+                raise ValueError("recorded source blob differs from upstream git: " + f["source_path"])
+        upstream = "verified"
+    return {"manifest": manifest, "roster": roster, "upstream": upstream}
 
 
 def build(output):
@@ -195,8 +254,15 @@ def main():
     if args.output:
         build(args.output)
     else:
-        item = verify(args.check_consumer.resolve())
+        report = verify_report(args.check_consumer.resolve())
+        item = report["manifest"]
         print("PASS:", len(item["files"]), "pinned source files")
+        print("Roster:", report["roster"])
+        if report["upstream"] == "verified":
+            print("Upstream: recorded source blobs match git at", item["source_revision"])
+        else:
+            print("Upstream: source revision", item["source_revision"],
+                  "is not in this checkout; recorded source blobs not verified here")
         if commit_sha() != item["source_revision"]:
             print("Source update available (no automatic upgrade)")
             if args.strict_current:
