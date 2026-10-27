@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,12 +33,46 @@ def safe(text: object) -> str:
     return str(text if text is not None else "—").replace("|", r"\|").replace("\r", "").replace("\n", " ").strip()
 
 
+PULL = re.compile(r"^https://github\.com/([^/]+)/([^/]+)/pull/(\d+)$")
+ISO_DATE = re.compile(r"\b(20\d{2}-\d{2}-\d{2})\b")
+
+
+def evidence_cell(work: dict) -> str:
+    """Link the first pull request among a work item's evidence, whatever its
+    `kind` label; fall back to the completion criterion."""
+    for entry in work.get("evidence", []):
+        match = PULL.match(str(entry.get("source", "")))
+        if match:
+            owner, repo, number = match.groups()
+            label = f"PR #{number}" if (owner, repo) == ("interzettel", "diakrisis") else f"{repo} PR #{number}"
+            return f"[{label}]({entry['source']})"
+    return safe(work.get("criterion") or "Check work criterion")
+
+
+def stale_update_date(ledger: dict, updated_on: str) -> str | None:
+    """Newest ISO date written in ledger narrative (notes, warnings, milestone
+    next actions) when it is later than the manifest's updatedOn, else None."""
+    texts = [item.get("note") or "" for item in ledger.get("items", [])]
+    texts += [w or "" for w in ledger.get("warnings", [])]
+    texts += [m.get("nextAction") or "" for m in ledger.get("milestones", [])]
+    dates = [d for text in texts for d in ISO_DATE.findall(text)]
+    newest = max(dates, default=None)
+    return newest if newest and newest > updated_on else None
+
+
 def fraction(progress: dict) -> str:
     value = progress["percent"]
     return f"{progress['done']}/{progress['total']} · {value:.1f}%" if value is not None else f"{progress['done']}/{progress['total']} · Not measured"
 
 
 def render() -> tuple[str, str]:
+    manifest = json.loads(CONFIG.read_text(encoding="utf-8"))
+    ledger = json.loads((CONFIG.parent / manifest["projects"][0]["sourceFile"]).read_text(encoding="utf-8"))
+    updated_on = manifest["projects"][0]["source"]["updatedOn"]
+    newer = stale_update_date(ledger, updated_on)
+    if newer:
+        raise ValueError(f"ledger mentions {newer} but progress/project-record.json updatedOn is "
+                         f"{updated_on}; update observedOn/updatedOn after reconciling, then regenerate")
     (record,) = load_config(CONFIG)
     record = summarize(record)
     theme = json.loads(THEME.read_text(encoding="utf-8"))
@@ -77,8 +112,7 @@ def render() -> tuple[str, str]:
     for work in items:
         link = f"[{safe(work['id'])}]({work['issueUrl']})" if work.get("issueUrl") else f"`{safe(work['id'])}`"
         deps = ", ".join(work.get("dependsOn", [])) or "—"
-        proof = next((e.get("source") for e in work.get("evidence", []) if e.get("kind") == "merged-pr"), None)
-        proof = f"[Evidence]({proof})" if proof and proof.startswith("https://") else safe(work.get("criterion") or "Check work criterion")
+        proof = evidence_cell(work)
         if not work["required"]:
             proof += " · deferred from required scope"
         if work.get("blocked"):
@@ -126,7 +160,11 @@ def main() -> int:
     modes.add_argument("--write", action="store_true", help="Update the generated region and SVG")
     modes.add_argument("--emit-hex", action="store_true", help="Emit generated content for controlled GitHub bootstrap")
     args = parser.parse_args()
-    readme, svg = render()
+    try:
+        readme, svg = render()
+    except ValueError as error:
+        print("STALE source dates:", error)
+        return 1
     if args.emit_hex:
         print("DIA_README_HEX_START" + readme.encode("utf-8").hex() + "DIA_README_HEX_END")
         print("DIA_SVG_HEX_START" + svg.encode("utf-8").hex() + "DIA_SVG_HEX_END")
