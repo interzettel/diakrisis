@@ -199,7 +199,7 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/6",
       "criterion": "Three specialist skills completed with portable metadata, matched no-skill/with-skill runs and human-adjudicated behavior results.",
-      "note": "Seven coordinated experimental reviewer modules merged into main via PR #17; real reviewer accuracy, activation and owner acceptance remain to be assessed.",
+      "note": "Seven coordinated experimental reviewer modules merged into main via PR #17; real reviewer accuracy, activation and owner acceptance remain to be assessed. 2026-10-27: pilot skills (terminology, conceptual-model, argument) revised to contract revision 2 in PR #43 (inline categories and severity, failure slot, specialist boundaries, routing aligned with USAGE.md) after the dated research records in PR #39; structure only, behaviour untested.",
       "deferReason": null,
       "evidence": [
         {
@@ -209,6 +209,10 @@
         {
           "kind": "ci-verification",
           "source": "https://github.com/interzettel/diakrisis/actions/runs/40386332620"
+        },
+        {
+          "kind": "skill-revision-contract-2",
+          "source": "https://github.com/interzettel/diakrisis/pull/43"
         }
       ]
     },
@@ -254,7 +258,7 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/8",
       "criterion": "Method, communication, cross-document consistency and coordinator integration passes composition/conflict tests.",
-      "note": "Owner-authorized build-first DIA-008 implementation: six specialist reports accepted through DIA-005 typed schemas; source-preserving deterministic coordinator in tools/coordinate_reviews.py, additive coordinated-report.schema.json, complete-link explicit grouping, unresolved disagreement, provenance digests, abstention/negative coverage, offline examples/tests, and expanded 19-file portable bundle with consumer links. Source PR #27 CI run 40417198629 passed initial static, schema, reproducibility and refusal controls. Final tested package additionally executes the vendored coordinator on the synthetic integration example; the final CI receipt governs that claim. DIA-007 actual evaluated reviewer quality and empirical composition remain deferred by owner; suite unreleased; issue In progress, no M3 acceptance or Done point.",
+      "note": "Owner-authorized build-first DIA-008 implementation: six specialist reports accepted through DIA-005 typed schemas; source-preserving deterministic coordinator in tools/coordinate_reviews.py, additive coordinated-report.schema.json, complete-link explicit grouping, unresolved disagreement, provenance digests, abstention/negative coverage, offline examples/tests, and expanded 19-file portable bundle with consumer links. Source PR #27 CI run 40417198629 passed initial static, schema, reproducibility and refusal controls. Final tested package additionally executes the vendored coordinator on the synthetic integration example; the final CI receipt governs that claim. DIA-007 actual evaluated reviewer quality and empirical composition remain deferred by owner; suite unreleased; issue In progress, no M3 acceptance or Done point. 2026-10-27: remaining specialists and coordinator revised to contract revision 2 in PR #43 (inline categories and severity, failure slot, specialist boundaries, routing aligned with USAGE.md) after the dated research records in PR #39; structure only, behaviour untested.",
       "deferReason": null,
       "evidence": [
         {
@@ -272,6 +276,10 @@
         {
           "kind": "coordinator-composition-ci",
           "source": "https://github.com/interzettel/diakrisis/actions/runs/40417198629"
+        },
+        {
+          "kind": "skill-revision-contract-2",
+          "source": "https://github.com/interzettel/diakrisis/pull/43"
         }
       ]
     },
@@ -472,7 +480,8 @@
     "2026-10-26: DIA-010 development bundle ZIP/SHA256/compatibility code authored in PR #26, structurally verified in GitHub Actions; package 0.1.0-dev.0 is still unreleased and no publication evidence exists. Work stays 2/10 Done until remaining dependency/acceptance gates.",
     "2026-10-26: DIA-008 deterministic coordinator implemented with validated source-preserving grouping and complete-link checks (PR #27), and portable 19-file builder verified in CI; this is structural functionality, not accepted/validated reviewer behavior. Required work stays 2/10.",
     "2026-10-27: DIA-009 consumer CI does not execute; both private repos fail before runner allocation. GitHub account/Actions control is an external owner-required check. No code-test failure is established. Work remains 2/10 Done.",
-    "2026-10-27: DIA-005 contract revision 2 implemented in PR #41 (structural checks only); DIA-005 stays In progress. Required work stays 2/10."
+    "2026-10-27: DIA-005 contract revision 2 implemented in PR #41 (structural checks only); DIA-005 stays In progress. Required work stays 2/10.",
+    "2026-10-27: all seven skills revised to contract revision 2 in PR #43 (structural); DIA-006 and DIA-008 stay In progress. Required work stays 2/10."
   ],
   "governance": {
     "purpose": "Portable review skills for conceptual, linguistic and scientific integrity",
