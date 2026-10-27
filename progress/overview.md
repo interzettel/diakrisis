@@ -17,3 +17,9 @@
 **Readiness:** current L0 / **insufficient evidence for L1** in this new repository: no verified clean bootstrap, tested local runtime, or CI as of initial inspection. Proposed target L3 for first release, subject to owner determination. No new R0–R4 agent authority granted. Central readiness assessment not yet persisted; pending review with Personal Agent Stack policy.
 
 **Unresolved decisions:** chosen first runtime; scope acceptance; publication/privacy policy for fixtures; acceptance and reviewer roles; release thresholds.
+
+## 2026-10-27 reconciliation
+
+- **Scope versus acceptance:** the ten-package working scope was authorized on 2026-10-26 (baseline `DIA-B01`). The "scope acceptance" item under unresolved decisions refers to accepting deliverables and milestones, which remains open.
+- **Readiness evidence since the initial inspection:** public Diakrisis CI has run green on `main` since 2026-10-26 (bootstrap integrity, skill format, unit tests, bundle build, README parity, PRS validation, disposable install). No local agent runtime has been tested and private consumer CI has not executed. The readiness level itself has not been re-assessed; that is an owner decision.
+- Required work remains 2/10; no milestone is accepted.

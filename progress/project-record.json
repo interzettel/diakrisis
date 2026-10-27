@@ -13,8 +13,8 @@
         "kind": "file-snapshot",
         "path": "progress/ledger.json",
         "commit": null,
-        "observedOn": "2026-10-26",
-        "updatedOn": "2026-10-26",
+        "observedOn": "2026-10-27",
+        "updatedOn": "2026-10-27",
         "authority": "Owner-directed initial working scope, effective 2026-10-26; implementation evidence and milestone acceptance remain separate."
       },
       "presentation": {
