@@ -18,7 +18,7 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-10-27 against `e9172107`.
+Observed 2026-10-27 against `345c9568`.
 
 #### Milestone roadmap
 
@@ -41,7 +41,7 @@ States represent recorded implementation progress; a closed issue, passing test 
 | [DIA-004](https://github.com/interzettel/diakrisis/issues/4) | Activate pinned authoring tools | Planned | P1 | DIA-003 | Portable Superpowers/skill-creator/PRS install and discovery verified in an actual Claude Code or Codex session, including rollback. |
 | [DIA-005](https://github.com/interzettel/diakrisis/issues/5) | Define typed findings and authority contract | In progress | P1 | DIA-002, DIA-003 | [PR #24](https://github.com/interzettel/diakrisis/pull/24) |
 | [DIA-006](https://github.com/interzettel/diakrisis/issues/6) | Build and test three pilot reviewers | In progress | P1 | DIA-004, DIA-005 | [PR #17](https://github.com/interzettel/diakrisis/pull/17) |
-| [DIA-007](https://github.com/interzettel/diakrisis/issues/7) | Evaluate pilots on genuine documents | Planned | P1 | DIA-006 | Evidence-linked evaluation on safe copies of real research/project documents, including false-positive and preservation checks. |
+| [DIA-007](https://github.com/interzettel/diakrisis/issues/7) | Evaluate pilots on genuine documents | In progress | P1 | DIA-006 | [PR #46](https://github.com/interzettel/diakrisis/pull/46) |
 | [DIA-008](https://github.com/interzettel/diakrisis/issues/8) | Expand reviewers and coordination | In progress | P2 | DIA-007 | [PR #27](https://github.com/interzettel/diakrisis/pull/27) |
 | [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | In progress | P2 | DIA-007 | [writing-kitchen PR #24](https://github.com/yigit-denktas/writing-kitchen/pull/24) · Blocked flag (reason in source) |
 | [DIA-010](https://github.com/interzettel/diakrisis/issues/10) | Version releases and evaluate drift | In progress | P2 | DIA-008, DIA-009 | [PR #26](https://github.com/interzettel/diakrisis/pull/26) |
