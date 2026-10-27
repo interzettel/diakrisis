@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -69,6 +70,7 @@ def compose(payload: dict) -> dict:
     source_ids = set()
     review_ids = set()
     statuses = []
+    every_source_examined = True
     for incoming in inputs:
         if not isinstance(incoming, dict) or set(incoming) != {"input_id", "report"}:
             raise ValueError("each input must supply input_id and an unchanged report")
@@ -83,6 +85,8 @@ def compose(payload: dict) -> dict:
             raise ValueError("duplicate upstream review ID")
         review_ids.add(review_id)
         statuses.append(report["status"])
+        if not report["coverage"]["examined"]:
+            every_source_examined = False
         source_reports.append({
             "input_id": source_id,
             "review_id": review_id,
@@ -98,6 +102,9 @@ def compose(payload: dict) -> dict:
             examined[canonical(item)] = item
         not_examined.update(report["coverage"]["not_examined"])
         limitations.update(f"{source_id}: {note}" for note in report["limitations"])
+
+    if coord_id in review_ids:
+        raise ValueError("coordination ID must differ from every input review ID")
 
     pairs = set()
     groups_pairs = set()
@@ -174,8 +181,10 @@ def compose(payload: dict) -> dict:
 
     findings = [all_findings[x] for x in sorted(all_findings)]
     if not findings:
+        # Clean only if EVERY source says so and every source examined
+        # something: one zero-coverage "clean" report must not ride on another.
         status = ("no-issues-detected" if statuses and all(
-            x == "no-issues-detected" for x in statuses) and examined
+            x == "no-issues-detected" for x in statuses) and every_source_examined
                   else "insufficient-evidence")
     elif all(x["disposition"] == "abstain" for x in findings):
         status = "insufficient-evidence"
@@ -214,13 +223,20 @@ def main() -> int:
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
     try:
+        # Check the paths as given BEFORE resolving: resolve() follows links,
+        # so a symlink test on the resolved path can never fire.
+        if args.input.is_symlink() or not args.input.is_file():
+            raise ValueError("input must be a real file, not a symlink")
+        if os.path.lexists(args.output):
+            raise ValueError("output must not exist (including as a symlink)")
         src = args.input.resolve(strict=True)
-        dest = args.output.resolve()
-        if not src.is_file() or src.is_symlink() or dest == src or dest.exists():
-            raise ValueError("input must be a real file; output must not exist or overwrite input")
+        if args.output.resolve() == src:
+            raise ValueError("output must not overwrite input")
         payload = json.loads(src.read_text(encoding="utf-8"))
         output = compose(payload)
-        dest.write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        # Exclusive create: never follows or replaces a path that appeared meanwhile.
+        with open(args.output, "x", encoding="utf-8") as handle:
+            handle.write(json.dumps(output, indent=2, ensure_ascii=False) + "\n")
         print(f"DIA-008: {len(output['report']['findings'])} preserved findings, "
               f"{len(output['groups'])} declared groups; no source files modified")
         return 0
