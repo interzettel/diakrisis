@@ -53,3 +53,19 @@ The [DIA-009 runner investigation](../docs/research/DIA-009-RUNNER-INCIDENT.md) 
 - The "Status" paragraph above reflects the initial observation (1/10). Current required work is **2/10** (DIA-001 and DIA-003 Done); no milestone is accepted.
 - GitHub's milestone endpoint is now readable: the repository has **no native milestones** (verified empty, `state=all`). DIA-M0–DIA-M3 exist only in the PRS ledger. See `progress/discovery.json` → `reconciliations`.
 - **`sourceState` in this ledger** holds semicolon-separated provenance tags (for example `first-consumer-source-merged;private-actions-runner-unallocated;acceptance-deferred`). Project Record Standard uses `sourceState` to retain a source's own state label and unmapped meaning; here it is that free-text provenance note, **not** a second execution state. The execution state is `state`; `Blocked` is the separate `blocked` flag.
+
+## 2026-10-27 Spatial Laboratory bridge re-checked against a contract revision 2 bundle
+
+Contract revision 2 changed the content of bundled files, so the unmerged [Spatial Laboratory PR #18](https://github.com/yigit-denktas/spatial-laboratory/pull/18) bridge was re-run locally, read-only, against a real bundle. Nothing was pushed to Spatial Laboratory and its pins are unchanged.
+
+**What was checked:**
+
+- **Bundle.** Built from Diakrisis `main` at `1e81f31499d93b765492f2f1b316005c21ee31a2`. `--check-consumer` reported the current 19-file roster, with every source blob matching git at that commit.
+- **Staging.** `python -m labcore.diakrisis_bridge --bundle … --out … --apply` at PR #18 head `a67976639666ed5b79125e2ef152074d2c257c36` staged all seven skills. The existing N02 `external_skills.verify` gate passed, and the receipt names commit `1e81f31`.
+- **Links and tests.** None of the 123 relative links inside the staged skill folders is broken. The bridge's own 12 synthetic tests pass.
+
+**Still open:**
+
+- PR #18 merge requires the owner's explicit approval.
+- Spatial Laboratory GitHub Actions still cannot start (see the runner incident record), so this is a local verification, not CI evidence.
+- No agent has loaded the staged skills natively.
