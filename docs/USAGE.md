@@ -46,6 +46,7 @@ For a very narrow question, invoke a named reviewer directly rather than the coo
 3. Findings about the **same underlying defect** are deduplicated; their differing reasons remain visible.
 4. Unresolved authority conflicts and inaccessible sources remain explicitly undecided.
 5. Only the human owner or authorized downstream workflow decides to accept, apply, publish or release a change.
+6. To get answers from people and agents, render the findings as a [review thread](REVIEW-THREADS.md): stable IDs, one-line `agree` / `partly` / `disagree` / `duplicate` replies, and an offline tally.
 
 The suite never changes a manuscript or project repository simply because a critique was generated. `findings` being empty is *not a certification*.
 
