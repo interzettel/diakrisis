@@ -35,16 +35,16 @@ States represent recorded implementation progress; a closed issue, passing test 
 
 | ID / issue | Work package | State | Priority | Dependencies | Evidence or next action |
 | --- | --- | --- | --- | --- | --- |
-| [DIA-001](https://github.com/interzettel/diakrisis/issues/1) | Preserve research foundation | Done | P0 | — | [Evidence](https://github.com/interzettel/diakrisis/pull/11) |
-| [DIA-002](https://github.com/interzettel/diakrisis/issues/2) | Install and verify Project Record Standard | In progress | P0 | DIA-001 | [Evidence](https://github.com/interzettel/diakrisis/pull/15) · Blocked flag (reason in source) |
-| [DIA-003](https://github.com/interzettel/diakrisis/issues/3) | Audit upstream standards and donors | Done | P0 | DIA-001 | [Evidence](https://github.com/interzettel/diakrisis/pull/20) |
+| [DIA-001](https://github.com/interzettel/diakrisis/issues/1) | Preserve research foundation | Done | P0 | — | [PR #11](https://github.com/interzettel/diakrisis/pull/11) |
+| [DIA-002](https://github.com/interzettel/diakrisis/issues/2) | Install and verify Project Record Standard | In progress | P0 | DIA-001 | [PR #15](https://github.com/interzettel/diakrisis/pull/15) · Blocked flag (reason in source) |
+| [DIA-003](https://github.com/interzettel/diakrisis/issues/3) | Audit upstream standards and donors | Done | P0 | DIA-001 | [PR #20](https://github.com/interzettel/diakrisis/pull/20) |
 | [DIA-004](https://github.com/interzettel/diakrisis/issues/4) | Activate pinned authoring tools | Planned | P1 | DIA-003 | Portable Superpowers/skill-creator/PRS install and discovery verified in an actual Claude Code or Codex session, including rollback. |
-| [DIA-005](https://github.com/interzettel/diakrisis/issues/5) | Define typed findings and authority contract | In progress | P1 | DIA-002, DIA-003 | Versioned typed finding schema and authority rules validated with examples, positive and negative controls. |
-| [DIA-006](https://github.com/interzettel/diakrisis/issues/6) | Build and test three pilot reviewers | In progress | P1 | DIA-004, DIA-005 | [Evidence](https://github.com/interzettel/diakrisis/pull/17) |
+| [DIA-005](https://github.com/interzettel/diakrisis/issues/5) | Define typed findings and authority contract | In progress | P1 | DIA-002, DIA-003 | [PR #24](https://github.com/interzettel/diakrisis/pull/24) |
+| [DIA-006](https://github.com/interzettel/diakrisis/issues/6) | Build and test three pilot reviewers | In progress | P1 | DIA-004, DIA-005 | [PR #17](https://github.com/interzettel/diakrisis/pull/17) |
 | [DIA-007](https://github.com/interzettel/diakrisis/issues/7) | Evaluate pilots on genuine documents | Planned | P1 | DIA-006 | Evidence-linked evaluation on safe copies of real research/project documents, including false-positive and preservation checks. |
-| [DIA-008](https://github.com/interzettel/diakrisis/issues/8) | Expand reviewers and coordination | In progress | P2 | DIA-007 | [Evidence](https://github.com/interzettel/diakrisis/pull/17) |
-| [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | In progress | P2 | DIA-007 | Reviewed reversible consumer repository adoption without changing each consumer's authoritative definitions. · Blocked flag (reason in source) |
-| [DIA-010](https://github.com/interzettel/diakrisis/issues/10) | Version releases and evaluate drift | In progress | P2 | DIA-008, DIA-009 | Versioned skill releases, pinned consumers, provenance/compatibility and update-drift checks established with publication evidence. |
+| [DIA-008](https://github.com/interzettel/diakrisis/issues/8) | Expand reviewers and coordination | In progress | P2 | DIA-007 | [PR #27](https://github.com/interzettel/diakrisis/pull/27) |
+| [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | In progress | P2 | DIA-007 | [writing-kitchen PR #24](https://github.com/yigit-denktas/writing-kitchen/pull/24) · Blocked flag (reason in source) |
+| [DIA-010](https://github.com/interzettel/diakrisis/issues/10) | Version releases and evaluate drift | In progress | P2 | DIA-008, DIA-009 | [PR #26](https://github.com/interzettel/diakrisis/pull/26) |
 
 **Versioning:** Suite `0.1.0-dev.0` — **unreleased**; included skills: **7**. Draft candidates: None. [Single package version policy](docs/VERSIONING.md).
 
