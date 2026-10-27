@@ -22,4 +22,5 @@
 
 - **Scope versus acceptance:** the ten-package working scope was authorized on 2026-10-26 (baseline `DIA-B01`). The "scope acceptance" item under unresolved decisions refers to accepting deliverables and milestones, which remains open.
 - **Readiness evidence since the initial inspection:** public Diakrisis CI has run green on `main` since 2026-10-26 (bootstrap integrity, skill format, unit tests, bundle build, README parity, PRS validation, disposable install). No local agent runtime has been tested and private consumer CI has not executed. The readiness level itself has not been re-assessed; that is an owner decision.
+- **Owner identity (owner statement, 2026-10-27):** one owner. *Studio Zettlerei* is the studio's name and the copyright holder in `LICENSE`; *interzettel* is the GitHub organisation, named for zettel woven together like warp and weft, as the repositories interlock.
 - Required work remains 2/10; no milestone is accepted.
