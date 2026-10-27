@@ -8,7 +8,7 @@ Measure whether `terminology-review` improves source-grounded terminology critiq
 
 ## Runtime preflight
 
-1. Open a reviewed checkout of draft PR #17 in a supported agent runtime (Claude Code and/or Codex). Use a clean branch/worktree and no private data.
+1. Open a reviewed checkout of `main` at the exact revision under test (record its commit ID) in a supported agent runtime (Claude Code and/or Codex). The seven skills were merged in PR #17 and revised to contract revision 2 in PR #43. Use a clean branch/worktree and no private data.
 2. Verify that `.agents/skills/terminology-review/SKILL.md` appears through the host's real skill discovery/activation mechanism. Separately verify whether Superpowers is active as a plugin; a copied directory is not a plugin hook.
 3. Record exact model/build, temperature/thinking where available, prompt versions, allowed tools, source revision, skill revision, system instruction baseline, time and user approvals.
 4. If using two different models or harnesses, treat results as distinct experiments, not matched pairs.
