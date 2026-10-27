@@ -148,7 +148,7 @@
       "groupId": "DIA-INF",
       "milestoneId": "DIA-M1",
       "state": "active",
-      "sourceState": "contract-revision-1-implemented-structural-ci-passed-dependency-pending",
+      "sourceState": "contract-revision-2-implemented-structural-ci-passed-dependency-pending",
       "required": true,
       "blocked": false,
       "dependsOn": [
@@ -162,7 +162,7 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/5",
       "criterion": "Versioned typed finding schema and authority rules validated with examples, positive and negative controls.",
-      "note": "Owner-directed build-before-test exception: finding JSON Schema contract revision 1, review-report envelope, scoped authority and coordinator deduplication rules plus synthetic positive/negative/abstention examples implemented in PR #24. Offline CI validated schema syntax and intentional negative rejection (run 40402756670). DIA-003 done; DIA-002 remains active with Blocked flag for deferred final local PRS verification, so DIA-005 remains In progress and no milestone acceptance is claimed. Real reviewer behavior and consumer context/authority applicability will be tested at end of build.",
+      "note": "Owner-directed build-before-test exception: finding JSON Schema contract revision 1, review-report envelope, scoped authority and coordinator deduplication rules plus synthetic positive/negative/abstention examples implemented in PR #24. Offline CI validated schema syntax and intentional negative rejection (run 40402756670). DIA-003 done; DIA-002 remains active with Blocked flag for deferred final local PRS verification, so DIA-005 remains In progress and no milestone acceptance is claimed. Real reviewer behavior and consumer context/authority applicability will be tested at end of build. 2026-10-27: contract revision 2 (PR #41): wire schema_version 2, clean reports need examined scope, issues-identified needs a non-abstention finding, severity and category vocabularies in schema $defs, migration documented; still no Done point while DIA-002 and end-of-build verification remain.",
       "deferReason": null,
       "evidence": [
         {
@@ -172,6 +172,10 @@
         {
           "kind": "structural-schema-ci",
           "source": "https://github.com/interzettel/diakrisis/actions/runs/40402756670"
+        },
+        {
+          "kind": "contract-revision-2-implementation",
+          "source": "https://github.com/interzettel/diakrisis/pull/41"
         }
       ]
     },
@@ -408,7 +412,7 @@
       "acceptanceRule": "unknown",
       "sourceAccepted": null,
       "unscopedWork": [],
-      "nextAction": "DIA-005 / #5 finding+report contract revision 1 structurally implemented in PR #24 (positive/negative/abstention cases passed). DIA-003 complete; DIA-002 / #2 remains the P0 prerequisite Blocked only for owner-deferred local archive/runtime verification. DIA-004 / #4 runtime activation is also deferred. No further eligible unblocked completion gate in M1 until owner resumes the final test phase; M1 acceptance remains unknown.",
+      "nextAction": "DIA-005 / #5 finding+report contract structurally implemented: revision 1 in PR #24, revision 2 in PR #41 (2026-10-27), with positive, negative and abstention cases. DIA-003 complete; DIA-002 / #2 remains the P0 prerequisite Blocked only for owner-deferred local archive/runtime verification. DIA-004 / #4 runtime activation is also deferred. No further eligible unblocked completion gate in M1 until owner resumes the final test phase; M1 acceptance remains unknown.",
       "priority": null,
       "sourceState": null,
       "evidence": []
@@ -467,7 +471,8 @@
     "2026-10-26: Owner-authorized DIA-009 build-before-test exception; first consumer Writing Kitchen code merged with precise source manifest. No Done/acceptance credit until DIA-007 and consumer checks; WK CI failed, root cause unverified. Required work stays 2/10.",
     "2026-10-26: DIA-010 development bundle ZIP/SHA256/compatibility code authored in PR #26, structurally verified in GitHub Actions; package 0.1.0-dev.0 is still unreleased and no publication evidence exists. Work stays 2/10 Done until remaining dependency/acceptance gates.",
     "2026-10-26: DIA-008 deterministic coordinator implemented with validated source-preserving grouping and complete-link checks (PR #27), and portable 19-file builder verified in CI; this is structural functionality, not accepted/validated reviewer behavior. Required work stays 2/10.",
-    "2026-10-27: DIA-009 consumer CI does not execute; both private repos fail before runner allocation. GitHub account/Actions control is an external owner-required check. No code-test failure is established. Work remains 2/10 Done."
+    "2026-10-27: DIA-009 consumer CI does not execute; both private repos fail before runner allocation. GitHub account/Actions control is an external owner-required check. No code-test failure is established. Work remains 2/10 Done.",
+    "2026-10-27: DIA-005 contract revision 2 implemented in PR #41 (structural checks only); DIA-005 stays In progress. Required work stays 2/10."
   ],
   "governance": {
     "purpose": "Portable review skills for conceptual, linguistic and scientific integrity",
