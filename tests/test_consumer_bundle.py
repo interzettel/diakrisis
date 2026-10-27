@@ -188,5 +188,23 @@ class ConsumerBundleTests(unittest.TestCase):
             self.assertEqual((out / "do-not-touch").read_text(), "original")
 
 
+class UncommittedFilesTests(unittest.TestCase):
+    def test_modified_and_untracked_bundled_files_are_listed(self):
+        import subprocess
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            git = lambda *a: subprocess.run(["git", *a], cwd=root, check=True, capture_output=True)
+            git("init", "-q")
+            (root / "a.md").write_text("a\n", encoding="utf-8")
+            (root / "other.md").write_text("o\n", encoding="utf-8")
+            git("add", ".")
+            git("-c", "user.name=t", "-c", "user.email=t@t", "commit", "-qm", "c")
+            self.assertEqual(bundle.uncommitted(["a.md", "b.md"], root), [])
+            (root / "a.md").write_text("changed\n", encoding="utf-8")
+            (root / "b.md").write_text("new\n", encoding="utf-8")
+            (root / "other.md").write_text("not bundled\n", encoding="utf-8")
+            self.assertEqual(bundle.uncommitted(["a.md", "b.md"], root), ["a.md", "b.md"])
+
+
 if __name__ == "__main__":
     unittest.main()

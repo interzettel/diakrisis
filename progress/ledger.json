@@ -356,7 +356,7 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/10",
       "criterion": "Versioned skill releases, pinned consumers, provenance/compatibility and update-drift checks established with publication evidence.",
-      "note": "Owner-authorized build-first exception: deterministic nonpublishing seven-skill package builder, pinned 16-file consumer manifest (extended to 19 files by DIA-008 PR #27), reproducible ZIP and SHA256SUMS, conservative offline drift/compatibility checks and rollback guidance implemented in PR #26. GitHub Actions run 40410906049 passed structural tests, reproducibility, tampering rejection and nonempty-target refusal. No stable release tag, GitHub Release assets, approved publication/consumer rollout, observed model quality or DIA-008/009 completion. Remains In progress, required work count unchanged.",
+      "note": "Owner-authorized build-first exception: deterministic nonpublishing seven-skill package builder, pinned 16-file consumer manifest (extended to 19 files by DIA-008 PR #27), reproducible ZIP and SHA256SUMS, conservative offline drift/compatibility checks and rollback guidance implemented in PR #26. GitHub Actions run 40410906049 passed structural tests, reproducibility, tampering rejection and nonempty-target refusal. No stable release tag, GitHub Release assets, approved publication/consumer rollout, observed model quality or DIA-008/009 completion. Remains In progress, required work count unchanged. 2026-10-27: the builder now refuses, before writing anything, when bundled files differ from the pinned commit, and names them (PR #48).",
       "deferReason": null,
       "evidence": [
         {
@@ -366,6 +366,10 @@
         {
           "kind": "offline-package-ci",
           "source": "https://github.com/interzettel/diakrisis/actions/runs/40410906049"
+        },
+        {
+          "kind": "dirty-tree-refusal",
+          "source": "https://github.com/interzettel/diakrisis/pull/48"
         }
       ]
     }
