@@ -71,6 +71,25 @@ class SkillSuiteTests(unittest.TestCase):
         self.assertNotIn("## Before release", body)
         self.assertIn("**Package status:**", body)
 
+    def test_shared_block_carries_round_1_lessons(self):
+        block = shared_block(text(SKILLS[0]))
+        self.assertIn("**Check the remedy, not only the diagnosis.**", block)
+        self.assertIn("`not inspected`, never absent", block)
+        self.assertIn("conflict only if both cannot be true", block)
+
+    def test_specialist_round_1_lessons(self):
+        expected = {
+            "argument-review": "Match the evidence you demand to the claim type",
+            "method-review": "something that happened after assignment",
+            "conceptual-model-review": "The repair must keep the declared concept",
+            "communication-review": "Respect genre",
+            "consistency-review": "Different wording is not a contradiction",
+            "review-coordinator": "**problem families**",
+        }
+        for name, phrase in expected.items():
+            with self.subTest(skill=name):
+                self.assertIn(phrase, text(ROOT / ".agents/skills" / name / "SKILL.md"))
+
 
 if __name__ == "__main__":
     unittest.main()

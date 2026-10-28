@@ -203,7 +203,7 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/6",
       "criterion": "Three specialist skills completed with portable metadata, matched no-skill/with-skill runs and human-adjudicated behavior results.",
-      "note": "Seven coordinated experimental reviewer modules merged into main via PR #17; real reviewer accuracy, activation and owner acceptance remain to be assessed. 2026-10-27: pilot skills (terminology, conceptual-model, argument) revised to contract revision 2 in PR #43 (inline categories and severity, failure slot, specialist boundaries, routing aligned with USAGE.md) after the dated research records in PR #39; structure only, behaviour untested. 2026-10-27: first matched no-skill/with-skill runs on owner material completed (DIA-007 round, private); human adjudication pending, so the criterion is not yet met.",
+      "note": "Seven coordinated experimental reviewer modules merged into main via PR #17; real reviewer accuracy, activation and owner acceptance remain to be assessed. 2026-10-27: pilot skills (terminology, conceptual-model, argument) revised to contract revision 2 in PR #43 (inline categories and severity, failure slot, specialist boundaries, routing aligned with USAGE.md) after the dated research records in PR #39; structure only, behaviour untested. 2026-10-27: first matched no-skill/with-skill runs on owner material completed (DIA-007 round, private); human adjudication pending, so the criterion is not yet met. 2026-10-28: all skills revised from round 1 lessons (remedy check, evidence hierarchy, claim-type evidence, comparable counterexamples, genre, problem families) after the research-gate record SUITE-REVISION-2026-10-28.md (PR #50); the revision is untested until round 2.",
       "deferReason": null,
       "evidence": [
         {
@@ -217,6 +217,10 @@
         {
           "kind": "skill-revision-contract-2",
           "source": "https://github.com/interzettel/diakrisis/pull/43"
+        },
+        {
+          "kind": "suite-revision-2026-10-28",
+          "source": "https://github.com/interzettel/diakrisis/pull/50"
         }
       ]
     },
@@ -267,7 +271,7 @@
       "priority": "P2",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/8",
       "criterion": "Method, communication, cross-document consistency and coordinator integration passes composition/conflict tests.",
-      "note": "Owner-authorized build-first DIA-008 implementation: six specialist reports accepted through DIA-005 typed schemas; source-preserving deterministic coordinator in tools/coordinate_reviews.py, additive coordinated-report.schema.json, complete-link explicit grouping, unresolved disagreement, provenance digests, abstention/negative coverage, offline examples/tests, and expanded 19-file portable bundle with consumer links. Source PR #27 CI run 40417198629 passed initial static, schema, reproducibility and refusal controls. Final tested package additionally executes the vendored coordinator on the synthetic integration example; the final CI receipt governs that claim. DIA-007 actual evaluated reviewer quality and empirical composition remain deferred by owner; suite unreleased; issue In progress, no M3 acceptance or Done point. 2026-10-27: remaining specialists and coordinator revised to contract revision 2 in PR #43 (inline categories and severity, failure slot, specialist boundaries, routing aligned with USAGE.md) after the dated research records in PR #39; structure only, behaviour untested. 2026-10-27: review threads (PR #47): tools/review_thread.py renders reports or blinded pools as issue threads with stable IDs and a one-line reply protocol, and tallies people's and agents' verdicts; owner's idea, structural tests only.",
+      "note": "Owner-authorized build-first DIA-008 implementation: six specialist reports accepted through DIA-005 typed schemas; source-preserving deterministic coordinator in tools/coordinate_reviews.py, additive coordinated-report.schema.json, complete-link explicit grouping, unresolved disagreement, provenance digests, abstention/negative coverage, offline examples/tests, and expanded 19-file portable bundle with consumer links. Source PR #27 CI run 40417198629 passed initial static, schema, reproducibility and refusal controls. Final tested package additionally executes the vendored coordinator on the synthetic integration example; the final CI receipt governs that claim. DIA-007 actual evaluated reviewer quality and empirical composition remain deferred by owner; suite unreleased; issue In progress, no M3 acceptance or Done point. 2026-10-27: remaining specialists and coordinator revised to contract revision 2 in PR #43 (inline categories and severity, failure slot, specialist boundaries, routing aligned with USAGE.md) after the dated research records in PR #39; structure only, behaviour untested. 2026-10-27: review threads (PR #47): tools/review_thread.py renders reports or blinded pools as issue threads with stable IDs and a one-line reply protocol, and tallies people's and agents' verdicts; owner's idea, structural tests only. 2026-10-28: coordinator presents problem families with every contributing finding ID (PR #50); untested.",
       "deferReason": null,
       "evidence": [
         {
@@ -293,6 +297,10 @@
         {
           "kind": "review-threads",
           "source": "https://github.com/interzettel/diakrisis/pull/47"
+        },
+        {
+          "kind": "suite-revision-2026-10-28",
+          "source": "https://github.com/interzettel/diakrisis/pull/50"
         }
       ]
     },

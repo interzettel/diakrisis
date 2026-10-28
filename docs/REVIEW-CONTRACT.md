@@ -86,6 +86,10 @@ A **finding** is an advisory, bounded observation about an exact passage, not a 
 
 **No issues detected** is represented as a `review-report` with `status=no-issues-detected` and `findings=[]`. It is an observed outcome for the **explicit covered scope**, never a scientific-validity certification. If there is insufficient authority to examine the targeted question, use `insufficient-evidence` and, where useful, an explicit abstention finding. Coverage distinguishes `examined` from `not_examined`.
 
+**Remedy check (2026-10-28).** A `suggestion` is a proposed change, and it is judged as well as the diagnosis. It must not substitute an easier construct or concept, bias a comparison by selecting or excluding cases, drop the author's information or commitments, or change a claim's status (conditional, illustrative or remembered into observed). When no change is safe, the finding keeps its diagnosis and asks a question instead of proposing a rewrite. The schema is unchanged; this is a rule for the field's content.
+
+**Evidence hierarchy (2026-10-28).** Evidence the reviewer could not open is recorded as `not-inspected` in `basis[].verification` and treated as unverified, never as absent. What the owner has confirmed outranks a public record's silence or different wording, and two statements conflict only if both cannot be true of the same thing. The lessons behind both rules are in the [suite revision record](https://github.com/interzettel/diakrisis/blob/main/docs/research/SUITE-REVISION-2026-10-28.md).
+
 ## Authority-resolution procedure
 
 1. **Identify the actual claim's domain and scope** (project, document, term, time/version, locale, legal or academic domain). Never compare matching keywords from different referents.
