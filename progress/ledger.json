@@ -226,7 +226,7 @@
       "groupId": "DIA-EVL",
       "milestoneId": "DIA-M2",
       "state": "active",
-      "sourceState": "protocol-and-tooling-implemented;first-private-round-run;adjudication-pending",
+      "sourceState": "protocol-and-tooling-implemented;round-1-adjudicated-and-unblinded;round-2-pending",
       "required": true,
       "blocked": false,
       "dependsOn": [
@@ -239,7 +239,7 @@
       "priority": "P1",
       "issueUrl": "https://github.com/interzettel/diakrisis/issues/7",
       "criterion": "Evidence-linked evaluation on safe copies of real research/project documents, including false-positive and preservation checks.",
-      "note": "Owner request 2026-10-27 supersedes the 2026-10-26 deferral: the owner supplied his own research proposal, two essay drafts and their ledgers for a paired test. 24 runs (12 with skill, 12 baseline, same model, fresh agents) completed against a frozen private copy; findings pooled, shuffled and blinded with a sealed key. Protocol and tooling in docs/EVALUATION.md, tools/blind_pool.py and tools/overlap_check.py (PR #46); fixture exposure labels close audit finding #19. Material and findings stay private; adjudication by the owner and by agents on the owner's threads is pending, so no result, false-positive rate or acceptance is claimed.",
+      "note": "Owner request 2026-10-27 supersedes the 2026-10-26 deferral: the owner supplied his own research proposal, two essay drafts and their ledgers for a paired test. 24 runs (12 with skill, 12 baseline, same model, fresh agents) completed against a frozen private copy; findings pooled, shuffled and blinded with a sealed key. Protocol and tooling in docs/EVALUATION.md, tools/blind_pool.py and tools/overlap_check.py (PR #46); fixture exposure labels close audit finding #19. Material and findings stay private; adjudication by the owner and by agents on the owner's threads is pending, so no result, false-positive rate or acceptance is claimed. 2026-10-28: round 1 adjudicated blind by agent graders on the owner's threads and unblinded; owner approved publishing aggregate counts (docs/research/DIA-007-ROUND-1-2026-10-27.md): with skill 67 findings, 30 agree, 23 partly, 1 disagree, 13 duplicate; baseline 71, 18 agree, 32 partly, 3 disagree, 18 duplicate, plus one owner-graded wrong. One run per cell and project-informed graders: a direction, not an effect; the false-positive and preservation criterion is not yet met.",
       "deferReason": null,
       "evidence": [
         {
