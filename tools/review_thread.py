@@ -144,9 +144,10 @@ def tally(comments: object, ids: list[str]) -> dict:
         if not isinstance(c, dict):
             continue
         body = str(c.get("body") or "")
-        if MARKER in body or len(HEADING.findall(body)) >= 2:  # the thread itself, or a hand-posted one
+        if HEADING.search(body):  # a thread part carries finding headings; a reply may quote the marker
             continue
-        first = body.strip().splitlines()[0] if body.strip() else ""
+        lines = [l for l in body.splitlines() if l.strip() and not l.strip().startswith("<!--")]
+        first = lines[0] if lines else ""
         sig = SIGNATURE.match(first)
         login = (c.get("user") or {}).get("login") if isinstance(c.get("user"), dict) else None
         author = sig.group(1).strip() if sig else str(c.get("author") or login or "unknown")
