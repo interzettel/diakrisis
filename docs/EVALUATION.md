@@ -112,4 +112,4 @@ Quotes from owner documents, findings, grades and keys stay with the owner.
 
 | Date | Material | Status |
 | --- | --- | --- |
-| 2026-10-27 | Owner-supplied research proposal, two essay drafts and their status ledgers (private) | Runs complete; adjudication pending; no result reported here |
+| 2026-10-27 | Owner-supplied research proposal, two essay drafts and their status ledgers (private) | Adjudicated and unblinded 28 Oct; aggregate counts published with owner approval in [DIA-007-ROUND-1-2026-10-27.md](research/DIA-007-ROUND-1-2026-10-27.md) |
