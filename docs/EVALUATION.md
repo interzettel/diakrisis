@@ -113,4 +113,4 @@ Quotes from owner documents, findings, grades and keys stay with the owner.
 | Date | Material | Status |
 | --- | --- | --- |
 | 2026-10-27 | Owner-supplied research proposal, two essay drafts and their status ledgers (private) | Adjudicated and unblinded 28 Oct; aggregate counts published with owner approval in [DIA-007-ROUND-1-2026-10-27.md](research/DIA-007-ROUND-1-2026-10-27.md) |
-| 2026-10-28 | Owner's revised research proposal (v7.6, private), six review types | Round 2: revised skills (`28067ca`) vs baseline, 12 runs, 70 findings posted blind (key SHA-256 `c7bc3027…`, protocol SHA-256 `956975dd…`); adjudication pending; no result reported here |
+| 2026-10-28 | Owner's revised research proposal (v7.6, private), six review types | Round 2: revised skills (`28067ca`) vs baseline, 12 runs, 70 findings posted blind (key SHA-256 `c7bc3027…`, protocol SHA-256 `956975dd…`); adjudicated and unblinded 28 Oct; counts in [DIA-007-ROUND-2-2026-10-28.md](research/DIA-007-ROUND-2-2026-10-28.md) |
