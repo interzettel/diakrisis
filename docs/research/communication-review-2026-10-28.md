@@ -8,4 +8,10 @@
 
 **Applied here:** L1, L2, L3 (shared block); L6 in procedure step 6. Protect genre, and never let a clarity edit change a claim's status.
 
+**Sources for the shared-block change (checked 2026-10-28):**
+
+- Altman and Bland (1995), absence of evidence is not evidence of absence: https://www.bmj.com/content/311/7003/485
+- Huang et al. (2024), unprompted model corrections can degrade correct answers: https://arxiv.org/abs/2310.01798
+- Montgomery, Nyhan and Torres (2018), post-treatment selection: https://ideas.repec.org/a/wly/amposc/v62y2018i3p760-775.html
+
 **Behavioural status:** the pre-revision skill was piloted in [round 1](DIA-007-ROUND-1-2026-10-27.md). This revision is untested until round 2.
