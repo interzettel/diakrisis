@@ -77,6 +77,26 @@ class SkillSuiteTests(unittest.TestCase):
         self.assertIn("`not inspected`, never absent", block)
         self.assertIn("conflict only if both cannot be true", block)
 
+    def test_shared_block_carries_round_3_lessons(self):
+        block = shared_block(text(SKILLS[0]))
+        self.assertIn("A record that says less", block)
+        self.assertIn("**One problem, one home.**", block)
+        self.assertIn("`handed off to <review>", block)
+
+    def test_specialist_round_3_lessons(self):
+        expected = {
+            "argument-review": "a title or abstract is not enough",
+            "method-review": "not its title or abstract",
+            "terminology-review": "This review is the home for a label",
+            "consistency-review": "→ terminology.",
+            "communication-review": "→ terminology.",
+            "conceptual-model-review": "→ terminology.",
+            "review-coordinator": "handed off to",
+        }
+        for name, phrase in expected.items():
+            with self.subTest(skill=name):
+                self.assertIn(phrase, text(ROOT / f".agents/skills/{name}/SKILL.md"))
+
     def test_specialist_round_1_lessons(self):
         expected = {
             "argument-review": "Match the evidence you demand to the claim type",

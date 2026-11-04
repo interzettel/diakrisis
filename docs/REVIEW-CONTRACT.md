@@ -90,6 +90,8 @@ A **finding** is an advisory, bounded observation about an exact passage, not a 
 
 **Evidence hierarchy (2026-10-28).** Evidence the reviewer could not open is recorded as `not-inspected` in `basis[].verification` and treated as unverified, never as absent. What the owner has confirmed outranks a public record's silence or different wording, and two statements conflict only if both cannot be true of the same thing. The lessons behind both rules are in the [suite revision record](https://github.com/interzettel/diakrisis/blob/main/docs/research/SUITE-REVISION-2026-10-28.md).
 
+**Narrower records and hand-offs (2026-11-04).** A record that says less than the owner's account (a narrower role, fewer details, one date for two events) is compatible with it and is not a finding. A cited source is judged on its full text, not its title or abstract; if the full text could not be opened it is `not-inspected` and gets no support finding. Each problem has one home review: a specialist that sees a problem owned by another review lists it in `limitations` as `handed off to <review>: "<span>"` instead of spending a finding on it, and the coordinator matches hand-offs to the home review's findings or raises them as their own family. The schema is unchanged. Lessons: [SUITE-REVISION-2026-11-04.md](https://github.com/interzettel/diakrisis/blob/main/docs/research/SUITE-REVISION-2026-11-04.md).
+
 ## Authority-resolution procedure
 
 1. **Identify the actual claim's domain and scope** (project, document, term, time/version, locale, legal or academic domain). Never compare matching keywords from different referents.
