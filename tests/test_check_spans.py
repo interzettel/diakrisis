@@ -37,6 +37,11 @@ class QuoteCheckerTests(unittest.TestCase):
     def test_whitespace_altered_span_is_flagged_as_normalised_match(self):
         self.assertEqual(statuses(finding("Distinguish  before\nyou judge.")), ["found-normalized"])
 
+    def test_hyphen_lost_or_added_at_a_line_break_is_flagged_as_dehyphenated(self):
+        self.assertEqual(statuses(finding("Distin-guish before you judge.")), ["found-dehyphenated"])
+        self.assertEqual(spans._dehyphenate("recycled-\ncardboard"), spans._dehyphenate("recycledcardboard"))
+        self.assertEqual(statuses(finding("Distinguish before your judge.")), ["missing"])
+
     def test_invented_span_is_missing(self):
         self.assertEqual(statuses(finding("Distinguish after you judge.")), ["missing"])
 
