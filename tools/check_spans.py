@@ -8,7 +8,8 @@ local file, it looks for the quoted text in that file at the stated revision
 no revision is given.
 
 Statuses: found · found-normalized (matches only after collapsing whitespace) ·
-missing · file-not-found · not-checkable (remote source, location rather than
+found-dehyphenated (matches only after also ignoring hyphens, as when PDF text
+extraction joins or splits a word at a line break) · missing · file-not-found · not-checkable (remote source, location rather than
 quote, path outside the root, revision not available here, unreadable file).
 
 It proves a quote exists, never that it supports the claim. Offline, read-only;
@@ -51,6 +52,12 @@ def findings_in(document: object) -> list[dict]:
 
 def _normalise(text: str) -> str:
     return " ".join(text.split())
+
+
+def _dehyphenate(text: str) -> str:
+    """Whitespace collapsed and hyphens dropped, including a hyphen that ends a line."""
+    text = re.sub(r"[-\u00ad\u2010\u2011]\s*\n\s*", "", text.replace("\u00ad", ""))
+    return re.sub(r"[-\u2010\u2011]", "", _normalise(text))
 
 
 def _read(root: Path, path: str, revision: object) -> tuple[str | None, str]:
@@ -103,6 +110,8 @@ def _check_one(root: Path, finding_id: str, where: str, path: object, revision: 
         result.update(status="found", reason="exact match")
     elif _normalise(span) and _normalise(span) in _normalise(text):
         result.update(status="found-normalized", reason="matches only after collapsing whitespace")
+    elif _dehyphenate(span) and _dehyphenate(span) in _dehyphenate(text):
+        result.update(status="found-dehyphenated", reason="matches only after ignoring hyphens; check the source if the hyphen matters")
     elif LOCATION.match(span):
         result.update(status="not-checkable", reason="span gives a location, not a quote")
     else:
@@ -138,7 +147,7 @@ def main() -> int:
     except (OSError, ValueError, json.JSONDecodeError) as error:
         print(f"DIA-005 quote check refused: {error}", file=sys.stderr)
         return 2
-    failing = FAILURES | ({"found-normalized"} if args.strict else set())
+    failing = FAILURES | ({"found-normalized", "found-dehyphenated"} if args.strict else set())
     if args.json:
         print(json.dumps(results, indent=2, ensure_ascii=False))
     else:
