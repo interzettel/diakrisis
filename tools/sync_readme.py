@@ -62,7 +62,63 @@ def stale_update_date(ledger: dict, updated_on: str) -> str | None:
 
 def fraction(progress: dict) -> str:
     value = progress["percent"]
-    return f"{progress['done']}/{progress['total']} · {value:.1f}%" if value is not None else f"{progress['done']}/{progress['total']} · Not measured"
+    return f"{progress['done']}/{progress['total']} · {value:.1f}%" if value is not None else f"{progress['done']}/{progress['total']} · not yet assessed"
+
+
+def progress_svg(items: list[dict], milestones: list[dict], source: dict, theme: dict) -> str:
+    """The README graphic: every required work package by state, and milestone acceptance.
+
+    Drawn here rather than by the upstream renderer, whose layout let long values
+    overlap their neighbours. Each value sits on its own line, so no two texts share
+    a row, and the bar shows in-progress work beside completed work.
+    """
+    from html import escape
+    c = theme["light"]
+    required = [w for w in items if w["required"]]
+    done = sum(w["state"] == "done" for w in required)
+    active = sum(w["state"] in ("active", "review", "ready") for w in required)
+    planned = len(required) - done - active
+    blocked = sum(bool(w.get("blocked")) for w in required)
+    total = len(required) or 1
+    accepted = sum(m["accepted"] is True for m in milestones)
+    assessed = sum(m["accepted"] is not None for m in milestones)
+    width, bar = 350, []
+    x = 28.0
+    for count, fill in ((done, c["accent"]), (active, "#7FAF9F")):
+        w = width * count / total
+        if w:
+            bar.append(f'<rect x="{x:.2f}" y="146" width="{w:.2f}" height="10" fill="{fill}"/>')
+        x += w
+    t = lambda x, y, size, text, weight="400", fill=c["text"]: (
+        f'<text x="{x}" y="{y}" font-size="{size}" font-weight="{weight}" fill="{fill}">{escape(text)}</text>')
+    detail = f"{active} in progress · {planned} planned" + (f" · {blocked} flagged blocked" if blocked else "")
+    m_detail = (f"{assessed} of {len(milestones)} assessed by the owner" if assessed
+                else "Acceptance not yet assessed by the owner")
+    legend = []
+    for n, (label, fill) in enumerate((("Done", c["accent"]), ("In progress", "#7FAF9F"), ("Planned", c["border"]))):
+        lx = 28 + n * 110
+        legend.append(f'<rect x="{lx}" y="170" width="10" height="10" rx="2" fill="{fill}"/>' + t(lx + 16, 179, 12, label, fill=c["muted"]))
+    desc = (f"Required work: {done} of {len(required)} work packages done, {active} in progress, {planned} planned. "
+            f"Milestones: {accepted} of {len(milestones)} accepted. Observed {source['observedOn']}.")
+    parts = [
+        '<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 840 226">',
+        '<title id="title">Diakrisis · project tracker</title>', f'<desc id="desc">{escape(desc)}</desc>',
+        f'<rect width="840" height="226" rx="10" fill="{c["background"]}"/>',
+        f'<g font-family="{escape(theme["font"])}">',
+        t(28, 37, 18, "Diakrisis · project tracker", "700"),
+        t(28, 72, 14, "Required work packages"), t(28, 108, 28, f"{done} / {len(required)} done", "700"),
+        t(28, 132, 13, detail, fill=c["muted"]),
+        f'<rect x="28" y="146" width="{width}" height="10" fill="{c["border"]}"/>', *bar,
+        t(445, 72, 14, "Milestones"), t(445, 108, 28, f"{accepted} / {len(milestones)} accepted", "700"),
+        t(445, 132, 13, m_detail, fill=c["muted"]),
+        f'<rect x="445" y="146" width="{width}" height="10" fill="{c["border"]}"/>',
+        *([f'<rect x="445" y="146" width="{width * accepted / len(milestones):.2f}" height="10" fill="{c["accent"]}"/>']
+          if accepted else []),
+        *legend,
+        t(28, 208, 12, f"Observed {source['observedOn']} · from progress/ledger.json", fill=c["muted"]),
+        "</g></svg>",
+    ]
+    return "".join(parts)
 
 
 def render() -> tuple[str, str]:
@@ -77,13 +133,23 @@ def render() -> tuple[str, str]:
     record = summarize(record)
     theme = json.loads(THEME.read_text(encoding="utf-8"))
     versions = json.loads(VERSIONS.read_text(encoding="utf-8"))
-    svg, module = render_readme(record, theme)
+    _, module = render_readme(record, theme)
     # The host has deliberately chosen README-only presentation; no missing-site warning.
     module = module.replace("Interactive route not connected. · ", "")
     source = record["source"]
     milestones = record["milestones"]
     items = record["items"]
     metrics = record["metrics"]
+    svg = progress_svg(items, milestones, source, theme)
+    module = module.replace("Not measured", "not yet assessed").replace("![Diakrisis · current required scope]", "![Diakrisis · project tracker]", 1)
+    required = [w for w in items if w["required"]]
+    in_progress = sum(w["state"] in ("active", "review", "ready") for w in required)
+    row = "| Required work |"
+    if module.count(row) == 1:
+        start = module.index(row)
+        end = module.index("\n", start)
+        module = (module[:end + 1] + f"| Work in progress | {in_progress}/{len(required)} | Leaf items started but not done (not counted as completed). |\n"
+                  + module[end + 1:])
     breakdown = [
         "",
         "#### Milestone roadmap",
