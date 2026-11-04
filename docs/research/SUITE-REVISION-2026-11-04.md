@@ -4,7 +4,7 @@
 
 **Scope:** a material revision of all seven skills, made under the [research gate](../RESEARCH-GATE.md). It changes the shared contract block, the hand-off sections of five specialists, one procedure step in argument-review and method-review, and one workflow step in the coordinator. It changes no schema, no category or severity vocabulary, and no contract revision.
 
-**What was tested.** Round 3 tested the skills at the 2026-10-28 revision against a no-skill baseline, each on the owner's PDF and on its extracted text (24 runs, private material). These revised skills are untested until a new round runs them; round 3 results are not credited to them. Round 3 counts stay private until the owner approves publishing them.
+**What was tested.** Round 3 tested the skills at the 2026-10-28 revision against a no-skill baseline, each on the owner's PDF and on its extracted text (24 runs, private material). These revised skills are untested until a new round runs them; round 3 results are not credited to them. Round 3 counts are in [DIA-007-ROUND-3-2026-11-04.md](DIA-007-ROUND-3-2026-11-04.md).
 
 ## Evidence that motivates each change
 
