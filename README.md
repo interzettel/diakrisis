@@ -19,7 +19,7 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-11-07 against `03fde516`.
+Observed 2026-11-07 against `34835545`.
 
 #### Milestone roadmap
 
@@ -28,7 +28,7 @@ Observed 2026-11-07 against `03fde516`.
 | **DIA-M0 — Documented basis** | Now | 1/1 · 100.0% | Unknown / not assessed | Review the documented foundation and its source authority (work 1/1; acceptance still unknown). |
 | **DIA-M1 — Reproducible foundation** | Now | 2/4 · 50.0% | Unknown / not assessed | DIA-003 and DIA-005 done (DIA-005 on owner instruction, 2026-11-07). Remaining: DIA-002 / #2, Blocked for owner-deferred local PRS archive/runtime verification, and DIA-004 / #4, runtime activation in a real Claude Code or Codex session. M1 acceptance unknown. |
 | **DIA-M2 — Evaluated reviewers** | Next | 0/2 · 0.0% | Unknown / not assessed | Rounds 1 to 3 (2026-10-27 to 2026-11-04) ran blinded skill-vs-baseline comparisons on owner documents, adjudicated by agent graders. Outstanding: owner (human) adjudication, recall against the owner's known-problem list, negative controls, and a round testing the 2026-11-04 revision. M2 acceptance unknown. |
-| **DIA-M3 — Portable system** | Later | 1/3 · 33.3% | Unknown / not assessed | DIA-008 done on owner instruction (2026-11-07). Spatial Laboratory PR #18 merged on owner approval (2026-11-07). Remaining: DIA-009 / #9, Blocked on private consumer Actions (no runner allocated) and on consumers moving to the released package; DIA-010 / #10, v0.1.0 prepared on main (2dfa6bf), tag and GitHub Release to be created by the owner, then consumer pinning and a drift check. M3 acceptance unknown. |
+| **DIA-M3 — Portable system** | Later | 1/3 · 33.3% | Unknown / not assessed | DIA-008 done on owner instruction (2026-11-07). Spatial Laboratory PR #18 merged on owner approval (2026-11-07). v0.1.0 published as an experimental pre-release (2026-11-07). Remaining: DIA-009 / #9, Blocked on private consumer Actions (no runner allocated) and on consumers moving to v0.1.0; DIA-010 / #10, consumer pinning to v0.1.0 and an update-drift check. M3 acceptance unknown. |
 
 #### Work packages
 
