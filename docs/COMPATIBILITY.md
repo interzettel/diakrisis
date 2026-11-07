@@ -1,6 +1,6 @@
 # Consumer bundle and compatibility — development phase
 
-**Accounting:** [DIA-010 / issue #10](https://github.com/interzettel/diakrisis/issues/10), milestone DIA-M3. **Status:** an implemented offline build utility, not an accepted suite release. **Package:** one coordinated version `0.1.0-dev.0` (unreleased).
+**Accounting:** [DIA-010 / issue #10](https://github.com/interzettel/diakrisis/issues/10), milestone DIA-M3. **Status:** an implemented offline build utility, not an accepted suite release. **Package:** one coordinated version, `0.1.0` (released 2026-11-07 as experimental; earlier consumers pinned `0.1.0-dev.0` by commit).
 
 ## Build a reviewable bundle
 
@@ -15,7 +15,7 @@ The output directory must be empty and outside this repository. The builder does
 
 - `bundle/.agents/skills/`: the **seven native Diakrisis reviewer skills**, with relative links redirected to bundled support files.
 - `bundle/integrations/diakrisis/`: schemas, authority references, one package-version registry, original copyright notice, terminology reference examples and pinned source manifest.
-- `diakrisis-consumer-0.1.0-dev.0.zip`: a deterministic archive of that complete consumer tree. ZIP entry order, timestamp and permissions are fixed for reproducibility.
+- `diakrisis-consumer-<version>.zip` (for example `diakrisis-consumer-0.1.0.zip`): a deterministic archive of that complete consumer tree. ZIP entry order, timestamp and permissions are fixed for reproducibility.
 - `SHA256SUMS`: local SHA-256 of the generated archive. This is a **build output** until a separately approved release publishes and authenticates it.
 
 A consumer adoption PR **must inspect its own filenames** before applying a bundle and refuse clobbering existing owner-authored skills; the builder intentionally creates an **empty staging artifact** rather than writing into a live consumer. Revert the consumer adoption PR to roll back; preserve files modified by local owners after adoption.
@@ -52,6 +52,6 @@ DIA-008 composition and DIA-009 accepted consumer verification depend on deferre
 
 - No `v0.1.0` or `v1.0.0` stable tag, GitHub Release or release date.
 - No claim of accepted scientific performance, human blind adjudication, production deployment, native Windows agent activation, or certified consumer compatibility.
-- `skills/versions.json` remains **`0.1.0-dev.0`, unreleased** and the current project-ledger denominator remains unchanged.
+- `skills/versions.json` records the package version (`0.1.0`, published as experimental on 2026-11-07); building a bundle never changes it or the project-ledger denominator.
 
 The offline utility is **development implementation evidence only** for the existing DIA-010 leaf.

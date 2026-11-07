@@ -41,8 +41,12 @@ A skill can be **experimental** while included in development builds; released s
 
 ## Current package
 
-**Contract revision 2 inside `0.1.0-dev.0` (2026-10-27).** The shared wire format moved from revision 1 to revision 2 ([REVIEW-CONTRACT.md](REVIEW-CONTRACT.md)) without renaming the unreleased development version, so pinned consumers keep matching their own manifests. Under the release policy above this is an incompatible contract change; the next proposed package version must account for it.
+**`0.1.0`, released 2026-11-07, experimental.** The first GitHub Release of the suite: tag `v0.1.0`, the seven skills, contract revision 2, and a consumer bundle with SHA-256 digests attached to the release.
 
-**`0.1.0-dev.0`, unreleased.** All seven coordinated skills were merged into `main` in [PR #17](https://github.com/interzettel/diakrisis/pull/17); [DIA-005](https://github.com/interzettel/diakrisis/issues/5) added the shared evidence/authority contract. Structural checks and source packaging are development work, not actual model behavior or a stable release. [Nonpublishing deterministic consumer-bundle procedure](COMPATIBILITY.md) is the source/upgrade/rollback policy; no GitHub Release has been published.
+**Gates (owner decision, 2026-11-07).** Gates 1, 2, 4 and 6 are met by the repository checks and the release receipts. Gate 5 is met for the documented consumer procedure. **Gate 3 is waived by the owner:** with-skill and no-skill runs were compared on the owner's real documents in three blinded rounds ([EVALUATION.md](EVALUATION.md)), but graded by agent graders, not by a person; recall against an owner problem list was not measured; the 2026-11-04 revision included in this release has not been evaluated. Nothing in this release claims validated review quality.
+
+**Version choice.** `0.1.0` is the first public number after `0.1.0-dev.0`; the contract moved to revision 2 during development, so there is no earlier release to be incompatible with.
+
+**Before `0.1.0`:** `0.1.0-dev.0` was the unreleased development version that consumers pinned by commit. Pinned consumers keep working until they choose to move to the tag.
 
 There is no GitHub Pages deployment for Diakrisis. The repository README tracker is a projection of governed project records, not a release channel. This is a deliberate small-project tailoring of the [Project Record Standard](https://github.com/interzettel/project-record-standard).

@@ -217,7 +217,8 @@ def build(output):
                          "so every bundled file must match it")
     output.mkdir(parents=True, exist_ok=True)
     reg = json.loads((ROOT / "skills/versions.json").read_text())
-    if set(reg["skills"]) != set(NAMES) or reg["suite"]["status"] != "unreleased":
+    statuses = {"unreleased": "unreleased-experimental", "published": "published-experimental"}
+    if set(reg["skills"]) != set(NAMES) or reg["suite"]["status"] not in statuses:
         raise ValueError("unsupported package roster or release status")
     version = reg["suite"]["version"]
     consumer = output / "bundle"
@@ -235,7 +236,7 @@ def build(output):
                           transformation=method, source_revision=sha))
     manifest = dict(schema_version=1, owner_record="DIA-010 / DIA-M3",
                     source_repository="interzettel/diakrisis", source_revision=sha,
-                    suite_version=version, suite_status="unreleased-experimental",
+                    suite_version=version, suite_status=statuses[reg["suite"]["status"]],
                     files=files)
     out = consumer / MANIFEST
     out.parent.mkdir(parents=True, exist_ok=True)

@@ -2,11 +2,11 @@
   "schemaVersion": 2,
   "project": "diakrisis",
   "suite": {
-    "version": "0.1.0-dev.0",
-    "status": "unreleased",
-    "releaseTag": null,
-    "releaseDate": null,
-    "notes": "Seven coordinated experimental skill modules implemented in development; one package SemVer. Formal model-behavior evaluation and release deferred by owner."
+    "version": "0.1.0",
+    "status": "published",
+    "releaseTag": "v0.1.0",
+    "releaseDate": "2026-11-07",
+    "notes": "First suite release, experimental. Owner-approved on 2026-11-07 with release gate 3 (human adjudication) waived: behaviour was compared with a no-skill baseline in three blinded rounds graded by agent graders only. The 2026-11-04 revision is untested."
   },
   "skills": [
     "terminology-review",
