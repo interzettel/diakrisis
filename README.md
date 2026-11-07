@@ -13,22 +13,22 @@ A local-first, evidence-aware collection of portable Agent Skills for reviewing 
 
 | Measure | Completion | Meaning |
 | --- | ---: | --- |
-| Required work | 2/10 · 20.0% | Completed leaf items in the named required scope. |
-| Work in progress | 7/10 | Leaf items started but not done (not counted as completed). |
+| Required work | 4/10 · 40.0% | Completed leaf items in the named required scope. |
+| Work in progress | 5/10 | Leaf items started but not done (not counted as completed). |
 | Accepted milestones | 0/4 · not yet assessed | Milestones whose declared outcome gates passed. |
 
 Source file: `progress/ledger.json` (content-addressed file snapshot).
 
-Observed 2026-11-04 against `9a849727`.
+Observed 2026-11-07 against `4e5adb09`.
 
 #### Milestone roadmap
 
 | Milestone | Horizon | Supporting required work | Outcome acceptance | Next gate |
 | --- | --- | ---: | --- | --- |
 | **DIA-M0 — Documented basis** | Now | 1/1 · 100.0% | Unknown / not assessed | Review the documented foundation and its source authority (work 1/1; acceptance still unknown). |
-| **DIA-M1 — Reproducible foundation** | Now | 1/4 · 25.0% | Unknown / not assessed | DIA-005 / #5 finding+report contract structurally implemented: revision 1 in PR #24, revision 2 in PR #41 (2026-10-27), with positive, negative and abstention cases. DIA-003 complete; DIA-002 / #2 remains the P0 prerequisite Blocked only for owner-deferred local archive/runtime verification. DIA-004 / #4 runtime activation is also deferred. No further eligible unblocked completion gate in M1 until owner resumes the final test phase; M1 acceptance remains unknown. |
+| **DIA-M1 — Reproducible foundation** | Now | 2/4 · 50.0% | Unknown / not assessed | DIA-003 and DIA-005 done (DIA-005 on owner instruction, 2026-11-07). Remaining: DIA-002 / #2, Blocked for owner-deferred local PRS archive/runtime verification, and DIA-004 / #4, runtime activation in a real Claude Code or Codex session. M1 acceptance unknown. |
 | **DIA-M2 — Evaluated reviewers** | Next | 0/2 · 0.0% | Unknown / not assessed | Rounds 1 to 3 (2026-10-27 to 2026-11-04) ran blinded skill-vs-baseline comparisons on owner documents, adjudicated by agent graders. Outstanding: owner (human) adjudication, recall against the owner's known-problem list, negative controls, and a round testing the 2026-11-04 revision. M2 acceptance unknown. |
-| **DIA-M3 — Portable system** | Later | 0/3 · 0.0% | Unknown / not assessed | DIA-009 / #9 private consumer Actions blocker isolated to **no runner allocated** (runner_id 0, zero steps) for Writing Kitchen and Spatial Laboratory, including before Diakrisis integration. Owner confirmed 2026-10-27 that monthly private Actions usage is exhausted and declined extra spending; retry once the quota renews, and meanwhile run consumer checks offline. Spatial Laboratory PR #18 still needs explicit owner merge approval. DIA-008 coordinator and DIA-010 offline bundle structurally implemented; DIA-007 behavior/consumer verification and stable release gates deferred. M3 acceptance unknown. |
+| **DIA-M3 — Portable system** | Later | 1/3 · 33.3% | Unknown / not assessed | DIA-008 done on owner instruction (2026-11-07). Remaining: DIA-009 / #9, Blocked on private consumer Actions (no runner allocated; monthly quota exhausted, owner declined extra spending) and Spatial Laboratory PR #18; DIA-010 / #10, offline bundle built, first release awaiting owner decision. M3 acceptance unknown. |
 
 #### Work packages
 
@@ -40,18 +40,18 @@ States represent recorded implementation progress; a closed issue, passing test 
 | [DIA-002](https://github.com/interzettel/diakrisis/issues/2) | Install and verify Project Record Standard | In progress | P0 | DIA-001 | [PR #15](https://github.com/interzettel/diakrisis/pull/15) · Blocked flag (reason in source) |
 | [DIA-003](https://github.com/interzettel/diakrisis/issues/3) | Audit upstream standards and donors | Done | P0 | DIA-001 | [PR #20](https://github.com/interzettel/diakrisis/pull/20) |
 | [DIA-004](https://github.com/interzettel/diakrisis/issues/4) | Activate pinned authoring tools | Planned | P1 | DIA-003 | Portable Superpowers/skill-creator/PRS install and discovery verified in an actual Claude Code or Codex session, including rollback. |
-| [DIA-005](https://github.com/interzettel/diakrisis/issues/5) | Define typed findings and authority contract | In progress | P1 | DIA-002, DIA-003 | [PR #24](https://github.com/interzettel/diakrisis/pull/24) |
+| [DIA-005](https://github.com/interzettel/diakrisis/issues/5) | Define typed findings and authority contract | Done | P1 | DIA-002, DIA-003 | [PR #24](https://github.com/interzettel/diakrisis/pull/24) |
 | [DIA-006](https://github.com/interzettel/diakrisis/issues/6) | Build and test three pilot reviewers | In progress | P1 | DIA-004, DIA-005 | [PR #17](https://github.com/interzettel/diakrisis/pull/17) |
 | [DIA-007](https://github.com/interzettel/diakrisis/issues/7) | Evaluate pilots on genuine documents | In progress | P1 | DIA-006 | [PR #46](https://github.com/interzettel/diakrisis/pull/46) |
-| [DIA-008](https://github.com/interzettel/diakrisis/issues/8) | Expand reviewers and coordination | In progress | P2 | DIA-007 | [PR #27](https://github.com/interzettel/diakrisis/pull/27) |
+| [DIA-008](https://github.com/interzettel/diakrisis/issues/8) | Expand reviewers and coordination | Done | P2 | DIA-007 | [PR #27](https://github.com/interzettel/diakrisis/pull/27) |
 | [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | In progress | P2 | DIA-007 | [writing-kitchen PR #24](https://github.com/yigit-denktas/writing-kitchen/pull/24) · Blocked flag (reason in source) |
 | [DIA-010](https://github.com/interzettel/diakrisis/issues/10) | Version releases and evaluate drift | In progress | P2 | DIA-008, DIA-009 | [PR #26](https://github.com/interzettel/diakrisis/pull/26) |
 
 **Versioning:** Suite `0.1.0-dev.0` — **unreleased**; included skills: **7**. Draft candidates: None. [Single package version policy](docs/VERSIONING.md).
 
-**Source coverage:** observed **2026-11-04**, authoritative [ledger](progress/ledger.json), [manifest](progress/project-record.json), [scope history](progress/history/2026-10-26-unapproved.json). Regeneration does not fetch newer issues or change the observation date.
+**Source coverage:** observed **2026-11-07**, authoritative [ledger](progress/ledger.json), [manifest](progress/project-record.json), [scope history](progress/history/2026-10-26-unapproved.json). Regeneration does not fetch newer issues or change the observation date.
 
-**Counts:** required work **2/10 · 20.0%**; retained work **2/10 · 20.0%**; accepted milestones **Unknown** (0 of 4 determinate).
+**Counts:** required work **4/10 · 40.0%**; retained work **4/10 · 40.0%**; accepted milestones **Unknown** (0 of 4 determinate).
 
 <!-- project-record:end -->
 
