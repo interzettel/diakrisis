@@ -47,7 +47,7 @@ States represent recorded implementation progress; a closed issue, passing test 
 | [DIA-009](https://github.com/interzettel/diakrisis/issues/9) | Adopt framework in consumer repositories | In progress | P2 | DIA-007 | [writing-kitchen PR #24](https://github.com/yigit-denktas/writing-kitchen/pull/24) · Blocked flag (reason in source) |
 | [DIA-010](https://github.com/interzettel/diakrisis/issues/10) | Version releases and evaluate drift | In progress | P2 | DIA-008, DIA-009 | [PR #26](https://github.com/interzettel/diakrisis/pull/26) |
 
-**Versioning:** Suite `0.1.0` — **released-experimental**; included skills: **7**. Draft candidates: None. [Single package version policy](docs/VERSIONING.md).
+**Versioning:** Suite `0.1.0` — **published**; included skills: **7**. Draft candidates: None. [Single package version policy](docs/VERSIONING.md).
 
 **Source coverage:** observed **2026-11-07**, authoritative [ledger](progress/ledger.json), [manifest](progress/project-record.json), [scope history](progress/history/2026-10-26-unapproved.json). Regeneration does not fetch newer issues or change the observation date.
 
