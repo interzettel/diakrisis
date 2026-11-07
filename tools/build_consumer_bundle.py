@@ -217,7 +217,7 @@ def build(output):
                          "so every bundled file must match it")
     output.mkdir(parents=True, exist_ok=True)
     reg = json.loads((ROOT / "skills/versions.json").read_text())
-    statuses = {"unreleased": "unpublished, experimental", "published": "published-experimental"}
+    statuses = {"unreleased": "unreleased-experimental", "published": "published-experimental"}
     if set(reg["skills"]) != set(NAMES) or reg["suite"]["status"] not in statuses:
         raise ValueError("unsupported package roster or release status")
     version = reg["suite"]["version"]

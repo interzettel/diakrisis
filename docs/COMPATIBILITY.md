@@ -52,6 +52,6 @@ DIA-008 composition and DIA-009 accepted consumer verification depend on deferre
 
 - No `v0.1.0` or `v1.0.0` stable tag, GitHub Release or release date.
 - No claim of accepted scientific performance, human blind adjudication, production deployment, native Windows agent activation, or certified consumer compatibility.
-- `skills/versions.json` records the package version (`0.1.0`, published, experimental since 2026-11-07); building a bundle never changes it or the project-ledger denominator.
+- `skills/versions.json` records the package version (`0.1.0`, published as experimental on 2026-11-07); building a bundle never changes it or the project-ledger denominator.
 
 The offline utility is **development implementation evidence only** for the existing DIA-010 leaf.
